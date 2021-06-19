@@ -1,77 +1,127 @@
-<nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav"
-                    aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
+<!-- welcome content start from here -->
+
+<header class="header-wrap header-box-style header-1">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 p-0 d-lg-none d-block d-none-mobile">
+                <div class="top-bar text-right">
+                    <a href="mailto:info@rootofjessephc.com"><i class="fal fa-envelope"></i>info@rootofjessephc.com</a>
+                    <a href="tel:08033104890"><i class="fal fa-phone"></i>0803 310 4890</a>
+                    <a href="#" class="d-btn">Giving</a>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <a href="volunteer.html"
-                    class="volunteer-link btn-primary btn-outline hidden-sm hidden-xs pull-right">become volunteer</a>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Home Variation 1</a></li>
-                            <li><a href="index2.html">Home Variation 2</a></li>
-                            <li><a href="index3.html">Home Variation 3</a></li>
-                            <li><a href="index4.html">Home Variation 4</a></li>
-                            <li><a href="index5.html">Home Variation 5</a></li>
-                            <li><a href="index-single-cause.html">Single Cause Variation 1</a></li>
-                            <li><a href="index-single-cause2.html">Single Cause Variation 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="donation-checkout.html">donate</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Causes</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="cause-listing-list.html">Cause listing list</a></li>
-                            <li><a href="cause-listing-grid.html">Cause listing grid</a></li>
-                            <li><a href="single-cause.html">Cause details</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">projects</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="project.html">Projects</a></li>
-                            <li><a href="single-project.html">Project Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">pages</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="single.html">Blog Details</a></li>
-                            <li><a href="events.html">Event Listing</a></li>
-                            <li><a href="single-event.html">Event Details</a></li>
-                            <li><a href="faqs.html">FAQ</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="shortcode.html">Shortcode</a></li>
-                            <li><a href="shortcode2.html">Shortcode Column</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="single-product.html">Product Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
+            <div class="col-xl-3 col-6 col-lg-3 pr-0">
+                <div class="logo">
+                    <a href="{{ route('home') }}">
+                        <center>
+                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624067471/Rccg_logo_c2s2wg.png" alt="RCCG" style="width: 70px;">
+                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="TROJ" style="width: 80px;">
+                        </center>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-9 pl-lg-0 col-lg-9 d-none d-lg-block">
+                <div class="box-wrap">
+                    <div class="top-bar text-right">
+                        <a href="mailto:info@rootofjessephc.com"><i class="fal fa-envelope"></i>info@rootofjessephc.com</a>
+                        <a href="tel:08033104890"><i class="fal fa-phone"></i>0803 310 4890</a>
+                        <a href="#" class="d-btn">Giving</a>
+                    </div>
+                    <div class="menu-wrap d-flex align-items-center justify-content-around">
+                        <div class="main-menu">
+                            <ul>
+                                {{-- <li><a href="#">Home</a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="index-2.html">Homepage 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="index-3.html">Homepage 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="index-4.html">Homepage 3</a>
+                                        </li>
+                                    </ul>
+                                </li> --}}
+                                <li><a href="{{ route('home') }}">home</a></li>
+                                <li><a href="#">about us</a></li>
+                                <li><a href="#">Ministries and programs</a></li>
+                                <li><a href="#">Messages Preached</a></li>
+                                {{-- <li><a href="causes.html">Causes</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="causes.html">Causes List</a></li>
+                                        <li><a href="cause-details.html">Causes details</a></li>
+                                        <li><a href="#">donation</a></li>
+                                    </ul>
+                                </li> --}}
+                                
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                        <div class="social-link">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-lg-none d-block pl-0">
+                <div class="mobile-nav-wrap">
+                    <div id="hamburger">
+                        <i class="fal fa-bars"></i>
+                    </div>
+                    <!-- mobile menu - responsive menu  -->
+                    <div class="mobile-nav">
+                        <button type="button" class="close-nav">
+                            <i class="fal fa-times-circle"></i>
+                        </button>
+                        <nav class="sidebar-nav">
+                            <ul class="metismenu" id="mobile-menu">
+                                {{-- <li><a class="has-arrow" href="#">Homes</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="index-2.html">Homepage 1</a></li>
+                                        <li><a href="index-3.html">Homepage 2</a></li>
+                                        <li><a href="index-4.html">Homepage 3</a></li>
+                                    </ul>
+                                </li> --}}
+                                <li><a href="{{ route('home') }}">home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">ministies and programs</a></li>
+                                <li><a href="#">message preached</a></li>
+                                {{-- <li>
+                                    <a class="has-arrow" href="causes.html">Causes</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="causes.html">Causes List</a></li>
+                                        <li><a href="cause-details.html">Causes details</a></li>
+                                        <li><a href="#">donation</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="has-arrow" href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="faq.html">faq</a></li>
+                                        <li><a href="events.html">events</a></li>
+                                        <li><a href="event-details.html">event details</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="news.html">News</a></li> --}}
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="action-bar">
+                            <a href="mailto:info@rootofjessephc.com"><i class="fal fa-envelope"></i>info@rootofjessephc.com</a>
+                            <a href="tel:08033104890"><i class="fal fa-phone"></i>0803 310 4890</a>
+                            <a href="#" class="d-btn theme-btn">Giving</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="overlay"></div>
             </div>
         </div>
-    </nav>
+    </div>
+</header>

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- Mirrored from themedesigner.in/demo/Helping-Hands/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 17 Jun 2021 11:41:21 GMT -->
+
+<!-- Mirrored from salmancreation.com/fundbux-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Jun 2021 02:13:19 GMT -->
 
 <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="modinatheme">
+    <!-- ======== Page title ============ -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'The Root Of Jesse | Homepage') }}</title>
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png">
+    <!-- ===========  All Stylesheet ================= -->
+    <!--  Icon css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}">
+    <!--  animate css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <!--  magnific-popup css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <!--  owl carosuel css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <!-- metis menu css file -->
+    <link rel="stylesheet" href="{{ asset('assets/css/metismenu.css') }}">
+    <!--  owl theme css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.css') }}">
+    <!--  Bootstrap css plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <!--  main style css file -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <!-- template main style css file -->
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 
-    <!--Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700italic,700' rel='stylesheet'
-        type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet'
-        type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
 
-    <!--Bootstrap-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <!--Font Awesome-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!--Owl Carousel-->
-    <link rel="stylesheet" href="vendors/owl.carousel/owl.carousel.css">
-    <!--Magnific Popup-->
-    <link rel="stylesheet" href="vendors/magnific-popup/magnific-popup.css">
-
-    <!--Theme Styles-->
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/theme.min.css">
-    <link rel="alternate stylesheet" title="yellow-theme" href="css/yellow-theme.min.css">
-    <link rel="alternate stylesheet" title="blue-theme" href="css/blue-theme.min.css">
-    <link rel="alternate stylesheet" title="red-theme" href="css/red-theme.min.css">
-    <link rel="alternate stylesheet" title="purple-theme" href="css/purple-theme.min.css">
-    <link rel="alternate stylesheet" title="orange-theme" href="css/orange-theme.min.css">
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="vendors/rs-plugin/css/settings-ie8.css">
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
-<body>
+<body class="body-wrapper">
