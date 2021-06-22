@@ -4,5 +4,6 @@
 @yield('content')
         
 
+@include('includes.message')
 @include('includes.footer')
 @include('includes.footerjs')

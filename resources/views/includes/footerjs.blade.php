@@ -18,6 +18,7 @@
 <script src="{{ asset('assets/js/timeline.min.js') }}"></script>
 <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
 <script src="{{ asset('assets/js/active.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 

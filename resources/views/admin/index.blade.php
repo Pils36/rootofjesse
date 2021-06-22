@@ -8,7 +8,7 @@
         <div class="nk-block-head nk-block-head-lg">
             <div class="nk-block-between-md g-4">
                 <div class="nk-block-head-content">
-                    <h2 class="nk-block-title fw-normal">Welcome, Administrator</h2>
+                    <h2 class="nk-block-title fw-normal">Welcome, {{ Auth::user()->name }}</h2>
                     <div class="nk-block-des">
                         <p>Welcome to your dashboard. Manage your platform and other activities.</p>
                     </div>
