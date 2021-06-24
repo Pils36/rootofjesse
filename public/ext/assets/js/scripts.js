@@ -5,6 +5,7 @@
 
   NioApp.Package.name = "DashLite";
   NioApp.Package.version = "2.3";
+  var csrf_token = $('meta[name="csrf-token"]').attr('content');
   var $win = $(window),
       $body = $('body'),
       $doc = $(document),
@@ -129,13 +130,13 @@
         msi = '',
         ticon = ttype === 'info' ? 'ni ni-info-fill' : ttype === 'success' ? 'ni ni-check-circle-fill' : ttype === 'error' ? 'ni ni-cross-circle-fill' : ttype === 'warning' ? 'ni ni-alert-fill' : '',
         def = {
-      position: 'bottom-right',
+      position: 'top-right',
       ui: '',
       icon: 'auto',
       clear: false
     },
         attr = opt ? extend(def, opt) : def;
-    attr.position = attr.position ? 'toast-' + attr.position : 'toast-bottom-right';
+    attr.position = attr.position ? 'toast-' + attr.position : 'toast-top-right';
     attr.icon = attr.icon === 'auto' ? ticon : attr.icon ? attr.icon : '';
     attr.ui = attr.ui ? ' ' + attr.ui : '';
     msi = attr.icon !== '' ? '<span class="toastr-icon"><em class="icon ' + attr.icon + '"></em></span>' : '', msg = msg !== '' ? msi + '<div class="toastr-text">' + msg + '</div>' : '';
@@ -155,7 +156,7 @@
         "preventDuplicates": true,
         "showDuration": "1500",
         "hideDuration": "1500",
-        "timeOut": "2000",
+        "timeOut": "5000",
         "toastClass": "toastr",
         "extendedTimeOut": "3000"
       };
@@ -408,9 +409,16 @@
   }; // Dropzone Init @v1.0
 
 
+      // autoQueue: false,
+
+
   NioApp.Dropzone.init = function () {
     NioApp.Dropzone('.upload-zone', {
-      url: "/images"
+      url: "/admin/ajax/dropzonemessage",
+      addRemoveLinks: true,
+      params: {
+        post_id: $('#post_id').val()
+      }
     });
   }; // Wizard @v1.0
 

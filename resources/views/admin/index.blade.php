@@ -6,6 +6,16 @@
 
     <div class="nk-content-wrap">
         <div class="nk-block-head nk-block-head-lg">
+            @if (session('success'))
+
+            <div class="example-alert">
+                <div class="alert alert-success alert-icon alert-dismissible">
+                    <em class="icon ni ni-check-circle"></em> <strong>{{ session("success") }}</strong> <button class="close" data-dismiss="alert"></button>
+                </div>
+            </div>
+
+            @endif
+
             <div class="nk-block-between-md g-4">
                 <div class="nk-block-head-content">
                     <h2 class="nk-block-title fw-normal">Welcome, {{ Auth::user()->name }}</h2>
@@ -112,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="html/subscription/profile-setting.html" class="link"><span>Get Started</span> <em class="icon ni ni-chevron-right"></em></a>
+                                <a href="{{ route('upload message') }}" class="link"><span>Get Started</span> <em class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>
                     </div>

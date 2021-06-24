@@ -1,13 +1,19 @@
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if (session('success'))
         <script>
-            swal('Good', '{{ session("success") }}', 'success');
+              toastr.clear();
+                NioApp.Toast('<h5>Successfully!</h5><p>{{ session("success") }}.</p>', 'success');
         </script>
+
 
     @elseif(session('error'))
 
         <script>
-            swal('Oops', '{{ session("error") }}', 'error');
+                toastr.clear();
+                    NioApp.Toast('{{ session("error") }}', 'error');
         </script>
 
+        
     @endif
+
+
+   

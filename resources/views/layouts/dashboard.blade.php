@@ -2,5 +2,6 @@
 @include('includes.admin.aside')
 @yield('content')
         
-@include('includes.message')
 @include('includes.admin.footerjs')
+@include('includes.message')
+@include('includes.alert')

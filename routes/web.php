@@ -21,12 +21,32 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::prefix('admin')->group(function () {
 
+    // Admin Login Page::
     Route::get('/login', 'AdminController@login')->name('admin login');
     Route::post('/login', 'AdminController@loginUser')->name('login');
 
 
     Route::middleware(['auth'])->group(function () {
+
+        // Admin Dashboard::
         Route::get('/dashboard', 'AdminController@index')->name('dasboard');
+
+        // Upload Sermon & Messages::
+        Route::get('/upload-message', 'AdminController@uploadMessage')->name('upload message');
+
+        Route::post('/publish-message', 'MessageController@publishMessage')->name('publish message');
+
+        // Logout User::
+        Route::post('/logout', 'AdminController@logoutUser')->name('logout');
+
+
+
+        Route::prefix('ajax')->group(function () {
+
+            Route::post('/dropzonemessage', 'MessageController@receiveUpload')->name('dropzonemessage');
+
+        });
+
         
     });
 

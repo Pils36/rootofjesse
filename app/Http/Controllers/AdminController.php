@@ -37,7 +37,24 @@ class AdminController extends Controller
 
     }
 
+
+    
+
+
+    public function logoutUser(){
+        $thisuser = User::where('email', Auth::user()->email)->first();
+
+        Auth::logout();
+
+        return back()->with('success', 'Successfully logged out');
+    }
+
     public function index(){
         return view('admin.index');
+    }
+
+    public function uploadMessage(){
+        
+        return view('admin.messages.index');
     }
 }
