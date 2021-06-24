@@ -9,9 +9,12 @@ use Auth;
 
 use App\User as User;
 
+use App\Traits\SermonUpload;
+
 class AdminController extends Controller
 {
-
+    use SermonUpload;
+    
     public function login(){
 
         return view('admin.auth.login');
@@ -56,5 +59,14 @@ class AdminController extends Controller
     public function uploadMessage(){
         
         return view('admin.messages.index');
+    }
+
+    public function allMessages(){
+        
+        $data = [
+            'messages' => $this->allSermons()
+        ];
+
+        return view('admin.messages.allmessages')->with(['data' => $data]);
     }
 }

@@ -34,6 +34,8 @@ Route::prefix('admin')->group(function () {
         // Upload Sermon & Messages::
         Route::get('/upload-message', 'AdminController@uploadMessage')->name('upload message');
 
+        Route::get('/all-message', 'AdminController@allMessages')->name('uploaded sermons');
+
         Route::post('/publish-message', 'MessageController@publishMessage')->name('publish message');
 
         // Logout User::

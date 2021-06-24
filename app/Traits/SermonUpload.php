@@ -3,6 +3,7 @@
 
 namespace App\Traits;
 
+use App\Sermon as Sermon;
 
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -30,4 +31,14 @@ trait SermonUpload
         }
         
     }
+
+
+    // Get all uploaded Sermons
+
+    public function allSermons(){
+        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->paginate(2);
+
+        return $data;
+    }
+
 }

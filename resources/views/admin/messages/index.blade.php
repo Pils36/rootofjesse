@@ -5,9 +5,16 @@
         <div class="nk-block nk-block-lg">
             <div class="nk-block-head">
                 <div class="nk-block-head-content">
-                    <h4 class="title nk-block-title">Pastor's Message and Sermons</h4>
-                    <div class="nk-block-des">
-                        <p>You can upload messages from the preachers here and will be visible to users all over the world</p>
+                    <div class="row">
+                        <div class="col-md-9">
+                            <h4 class="title nk-block-title">Pastor's Message and Sermons</h4>
+                            <div class="nk-block-des">
+                                <p>You can upload messages from the preachers here and will be visible to users all over the world</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{{ route('uploaded sermons') }}" class="btn btn-round btn-danger"><span>All Sermons</span><em class="icon ni ni-chevron-right"></em></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +145,7 @@
     </div>
 
 
-    
+
 
 
 @endsection
