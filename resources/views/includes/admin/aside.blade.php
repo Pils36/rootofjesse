@@ -12,19 +12,19 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/subscriptions.html" class="nk-menu-link">
+                                            <a href="{{ route('uploaded sermons') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-file-text"></em></span>
                                                 <span class="nk-menu-text">Messages & Sermons</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/payments.html" class="nk-menu-link">
+                                            <a href="javascript:void(0)" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-report-profit"></em></span>
                                                 <span class="nk-menu-text">All Members</span>
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/team-access.html" class="nk-menu-link">
+                                            <a href="{{ route('team member') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
                                                 <span class="nk-menu-text">Manage Team</span>
                                             </a>
@@ -36,7 +36,7 @@
                                             </a>
                                         </li> --}}
                                         <li class="nk-menu-item">
-                                            <a href="html/subscription/profile-setting.html" class="nk-menu-link">
+                                            <a href="javascript:void(0)" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
                                                 <span class="nk-menu-text">Account Setting</span>
                                             </a>

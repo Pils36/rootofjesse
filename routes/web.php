@@ -32,16 +32,27 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', 'AdminController@index')->name('dasboard');
 
         // Upload Sermon & Messages::
-        Route::get('/upload-message', 'AdminController@uploadMessage')->name('upload message');
-
-        Route::get('/all-message', 'AdminController@allMessages')->name('uploaded sermons');
-
+        Route::get('/upload-message', 'MessageController@uploadMessage')->name('upload message');
+        Route::get('/all-message', 'MessageController@allMessages')->name('uploaded sermons');
+        Route::get('/view-message/{id}', 'MessageController@viewMessages')->name('view message');
+        Route::get('/edit-message/{id}', 'MessageController@editMessages')->name('edit message');
         Route::post('/publish-message', 'MessageController@publishMessage')->name('publish message');
+        Route::post('/delete-message/{id}', 'MessageController@deleteMessage')->name('delete message');
+
+
+
+
+
+        // Team
+        Route::get('/team-members', 'TeamController@index')->name('team member');
+        Route::get('/create-team-member', 'TeamController@create')->name('create team member');
+        Route::post('/new-team-member', 'TeamController@createNewTeam')->name('create new team');
+
+        
+
 
         // Logout User::
         Route::post('/logout', 'AdminController@logoutUser')->name('logout');
-
-
 
         Route::prefix('ajax')->group(function () {
 

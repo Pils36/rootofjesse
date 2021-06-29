@@ -12,6 +12,15 @@
 <script src="{{ asset('ext/assets/js/scripts.js?ver=2.4.0') }}"></script>
 {{-- <script src="{{ asset('ext/assets/js/example-toastr.js?ver=2.4.0') }}"></script> --}}
 <script src="{{ asset('ext/assets/js/example-sweetalert.js?ver=2.4.0') }}"></script>
+
+
+<script>
+    function deleteData(val, id){
+
+        $('#'+val+id).click();
+    }
+</script>
+
 </body>
 
 </html>

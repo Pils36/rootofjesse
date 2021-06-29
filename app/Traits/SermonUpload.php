@@ -36,7 +36,21 @@ trait SermonUpload
     // Get all uploaded Sermons
 
     public function allSermons(){
-        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->paginate(2);
+        $data = Sermon::orderBy('created_at', 'DESC')->paginate(9);
+
+        return $data;
+    }
+
+
+    public function thisSermons($id){
+        $data = Sermon::where('id', $id)->first();
+
+        return $data;
+    }
+
+
+    public function removeSermons($id){
+        $data = Sermon::where('id', $id)->delete();
 
         return $data;
     }

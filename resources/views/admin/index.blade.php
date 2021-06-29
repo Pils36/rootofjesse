@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="html/subscription/profile.html" class="link"><span>Manage Your Account</span>
+                                <a href="javascript:void(0)" class="link"><span>Manage Your Account</span>
                                     <em class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>
@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="html/subscription/payments.html" class="link"><span>View Members</span> <em
+                                <a href="javascript:void(0)" class="link"><span>View Members</span> <em
                                         class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="html/subscription/subscriptions.html" class="link"><span>Manage
+                                <a href="{{ route('team member') }}" class="link"><span>Manage
                                         Team</span> <em class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>
