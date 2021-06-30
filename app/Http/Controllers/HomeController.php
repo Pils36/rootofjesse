@@ -22,4 +22,12 @@ class HomeController extends Controller
     {
         return view('pages.index');
     }
+    public function about()
+    {
+        return view('pages.about');
+    }
+    public function contactUs()
+    {
+        return view('pages.contact');
+    }
 }

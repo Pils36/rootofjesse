@@ -31,7 +31,7 @@ class TeamController extends Controller
         return view('admin.team.create')->with(['data' => $data]);
     }
 
-
+    // Create Team Member
     public function createNewTeam(Request $req){
 
         $query = $req->all();
@@ -57,6 +57,30 @@ class TeamController extends Controller
         } catch (\Throwable $th) {
             //throw $th;
             return back()->with('error', 'Error: '.$th->getMessage());
+        }
+
+    }
+
+    // Edit Team Member
+    public function editTeamMember($id){
+        $data = [
+            'team' => $this->thisTeamMember($id)
+        ];
+
+        return view('admin.team.edit')->with(['data' => $data]);
+    }
+
+
+    // Delete Team Member
+    public function deleteTeamMember($id){
+
+        $data = $this->removeTeamMember($id);
+
+        if(isset($data)){
+            return redirect()->route('team member')->with('success', 'Successfully deleted');
+        }
+        else{
+            return back()->with('error', 'Something went wrong!');
         }
 
     }

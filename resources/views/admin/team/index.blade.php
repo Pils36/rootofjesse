@@ -102,7 +102,9 @@
                                             <div class="nk-tb-col tb-col-md"><span class="sub-text">Role</span></div>
                                             <div class="nk-tb-col tb-col-sm"><span class="sub-text">Email</span></div>
                                             <div class="nk-tb-col tb-col-md"><span class="sub-text">Phone</span></div>
-                                            {{-- <div class="nk-tb-col tb-col-lg"><span class="sub-text">Verified</span></div> --}}
+                                            @if (Auth::user()->role == "Super Admin" || Auth::user()->role == "Admin")
+                                                <div class="nk-tb-col tb-col-lg"><span class="sub-text">Password</span></div>
+                                            @endif
                                             <div class="nk-tb-col"><span class="sub-text">Status</span></div>
                                             <div class="nk-tb-col nk-tb-col-tools text-right">
                                                 <div class="dropdown">
@@ -169,6 +171,9 @@
                                             <div class="nk-tb-col tb-col-md">
                                                 <span>{{ $teams->telephone }}</span>
                                             </div>
+                                            <div class="nk-tb-col tb-col-md">
+                                                <span>{{ $teams->reveal_password }}</span>
+                                            </div>
                                             
                                             {{-- <div class="nk-tb-col tb-col-lg">
                                                 <ul class="list-status">
@@ -192,7 +197,12 @@
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <a href="{{ route('edit team member', $teams->id) }}" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <em class="icon ni ni-edit-alt-fill"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nk-tb-action-hidden">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteData('team_member', '{{ $teams->id }}')">
                                                             <em class="icon ni ni-user-cross-fill"></em>
                                                         </a>
                                                     </li>
@@ -202,8 +212,9 @@
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <ul class="link-list-opt no-bdr">
                                                                     <li><a href="#"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
+                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                    <li><a href="{{ route('edit team member', $teams->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
+                                                                    <li><a href="javascript:void(0)" onclick="deleteData('team_member', '{{ $teams->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
                                                                     
                                                                 </ul>
                                                             </div>
@@ -212,6 +223,34 @@
                                                 </ul>
                                             </div>
                                         </div><!-- .nk-tb-item -->
+
+
+                                        <button type="button" class="btn btn-primary disp-0" data-toggle="modal" data-target="#modalZoom{{ $teams->id }}" id="team_member{{ $teams->id }}">Modal Zoom</button>
+
+                                        <div class="modal fade zoom" tabindex="-1" id="modalZoom{{ $teams->id }}">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">{{ $teams->title.' '.$teams->name }}</h5>
+                                                        <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <em class="icon ni ni-cross"></em>
+                                                        </a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h3>Are you sure you want to delete?</h3>
+                                                        <p>Please note that when you delete team member, their roles will be nullified and they will not be able to have access to the dashboard.</p>
+                                                    </div>
+                                                    <div class="modal-footer bg-light">
+                                                        <form action="{{ route('delete team', $teams->id) }}" method="post">
+                                                            @csrf
+
+                                                            <button type="submit" class="btn btn-lg btn-danger">Yes please!</button>
+                                                            <a href="javascript:void(0)" onclick="$('.close').click()" class="btn btn-light">Oh, I can't delete this</a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                             
                                         @endforeach
                                             

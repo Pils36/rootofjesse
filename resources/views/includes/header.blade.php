@@ -44,7 +44,7 @@
                                     </ul>
                                 </li> --}}
                                 <li><a href="{{ route('home') }}">home</a></li>
-                                <li><a href="#">about us</a></li>
+                                <li><a href="{{ route('about us') }}">about us</a></li>
                                 <li><a href="#">Ministries and programs</a></li>
                                 <li><a href="#">Messages Preached</a></li>
                                 {{-- <li><a href="causes.html">Causes</a>
@@ -55,7 +55,7 @@
                                     </ul>
                                 </li> --}}
                                 
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>
                         </div>
                         <div class="social-link">
@@ -88,7 +88,7 @@
                                     </ul>
                                 </li> --}}
                                 <li><a href="{{ route('home') }}">home</a></li>
-                                <li><a href="#">about</a></li>
+                                <li><a href="{{ route('about us') }}">about</a></li>
                                 <li><a href="#">ministies and programs</a></li>
                                 <li><a href="#">message preached</a></li>
                                 {{-- <li>
@@ -109,7 +109,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="news.html">News</a></li> --}}
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{ route('contact us') }}">Contact</a></li>
                             </ul>
                         </nav>
 

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
+// Basic Pages
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about us');
+Route::get('/contactus', 'HomeController@contactUs')->name('contact us');
 
 
 
@@ -46,7 +49,9 @@ Route::prefix('admin')->group(function () {
         // Team
         Route::get('/team-members', 'TeamController@index')->name('team member');
         Route::get('/create-team-member', 'TeamController@create')->name('create team member');
+        Route::get('/edit-team-member/{id}', 'TeamController@editTeamMember')->name('edit team member');
         Route::post('/new-team-member', 'TeamController@createNewTeam')->name('create new team');
+        Route::post('/delete-team-member/{id}', 'TeamController@deleteTeamMember')->name('delete team');
 
         
 

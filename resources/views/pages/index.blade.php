@@ -9,27 +9,28 @@
                     <div class="col-xl-6">
                         <div class="slide-contents text-white">
                             <div class="sub-title">
-                                <h4><strong>Our Mission:</strong> Food, Education, Medicine</h4>
+                                <h4><strong>The Chosen Generations</strong></h4>
                             </div>
-                            <h1 class="fs-lg">We’re On A Mission To Change That</h1>
-                            <a href="causes.html" class="theme-btn">View Causes</a>
-                            <a href="donation.html" class="theme-btn no-fil">Donate Now</a>
+                            <h1 class="fs-lg">Welcome to The Root Of Jesse Church</h1>
+                            {{-- <a href="causes.html" class="theme-btn">View Causes</a> --}}
+                            {{-- <a href="donation.html" class="theme-btn no-fil">Donate Now</a> --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div> <!-- single-slide end -->
+        
         <div class="single-slide" style="background-image: url('assets/img/slide2.jpg')">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6">
                         <div class="slide-contents text-white">
                             <div class="sub-title">
-                                <h4><strong>Our Mission:</strong> Food, Education, Medicine</h4>
+                                <h4><strong>Called Forth To Show his Excellence</strong></h4>
                             </div>
-                            <h1 class="fs-lg">More charity. Make More better life.</h1>
-                            <a href="events.html" class="theme-btn">View Events</a>
-                            <a href="donation.html" class="theme-btn no-fil">Donate Now</a>
+                            <h1 class="fs-lg">Messages by the Ministers are available</h1>
+                            <a href="javascript:void(0)" class="theme-btn">Get Message</a>
+                            {{-- <a href="donation.html" class="theme-btn no-fil">Donate Now</a> --}}
                         </div>
                     </div>
                 </div>
@@ -41,11 +42,11 @@
                     <div class="col-xl-6">
                         <div class="slide-contents text-white">
                             <div class="sub-title">
-                                <h4><strong>Our Mission:</strong> Food, Education, Medicine</h4>
+                                <h4><strong>God has Given Us All That is Required</strong></h4>
                             </div>
-                            <h1 class="fs-lg">We’re On A Mission To Change That</h1>
-                            <a href="causes.html" class="theme-btn">View Causes</a>
-                            <a href="donation.html" class="theme-btn no-fil">Donate Now</a>
+                            <h1 class="fs-lg">Feel Free to Contact Us Today</h1>
+                            {{-- <a href="causes.html" class="theme-btn no-fil">View Causes</a> --}}
+                            <a href="{{ route('contact us') }}" class="theme-btn">Contact Us</a>
                         </div>
                     </div>
                 </div>
