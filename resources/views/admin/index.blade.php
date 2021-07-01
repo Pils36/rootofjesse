@@ -172,7 +172,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="javascript:void(0)" class="link"><span>View Members</span> <em
+                                <a href="{{ route('members list') }}" class="link"><span>View Members</span> <em
                                         class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>
@@ -267,49 +267,50 @@
                             </th>
                     </thead>
                     <tbody>
-                        <tr class="tb-tnx-item">
-                            <td class="tb-tnx-id">
-                                <a href="#"><span>1</span></a>
-                            </td>
-                            <td class="tb-tnx-info">
-                                <div class="tb-tnx-desc">
-                                    <span class="title">Adebambo Adenuga</span>
-                                </div>
-                                <div class="tb-tnx-date">
-                                    <span class="date">adenugaadebamb...</span>
-                                    <span class="date">08137492316</span>
-                                </div>
-                            </td>
-                            <td class="tb-tnx-amount">
-                                <div class="tb-tnx-total">
-                                    <span class="amount">Shola Mati</span>
-                                </div>
-                                <div class="tb-tnx-status">
-                                    <span class="badge badge-dot badge-success">Membership</span>
-                                </div>
-                            </td>
-                        </tr><!-- .tb-tnx-item -->
-                        <tr class="tb-tnx-item">
-                            <td class="tb-tnx-id">
-                                <a href="#"><span>2</span></a>
-                            </td>
-                            <td class="tb-tnx-info">
-                                <div class="tb-tnx-desc">
-                                    <span class="title">Bambo Oluwafemi</span>
-                                </div>
-                                <div class="tb-tnx-date">
-                                    <span class="date">bambo@pilstech..</span>
-                                    <span class="date">08099443244</span>
-                                </div>
-                            </td>
-                            <td class="tb-tnx-amount">
-                                <div class="tb-tnx-total">
-                                    <span class="amount">Bola James</span>
-                                </div>
-                                <div class="tb-tnx-status"><span class="badge badge-dot badge-info">Visitor</span>
-                                </div>
-                            </td>
-                        </tr><!-- .tb-tnx-item -->
+
+                        @if (count($data['members']) > 0)
+
+                            @php
+                                $i = 1;
+                            @endphp
+
+                            @foreach ($data['members'] as $members)
+                                <tr class="tb-tnx-item">
+                                    <td class="tb-tnx-id">
+                                        <a href="javascript:void(0)"><span>{{ $i++ }}</span></a>
+                                    </td>
+                                    <td class="tb-tnx-info">
+                                        <div class="tb-tnx-desc">
+                                            <span class="title">{{ $members->name }}</span>
+                                        </div>
+                                        <div class="tb-tnx-date">
+                                            <span class="date">{{ $members->email }}</span>
+                                            <span class="date">{{ $members->telephone }}</span>
+                                        </div>
+                                    </td>
+                                    <td class="tb-tnx-amount">
+                                        <div class="tb-tnx-total">
+                                            {{--  <span @if($members->status == "Visitor") class="tb-status text-info" @elseif($members->status == "Existing member") class="tb-status text-success" @else class="tb-status text-danger" @endif >{{ $members->status }}</span>  --}}
+
+                                            <span class="date">{{ $members->who_invited_you }}</span>
+                                            
+                                        </div>
+                                        <div class="tb-tnx-status">
+                                            <span class="badge badge-dot badge-success"><span @if($members->status == "Visitor") class="tb-status text-info" @elseif($members->status == "Existing member") class="tb-status text-success" @else class="tb-status text-danger" @endif >{{ $members->status }}</span></span>
+                                        </div>
+                                    </td>
+                                </tr><!-- .tb-tnx-item -->
+                            @endforeach
+                        @else
+
+                                <tr class="tb-tnx-item">
+                                    <td colspan="6" align="center">No record</td>
+                                </tr><!-- .tb-tnx-item -->
+                            
+                        @endif
+
+                        
+                        
                         
                     </tbody>
                 </table>

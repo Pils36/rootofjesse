@@ -10,10 +10,12 @@ use Auth;
 use App\User as User;
 
 use App\Traits\SermonUpload;
+use App\Traits\ChurchMember;
 
 class AdminController extends Controller
 {
     use SermonUpload;
+    use ChurchMember;
 
     public function login(){
 
@@ -53,7 +55,12 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('admin.index');
+
+        $data = [
+            'members' => $this->recentFiveMembers(),
+        ];
+
+        return view('admin.index')->with(['data' => $data]);
     }
 
 

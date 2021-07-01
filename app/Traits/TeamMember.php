@@ -4,6 +4,7 @@
 namespace App\Traits;
 
 use App\User as User;
+use App\Members as Members;
 
 
 trait TeamMember
@@ -11,6 +12,14 @@ trait TeamMember
     public function allTeam(){
 
         $data = User::where('role', '!=', 'Super Admin')->orderBy('created_at', 'DESC')->paginate(20);
+
+        return $data;
+    }
+
+
+    public function assignTeam(){
+
+        $data = User::where('role', '!=', 'Super Admin')->orderBy('created_at', 'DESC')->get();
 
         return $data;
     }

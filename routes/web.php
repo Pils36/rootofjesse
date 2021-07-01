@@ -53,6 +53,14 @@ Route::prefix('admin')->group(function () {
         Route::post('/new-team-member', 'TeamController@createNewTeam')->name('create new team');
         Route::post('/delete-team-member/{id}', 'TeamController@deleteTeamMember')->name('delete team');
 
+
+
+
+        // Church Members and First Timers
+        Route::get('/members-list', 'MemberController@index')->name('members list');
+        Route::get('/create-members', 'MemberController@create')->name('create members');
+        Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new memebers');
+
         
 
 

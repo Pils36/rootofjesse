@@ -18,7 +18,7 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="javascript:void(0)" class="nk-menu-link">
+                                            <a href="{{ route('members list') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-report-profit"></em></span>
                                                 <span class="nk-menu-text">All Members</span>
                                             </a>
