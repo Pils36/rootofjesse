@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <section class="page-banner-wrap bg-cover" style="background-image: url('assets/img/page-banner.jpg')">
+    <section class="page-banner-wrap bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg')">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
                     <div class="page-heading text-white">
                         <div class="sub-title">
-                            <h4><strong>Our Mission:</strong> Food, Education, Medicine</h4>
+                            <h4><strong>The Chosen Generations</strong></h4>
                         </div>
                         <div class="page-title">
                             <h1>About Us</h1>
@@ -18,7 +18,7 @@
                 <div class="col-md-4">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                          <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                           <li class="breadcrumb-item active" aria-current="page">about us</li>
                         </ol>
                     </nav>
@@ -33,41 +33,41 @@
                 <div class="col-lg-6">
                     <div class="about-shots">
                         <div class="about-main-img">
-                            <img src="assets/img/gridl-withglass.jpg" alt="" class="img-fluid">
+                            <img src="{{ asset('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217357/site-image/IMG_4004_urvgo6.jpg') }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
                     <div class="section-title">
                         <span><i class="fal fa-heart"></i>About Us</span>
-                        <h1>We’ve Funded <span>44k</span> Dollars Over</h1>
+                        <h1>The Root <span>Of</span> Jesse,</h1>
                     </div>
-                    <p>Your $40.00 monthly donation can give 12 people clean water every year. 100% funds water projects. We have plenty of water to drink even.</p>
+                    <p>ROJ is the Youth Church of the RCCG Jesus House Parish, Port Harcourt. Our services are always unpredictably vibrant. It is a place for the singles and married with and youth at heart.</p>
+
+                    <p>
+                        ROJ Service is the 3rd service of the RCCG Jesus House parish, Port Harcourt
+                        WITH vibrant sharp youths...taking Nigeria for Christ.
+                    </p>
                     
                     <div class="testimonial-quote">
                         <div class="feedback">
-                            Join our community of monthly donors bringing clean water to
-                                people in need. <a href="#">Get Started Now</a>
+                            <strong>
+                                When you have this kind of congregation – you have members of every party in the congregation and if you want to retain their respect for you-you must be neutral.
+                            </strong>
                         </div>
                         <div class="user-info d-flex align-items-center">
-                            <div class="profile-img bg-cover" style="background-image: url('assets/img/user-img.jpg')">                                
+                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625222394/site-image/Daddy_GO_jdwrow.jpg')">                                
                             </div>
-                            <span>Rosalina. Williamson</span>
+                            <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
                         </div>
                     </div>
-
-                    <ul class="list-box">
-                        <li>We track every dollar</li>
-                        <li>We’re an open book</li>
-                        <li>100% goes to the field</li>
-                        <li>Received the highest grades</li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="timeline-wrap bg-cover section-padding" style="background-image: url('assets/img/timeline-bg.png')">
+    <div class="timeline-wrap bg-cover section-padding disp-0" style="background-image: url('assets/img/timeline-bg.png')">
         <div class="container">
             <div class="row">
                 <div class="col-12 p-md-0">
@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <section class="skills-section section-padding">
+    <section class="skills-section section-padding disp-0">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 pr-lg-0">
@@ -209,7 +209,7 @@
         </div>
     </section>    
 
-    <section class="brands-carousel-section bg-cover bg-overlay section-padding"  style="background-image: url('assets/img/brand_carousel_bg.jpg')">
+    <section class="brands-carousel-section bg-cover bg-overlay section-padding disp-0"  style="background-image: url('assets/img/brand_carousel_bg.jpg')">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-12">

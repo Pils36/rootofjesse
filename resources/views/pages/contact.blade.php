@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="page-banner-wrap bg-cover" style="background-image: url('assets/img/page-banner.jpg')">
+<section class="page-banner-wrap bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217471/site-image/IMG_3414_tlepbu.jpg')">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
@@ -103,10 +103,12 @@
             <div class="col-12 col-lg-12">
                 <div class="contact-map-wrap">
                     <div id="map">
-                        <iframe
+                        {{-- <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5457.875323165521!2d144.90402300269133!3d-37.792722838344716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sbd!4v1612018663424!5m2!1sen!2sbd"
                             frameborder="0" style="border:0; width:100%" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                            tabindex="0"></iframe> --}}
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d4064226.6368307164!2d2.960535128074049!3d5.859655540017993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d6.5953588!2d3.3639538!4m5!1s0x1069cd9cb66ff4a5%3A0x26d8a3c86a884a05!2s2b%20Degema%20Close%2C%20Obia%2C%20Port%20Harcourt!3m2!1d4.846119799999999!2d7.0456864999999995!5e0!3m2!1sen!2sng!4v1625216090561!5m2!1sen!2sng" style="border:0; width:100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -122,39 +124,40 @@
 
             <div class="col-12 col-lg-12">
                 <div class="contact-form">
-                    <form action="#" class="row conact-form">
+                    <form action="{{ route('message us') }}" class="row conact-form" method="POST">
+                        @csrf
                         <div class="col-md-6 col-12">
                             <div class="single-personal-info">
                                 <label for="fname">Full Name</label>
-                                <input type="text" id="fname" placeholder="Enter Name">
+                                <input type="text" id="fname" name="name" placeholder="Enter Name">
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="single-personal-info">
                                 <label for="email">Email Address</label>
-                                <input type="email" id="email" placeholder="Enter Email Address">
+                                <input type="email" id="email" name="email" placeholder="Enter Email Address">
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="single-personal-info">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" id="phone" placeholder="Enter Number">
+                                <input type="text" id="phone" name="telephone" placeholder="Enter Number">
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="single-personal-info">
                                 <label for="subject">Subject</label>
-                                <input type="text" id="subject" placeholder="Enter Subject">
+                                <input type="text" id="subject" name="subject" placeholder="Enter Subject">
                             </div>
                         </div>
                         <div class="col-md-12 col-12">
                             <div class="single-personal-info">
                                 <label for="subject">Enter Message</label>
-                                <textarea id="subject" placeholder="Enter message"></textarea>
+                                <textarea id="message" name="message" placeholder="Enter message"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 col-12 text-center">
-                            <input class="submit-btn" type="submit" value="Get A Quote">
+                            <input class="submit-btn" type="submit" value="Send Message">
                         </div>
                     </form>
                 </div>

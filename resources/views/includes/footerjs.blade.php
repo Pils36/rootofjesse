@@ -19,7 +19,21 @@
 <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
 <script src="{{ asset('assets/js/active.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{{ asset('ext/assets/js/example-sweetalert.js?ver=2.4.0') }}"></script>
+
+@if (session('success'))
+    <script>
+            swal('Great!', '{{ session("success") }}', 'success');
+    </script>
+
+
+@elseif(session('error'))
+
+    <script>
+            swal('Oops!', '{{ session("error") }}', 'error');
+    </script>
+
+
+@endif
 
 
 <!--Start of Tawk.to Script-->

@@ -3,7 +3,7 @@
 @section('content')
 <section class="hero-slider hero-style-1">
     <div class="hero-slider-active owl-carousel">
-        <div class="single-slide" style="background-image: url('assets/img/home1/hero1.jpg')">
+        <div class="single-slide" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217439/site-image/IMG_3457_y8cgl8.jpg')">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6">
@@ -20,7 +20,7 @@
             </div>
         </div> <!-- single-slide end -->
         
-        <div class="single-slide" style="background-image: url('assets/img/slide2.jpg')">
+        <div class="single-slide" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg')">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div> <!-- single-slide end -->
-        <div class="single-slide" style="background-image: url('assets/img/slide4.jpg')">
+        <div class="single-slide" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217471/site-image/IMG_3414_tlepbu.jpg')">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6">
@@ -60,28 +60,28 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="support-promo-box text-white">
-                    <div class="promo-bg bg-cover" style="background-image: url('assets/img/home1/support_girl.jpg')">
+                    <div class="promo-bg bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625218965/site-image/children_jnv4zn.jpg')">
                     </div>
                     <div class="promo-details">
-                        <span>Trending Cause</span>
-                        <h2><a href="donation.html">Make A Support</a></h2>
+                        <span>Church Department</span>
+                        <h2><a href="javascript:void(0)">Ministries</a></h2>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="checkout-promo-box text-white">
                     <div class="icon">
-                        <img src="assets/img/home1/support_icon.png" alt="">
+                        <img src="{{ asset('assets/img/home1/support_icon.png') }}" alt="">
                     </div>
-                    <span>Support Us</span>
-                    <h2>Explore Causes</h2>
-                    <a href="causes.html" class="theme-btn black">Check It Out</a>
+                    <span>Consultation</span>
+                    <h2>Chat with us LIVE</h2>
+                    <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="subscribe-promo-box text-white">
                     <div class="icon">
-                        <img src="assets/img/home1/envalope.png" alt="">
+                        <img src="{{ asset('assets/img/home1/envalope.png') }}" alt="">
                     </div>
                     <span>Subscribe</span>
                     <h2>Get Updates</h2>
@@ -102,32 +102,30 @@
             <div class="col-lg-6">
                 <div class="about-shots">
                     <div class="about-top-img bg-cover"
-                        style="background-image: url('assets/img/home1/about_woman.jpg')"></div>
+                        style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg')"></div>
                     <div class="about-main-img">
-                        <img src="assets/img/home1/about_girl.jpg" alt="" class="img-fluid">
+                        <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217367/site-image/IMG_0448_w8tcmc.jpg" alt="" class="img-fluid">
                     </div>
-                    <div class="our-experience text-white d-none d-sm-block">
+                    {{-- <div class="our-experience text-white d-none d-sm-block">
                         <h1>32</h1>
                         <span>Years Of Experience</span>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="col-lg-6 about_left_content pr-lg-0 pl-lg-5">
                 <div class="section-title">
                     <span><i class="fal fa-heart"></i>About Us</span>
-                    <h1>We’ve Funded <span>44k</span> Dollars Over</h1>
+                    <h1>The Root <span>Of</span> Jesse,</h1>
                 </div>
-                <p>Your $40.00 monthly donation can give 12 people clean water every year. 100% funds water
-                    projects. We have plenty of water to drink even.</p>
+                <p>ROJ is the Youth Church of the RCCG Jesus House Parish, Port Harcourt. Our services are always unpredictably vibrant. It is a place for the singles and married with and youth at heart.</p>
 
-                <ul class="checked-list ml-80 mt-30">
-                    <li>A place in history</li>
-                    <li>It’s about impact, goodness</li>
-                    <li>More goodness in the world</li>
-                    <li>The world we live in right now<br />can be hard</li>
-                </ul>
+                <p>
+                    ROJ Service is the 3rd service of the RCCG Jesus House parish, Port Harcourt
+                    WITH vibrant sharp youths...taking Nigeria for Christ.
+                </p>
 
-                <a href="about.html" class="theme-btn minimal-btn ml-80 mt-35">Learn More</a>
+
+                <a href="{{ route('about us') }}" class="theme-btn minimal-btn ml-80 mt-35">Learn More</a>
             </div>
         </div>
     </div>
@@ -138,13 +136,13 @@
         <div class="row">
             <div class="col-12 col-lg-8 offset-lg-2 text-center">
                 <div class="section-title mb-40">
-                    <span><i class="fal fa-heart"></i>Trending Cause</span>
-                    <h1>It’s About Impact, <span>Good</span> History</h1>
+                    <span><i class="fal fa-play"></i>Message & Sermon</span>
+                    <h1>Renewal of Mind, <span>Impact, </span> & Fellowship</h1>
                 </div>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row disp-0">
             <div class="col-xl-4 col-md-6">
                 <div class="single-cause-item style-1">
                     <div class="cause-bg bg-cover" style="background-image: url('assets/img/home1/cause5.jpg');">
@@ -237,7 +235,7 @@
     </div>
 </section>
 
-<section class="cta-section theme-bg text-white section-padding">
+<section class="cta-section theme-bg text-white section-padding disp-0">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-4 pr-xl-0">
@@ -461,7 +459,7 @@
     </div>
 </section>
 
-<section class="block-section section-padding">
+<section class="block-section section-padding disp-0">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-12 mb-5 mb-lg-0 pr-lg-0">
@@ -498,13 +496,13 @@
     </div>
 </section>
 
-<section class="video-section bg-cover section-padding" style="background-image: url('assets/img/child_video_bg.jpg')">
+<section class="video-section bg-cover section-padding" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg')">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-12 text-center text-lg-left">
                 <div class="section-title">
                     <span><i class="fal fa-heart"></i>Life Changing Video</span>
-                    <h1>Joel Orphanage Of Ministry Uganda</h1>
+                    <h1>ROJ Thanksgiving Service</h1>
                 </div>
             </div>
             <div class="col-lg-4 col-12 text-center text-lg-right offset-lg-1 mt-4 mt-lg-0">
@@ -519,7 +517,7 @@
     </div>
 </section>
 
-<section class="blog-section section-padding">
+<section class="blog-section section-padding disp-0">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center mb-50">

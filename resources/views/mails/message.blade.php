@@ -65,7 +65,7 @@
                                                             <li><a href="#"><img src="{{ asset('ext/images/socials/facebook.png') }}" alt=""></a></li>
                                                             <li><a href="#"><img src="{{ asset('ext/images/socials/twitter.png') }}" alt=""></a></li>
                                                             <li><a href="#"><img src="{{ asset('ext/images/socials/youtube.png') }}" alt=""></a></li>
-                                                            <li><a href="#"><img src="{{ asset('ext/images/socials/instagram.png') }}" alt=""></a></li>
+                                                            
                                                         </ul>
                                                         <p class="fs-12px pt-4">This email was sent to you as a registered member of <a href="{{ route('home') }}">The Root of Jesse PHC</a>.</p>
                                                     </td>
