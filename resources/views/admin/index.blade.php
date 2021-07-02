@@ -240,7 +240,7 @@
                     <div class="card-title-group">
                         <h6 class="card-title">New Members</h6>
                         <div class="card-action">
-                            <a href="#" class="link link-sm">See All <em
+                            <a href="{{ route('members list') }}" class="link link-sm">See All <em
                                     class="icon ni ni-chevron-right"></em></a>
                         </div>
                     </div>
@@ -281,18 +281,17 @@
                                     </td>
                                     <td class="tb-tnx-info">
                                         <div class="tb-tnx-desc">
-                                            <span class="title">{{ $members->name }}</span>
+                                            <span class="title">{{ (strlen($members->name) < 15) ? $members->name : substr($members->name, 0, 15)."..." }}</span>
                                         </div>
                                         <div class="tb-tnx-date">
-                                            <span class="date">{{ $members->email }}</span>
+                                            <span class="date">{{ (strlen($members->email) < 15) ? $members->email : substr($members->email, 0, 15)."..." }}</span>
                                             <span class="date">{{ $members->telephone }}</span>
                                         </div>
                                     </td>
                                     <td class="tb-tnx-amount">
                                         <div class="tb-tnx-total">
-                                            {{--  <span @if($members->status == "Visitor") class="tb-status text-info" @elseif($members->status == "Existing member") class="tb-status text-success" @else class="tb-status text-danger" @endif >{{ $members->status }}</span>  --}}
 
-                                            <span class="date">{{ $members->who_invited_you }}</span>
+                                            <span class="date">{{ (strlen($members->who_invited_you) < 10) ? $members->who_invited_you : substr($members->who_invited_you, 0, 10)."..." }}</span>
                                             
                                         </div>
                                         <div class="tb-tnx-status">

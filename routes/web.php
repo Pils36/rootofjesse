@@ -54,12 +54,18 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete-team-member/{id}', 'TeamController@deleteTeamMember')->name('delete team');
 
 
-
-
+        
+        
+        
+        
         // Church Members and First Timers
         Route::get('/members-list', 'MemberController@index')->name('members list');
+        Route::get('/view-member/{id}', 'MemberController@view')->name('view member');
         Route::get('/create-members', 'MemberController@create')->name('create members');
-        Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new memebers');
+        Route::get('/edit-church-member/{id}', 'MemberController@editChurchMember')->name('edit church member');
+        Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new members');
+        Route::post('/edit-new-members/{id}', 'MemberController@editNewMember')->name('edit new members');
+        Route::post('/delete-church-member/{id}', 'MemberController@deleteChurchMember')->name('delete member');
 
         
 

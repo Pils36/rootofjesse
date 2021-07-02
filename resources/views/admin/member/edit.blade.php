@@ -9,7 +9,7 @@
                         <div class="col-md-9">
                             <h4 class="title nk-block-title">Members</h4>
                             <div class="nk-block-des">
-                                <p>Create church members, assign a follow up team</p>
+                                <p>Update church members, assign a follow up team</p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -23,7 +23,7 @@
                     <div class="card-head">
                         <h5 class="card-title">Fill up the information below</h5>
                     </div>
-                    <form action="{{ route('create new members') }}" class="gy-3" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('edit new members', $data['member']->id) }}" class="gy-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
@@ -37,12 +37,12 @@
                                     <div class="form-control-wrap">
                                         <select name="title" id="title" required class="form-control">
                                             <option value="">Select Title</option>
-                                            <option value="Bro">Bro</option>
-                                            <option value="Elder">Elder</option>
-                                            <option value="Mr">Mr</option>
-                                            <option value="Mrs">Mrs</option>
-                                            <option value="Pastor">Pastor</option>
-                                            <option value="Sis">Sis</option>
+                                            <option value="Bro" {{ ($data['member']->title == "Bro") ? "selected" : "" }}>Bro</option>
+                                            <option value="Elder" {{ ($data['member']->title == "Elder") ? "selected" : "" }}>Elder</option>
+                                            <option value="Mr" {{ ($data['member']->title == "Mr") ? "selected" : "" }}>Mr</option>
+                                            <option value="Mrs" {{ ($data['member']->title == "Mrs") ? "selected" : "" }}>Mrs</option>
+                                            <option value="Pastor" {{ ($data['member']->title == "Pastor") ? "selected" : "" }}>Pastor</option>
+                                            <option value="Sis" {{ ($data['member']->title == "Sis") ? "selected" : "" }}>Sis</option>
                                         </select>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="Samuel Mathew" required>
+                                        <input type="text" name="name" class="form-control" id="name" value="{{ $data['member']->name }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+                                        <input type="email" name="email" class="form-control" id="email" value="{{ $data['member']->email }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="telephone" name="telephone" class="form-control" id="telephone" placeholder="08012345678" required>
+                                        <input type="telephone" name="telephone" class="form-control" id="telephone" value="{{ $data['member']->telephone }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="address" class="form-control" id="address" placeholder="Opposite YKC Fueling Station, Woji PHC" required>
+                                        <input type="text" name="address" class="form-control" id="address" value="{{ $data['member']->address }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="who_invited_you" class="form-control" id="who_invited_you" placeholder="Edidiong Gabriel">
+                                        <input type="text" name="who_invited_you" class="form-control" id="who_invited_you" value="{{ $data['member']->who_invited_you }}">
                                     </div>
                                 </div>
                             </div>
@@ -142,9 +142,9 @@
                                     <div class="form-control-wrap">
                                         <select name="status" id="status" required class="form-control">
                                             <option value="">Select Status</option>
-                                            <option value="Visitor">Visitor</option>
-                                            <option value="Existing member">Existing member</option>
-                                            <option value="First timer">First timer</option>
+                                            <option value="Visitor" {{ ($data['member']->status == "Visitor") ? "selected" : "" }}>Visitor</option>
+                                            <option value="Existing member" {{ ($data['member']->status == "Existing member") ? "selected" : "" }}>Existing member</option>
+                                            <option value="First timer" {{ ($data['member']->status == "First timer") ? "selected" : "" }}>First timer</option>
                                         </select>
                                     </div>
                                 </div>
@@ -199,16 +199,7 @@
                         <div class="row g-3">
                             <div class="col-lg-7 offset-lg-5">
                                 <div class="form-group mt-2">
-                                    <button type="submit" class="btn btn-lg btn-primary">Submit and Save</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-lg-7 offset-lg-5">
-                                <div class="form-group mt-2">
-                                    {{--  Upload by Excel  --}}
-                                    <a href="javascript:void(0)"><em class="icon ni ni-file-xls" style="font-size: 40px;"></em> Click here to upload Excel sheet</a>
+                                    <button type="submit" class="btn btn-lg btn-primary">Update and Save</button>
                                 </div>
                             </div>
                         </div>

@@ -146,7 +146,7 @@
                                             <div class="nk-tb-col nk-tb-col-tools">
                                                 <ul class="nk-tb-actions gx-2">
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Quick view">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Quick view" onclick="$('#quick_view{{ $members->id }}').click()">
                                                             <em class="icon ni ni-user-fill-c"></em>
                                                         </a>
                                                     </li>
@@ -156,12 +156,12 @@
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="{{ route('edit team member', $members->id) }}" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <a href="{{ route('edit church member', $members->id) }}" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <em class="icon ni ni-edit-alt-fill"></em>
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteData('team_member', '{{ $members->id }}')">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteData('church_member', '{{ $members->id }}')">
                                                             <em class="icon ni ni-user-cross-fill"></em>
                                                         </a>
                                                     </li>
@@ -170,10 +170,10 @@
                                                             <a href="#" class="btn btn-sm btn-icon btn-trigger dropdown-toggle" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
+                                                                    <li><a href="{{ route('view member', $members->id) }}"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
                                                                     <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
-                                                                    <li><a href="{{ route('edit team member', $members->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
-                                                                    <li><a href="javascript:void(0)" onclick="deleteData('team_member', '{{ $members->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
+                                                                    <li><a href="{{ route('edit church member', $members->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
+                                                                    <li><a href="javascript:void(0)" onclick="deleteData('church_member', '{{ $members->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
                                                                     
                                                                 </ul>
                                                             </div>
@@ -184,7 +184,111 @@
                                         </div><!-- .nk-tb-item -->
 
 
-                                        <button type="button" class="btn btn-primary disp-0" data-toggle="modal" data-target="#modalZoom{{ $members->id }}" id="team_member{{ $members->id }}">Modal Zoom</button>
+
+                                        {{-- Quick View --}}
+
+                                        <button type="button" class="btn btn-secondary disp-0" data-toggle="modal" data-target="#modalTabs{{ $members->id }}" id="quick_view{{ $members->id }}">Quick Profile View</button>
+
+                                        <!-- Modal Tabs -->
+                                        <div class="modal fade" tabindex="-1" role="dialog" id="modalTabs{{ $members->id }}">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                                                    <div class="modal-body modal-body-md">
+                                                        <h4 class="title">{{ $members->title.' '.$members->name }}</h4>
+                                                        <ul class="nk-nav nav nav-tabs">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" data-toggle="tab" href="#tabItem1">Information</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#tabItem2">Other Informations</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane active" id="tabItem1">
+                                                                <h6 class="title">Personal Information</h6>
+                                                                <div class="nk-block">
+                                                                    <div class="nk-data data-list data-list-s2">
+                                                                        <div class="data-head">
+                                                                            <h6 class="overline-title">Basics</h6>
+                                                                        </div>
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Full Name</span>
+                                                                                <span class="data-value">{{ $members->title.' '.$members->name }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        
+                                                                        <div class="data-item">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Email</span>
+                                                                                <span class="data-value">{{ $members->email }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more disable"><em class="icon ni ni-lock-alt"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Phone Number</span>
+                                                                                <span class="data-value text-soft">{{ $members->telephone }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit" data-tab-target="#address">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Address</span>
+                                                                                <span class="data-value">{{ $members->address }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                    </div><!-- data-list -->
+                                                                    
+                                                                </div><!-- .nk-block -->
+                                                            </div>
+                                                            <div class="tab-pane" id="tabItem2">
+                                                                <h6 class="title">Contact Information</h6>
+                                                                <div class="nk-data data-list data-list-s2">
+                                                                    <div class="data-head">
+                                                                        <h6 class="overline-title">Preferences</h6>
+                                                                    </div>
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Who Invited You</span>
+                                                                            <span class="data-value">{{ $members->who_invited_you }}</span>
+                                                                        </div>
+                                                                        <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language" class="link link-primary">View details</a></div>
+                                                                    </div><!-- data-item -->
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Current Status</span>
+                                                                            <span class="data-value">{{ $members->status }}</span>
+                                                                        </div>
+                                                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                    </div><!-- data-item -->
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Assigned Staff</span>
+                                                                            <span class="data-value">{{ $members->assigned_staff }}</span>
+                                                                        </div>
+                                                                        <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language" class="link link-primary">View staff</a></div>
+                                                                    </div><!-- data-item -->
+                                                                </div><!-- data-list -->
+                                                            </div>
+                                                        </div>
+
+                                                        <button type="submit" class="btn btn-lg btn-danger" onclick="deleteData('church_member', '{{ $members->id }}')">Delete Member</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div> <!-- .modal -->
+
+
+
+
+                                        <button type="button" class="btn btn-primary disp-0" data-toggle="modal" data-target="#modalZoom{{ $members->id }}" id="church_member{{ $members->id }}">Modal Zoom</button>
 
                                         <div class="modal fade zoom" tabindex="-1" id="modalZoom{{ $members->id }}">
                                             <div class="modal-dialog" role="document">
@@ -200,7 +304,7 @@
                                                         <p>Please note that when you delete member, their roles will be nullified and they will not be able to have access to the dashboard.</p>
                                                     </div>
                                                     <div class="modal-footer bg-light">
-                                                        <form action="{{ route('delete team', $members->id) }}" method="post">
+                                                        <form action="{{ route('delete member', $members->id) }}" method="post">
                                                             @csrf
 
                                                             <button type="submit" class="btn btn-lg btn-danger">Yes please!</button>

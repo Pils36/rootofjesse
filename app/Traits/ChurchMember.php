@@ -26,4 +26,18 @@ trait ChurchMember
         return $data;
     }
 
+
+    public function getMember($id){
+        $data = Members::where('id', $id)->first();
+
+        return $data;
+    }
+
+
+    public function removeChurchMember($id){
+        $data = Members::where('id', $id)->delete();
+
+        return $data;
+    }
+
 }
