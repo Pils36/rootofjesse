@@ -58,17 +58,17 @@
 <section class="promo-section promo-box-items text-center">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-6 col-md-6 col-12">
                 <div class="support-promo-box text-white">
                     <div class="promo-bg bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625218965/site-image/children_jnv4zn.jpg')">
                     </div>
                     <div class="promo-details">
                         <span>Church Department</span>
-                        <h2><a href="javascript:void(0)">Ministries</a></h2>
+                        <h2><a href="javascript:void(0)">Ministries & Programs</a></h2>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-6 col-md-6 col-12">
                 <div class="checkout-promo-box text-white">
                     <div class="icon">
                         <img src="{{ asset('assets/img/home1/support_icon.png') }}" alt="">
@@ -78,7 +78,7 @@
                     <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12 disp-0">
                 <div class="subscribe-promo-box text-white">
                     <div class="icon">
                         <img src="{{ asset('assets/img/home1/envalope.png') }}" alt="">
@@ -131,112 +131,70 @@
     </div>
 </section>
 
-<section class="cause-section section-padding section-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-8 offset-lg-2 text-center">
-                <div class="section-title mb-40">
-                    <span><i class="fal fa-play"></i>Message & Sermon</span>
-                    <h1>Renewal of Mind, <span>Impact, </span> & Fellowship</h1>
+
+
+@if (count($data['messages']) > 0)
+
+        
+    <section class="cause-section section-padding section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title mb-40">
+                        <span><i class="fal fa-play"></i>Message & Sermon</span>
+                        <h1>Renewal of Mind, <span>Impact</span> & Fellowship</h1>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row disp-0">
-            <div class="col-xl-4 col-md-6">
-                <div class="single-cause-item style-1">
-                    <div class="cause-bg bg-cover" style="background-image: url('assets/img/home1/cause5.jpg');">
-                    </div>
-                    <div class="cause-content">
-                        <div class="cause-meta">
-                            <a href="causes.html" class="cause-cat">food</a>
-                            <a href="#" class="cause-author"><i class="fal fa-user"></i>By Miranda H.</a>
-                        </div>
-                        <h4><a href="cause-details.html">Emergency response and school food</a></h4>
-                        <div class="goal-progress-wrap">
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" role="progressbar" style="width:70%"></div>
-                            </div>
-                        </div>
-                        <div class="cause-amount d-flex justify-content-between">
-                            <div class="price-raised">
-                                <i class="fal fa-heart"></i><span>70</span> Raised
-                            </div>
-                            <div class="price-goal">
-                                <i class="far fa-analytics"></i><span>$3000</span> Goal
-                            </div>
-                            <div class="read-cause-link">
-                                <a href="cause-details.html"><i class="fal fa-share"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.single-cause-item  -->
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="single-cause-item style-1">
-                    <div class="cause-bg bg-cover" style="background-image: url('assets/img/home1/cause7.jpg');">
-                    </div>
-                    <div class="cause-content">
-                        <div class="cause-meta">
-                            <a href="causes.html" class="cause-cat">Health</a>
-                            <a href="#" class="cause-author"><i class="fal fa-user"></i>By Miranda H.</a>
-                        </div>
-                        <h4><a href="cause-details.html">People Health response and Village mans</a></h4>
-                        <div class="goal-progress-wrap">
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" role="progressbar" style="width:70%"></div>
-                            </div>
-                        </div>
-                        <div class="cause-amount d-flex justify-content-between">
-                            <div class="price-raised">
-                                <i class="fal fa-heart"></i><span>14</span> Raised
-                            </div>
-                            <div class="price-goal">
-                                <i class="far fa-analytics"></i><span>$7000</span> Goal
-                            </div>
-                            <div class="read-cause-link">
-                                <a href="cause-details.html"><i class="fal fa-share"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.single-cause-item  -->
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="single-cause-item style-1">
-                    <div class="cause-bg bg-cover" style="background-image: url('assets/img/home1/cause3.jpg');">
-                    </div>
-                    <div class="cause-content">
-                        <div class="cause-meta">
-                            <a href="causes.html" class="cause-cat">water</a>
-                            <a href="#" class="cause-author"><i class="fal fa-user"></i>By Miranda H.</a>
-                        </div>
-                        <h4><a href="cause-details.html">Because Everyone Deserves Clean Water</a></h4>
-                        <div class="goal-progress-wrap">
-                            <div class="progress">
-                                <div class="progress-bar wow fadeInLeft" role="progressbar" style="width:50%"></div>
-                            </div>
-                        </div>
-                        <div class="cause-amount d-flex justify-content-between">
-                            <div class="price-raised">
-                                <i class="fal fa-heart"></i><span>50</span> Raised
-                            </div>
-                            <div class="price-goal">
-                                <i class="far fa-analytics"></i><span>$5000</span> Goal
-                            </div>
-                            <div class="read-cause-link">
-                                <a href="cause-details.html"><i class="fal fa-share"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- /.single-cause-item  -->
-            </div>
-        </div>
+            <div class="row">
 
-    </div>
-</section>
+                @foreach ($data['messages'] as $messages)
+
+                    <div class="col-xl-4 col-md-6">
+                        <div class="single-cause-item style-1">
+                            <div class="cause-bg bg-cover" style="background-image: url('{{ $messages->album_art }}');">
+                            </div>
+                            <div class="cause-content">
+                                <div class="cause-meta">
+                                    <a href="javascript:void(0)" class="cause-cat">{{ (strlen($messages->title) < 12) ? $messages->title : substr($messages->title, 0, 12)."..." }}</a>
+                                    <a href="javascript:void(0)" class="cause-author"><i class="fal fa-user"></i>{{ (strlen($messages->minister) < 12) ? $messages->minister : substr($messages->minister, 0, 12)."..." }}</a>
+                                </div>
+                                <p><a href="javascript:void(0)">{{ (strlen($messages->description) < 150) ? $messages->description : substr($messages->description, 0, 150)."..." }}</a></p>
+                                
+                                <div class="cause-amount d-flex justify-content-between">
+
+                                    <audio class="mt-10" style="width: 100%" controls src="{{ $messages->message }}"> Your browser  does not support the <code>audio</code> element. </audio>
+                                    
+                                </div>
+                            </div>
+                        </div> <!-- /.single-cause-item  -->
+                    </div>
+
+                @endforeach
+
+                
+              
+            </div>
+
+                @if (count($data['messages']) > 3)
+
+                    <center>
+                            <a href="{{ route('more message') }}" class="theme-btn black mt-35">Listen to More</a>
+                    </center>
+
+                @endif
+
+        </div>
+    </section>  
+@endif
+
+
 
 <section class="cta-section theme-bg text-white section-padding disp-0">
     <div class="container">
+
+
         <div class="row align-items-center">
             <div class="col-xl-4 pr-xl-0">
                 <div class="section-title">
@@ -283,7 +241,18 @@
     </div>
 </section>
 
-<section class="event-section event-carousel text-white">
+
+
+<div class="row disp-0">
+    <div class="col-12 col-lg-8 offset-lg-2 text-center">
+        <div class="section-title mt-40 mb-40">
+            <h1>Photo Gallery</h1>
+        </div>
+    </div>
+</div>
+
+<section class="event-section event-carousel text-white disp-0">
+    
     <div class="event-carousel-active owl-carousel">
         <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/1.jpg')">
             <div class="event-details">

@@ -41,6 +41,22 @@ trait SermonUpload
         return $data;
     }
 
+    // Get Latest 5 messages
+    public function getLatestMessages(){
+        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->take(3)->get();
+
+        return $data;
+    }
+
+
+    // Get Available Message
+    public function availableSermon(){
+
+        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->paginate(10);
+
+        return $data;
+    }
+
 
     public function thisSermons($id){
         $data = Sermon::where('id', $id)->first();
