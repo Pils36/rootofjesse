@@ -54,6 +54,28 @@ class AdminController extends Controller
         return back()->with('success', 'Successfully logged out');
     }
 
+
+    public function changeTheme(Request $req){
+        $thisuser = User::where('id', $req->user_id)->first();
+
+        if(isset($thisuser)){
+
+            $mode = $thisuser->mode;
+
+            if($mode == null || $mode == "light"){
+                User::where('id', $req->user_id)->update(['mode' => "dark"]);
+            }
+            else{
+                User::where('id', $req->user_id)->update(['mode' => "light"]);
+            }
+        }
+        else{
+            return back()->with('error', 'Oops!, Something went wrong');
+        }
+
+        return back();
+    }
+
     public function index(){
 
         $data = [
@@ -61,6 +83,22 @@ class AdminController extends Controller
         ];
 
         return view('admin.index')->with(['data' => $data]);
+    }
+
+
+    public function activity(){
+
+        return view('admin.auth.activity');
+    }
+
+    public function profile(){
+
+        return view('admin.auth.profile');
+    }
+
+    public function settings(){
+
+        return view('admin.auth.settings');
     }
 
 

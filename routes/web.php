@@ -35,6 +35,10 @@ Route::prefix('admin')->group(function () {
 
         // Admin Dashboard::
         Route::get('/dashboard', 'AdminController@index')->name('dasboard');
+        Route::get('/activity', 'AdminController@activity')->name('activity');
+        Route::get('/profile', 'AdminController@profile')->name('profile');
+        Route::get('/settings', 'AdminController@settings')->name('settings');
+
 
         // Upload Sermon & Messages::
         Route::get('/upload-message', 'MessageController@uploadMessage')->name('upload message');
@@ -50,6 +54,7 @@ Route::prefix('admin')->group(function () {
 
         // Team
         Route::get('/team-members', 'TeamController@index')->name('team member');
+        Route::get('/view-team/{id}', 'TeamController@view')->name('view team');
         Route::get('/create-team-member', 'TeamController@create')->name('create team member');
         Route::get('/edit-team-member/{id}', 'TeamController@editTeamMember')->name('edit team member');
         Route::post('/new-team-member', 'TeamController@createNewTeam')->name('create new team');
@@ -68,6 +73,12 @@ Route::prefix('admin')->group(function () {
         Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new members');
         Route::post('/edit-new-members/{id}', 'MemberController@editNewMember')->name('edit new members');
         Route::post('/delete-church-member/{id}', 'MemberController@deleteChurchMember')->name('delete member');
+
+
+
+
+        // Settings
+        Route::post('/change-theme', 'AdminController@changeTheme')->name('change theme');
 
         
 

@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+<?php use \App\Http\Controllers\User; ?>
+
 @section('content')
     <!-- content @s -->
     <div class="nk-content ">
@@ -257,7 +259,7 @@
                                                                             <span class="data-label">Who Invited You</span>
                                                                             <span class="data-value">{{ $members->who_invited_you }}</span>
                                                                         </div>
-                                                                        <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language" class="link link-primary">View details</a></div>
+                                                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
                                                                     </div><!-- data-item -->
                                                                     <div class="data-item">
                                                                         <div class="data-col">
@@ -271,7 +273,16 @@
                                                                             <span class="data-label">Assigned Staff</span>
                                                                             <span class="data-value">{{ $members->assigned_staff }}</span>
                                                                         </div>
-                                                                        <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language" class="link link-primary">View staff</a></div>
+                                                                        @if ($allmembers = \App\User::where('name', $members->assigned_staff)->first())
+
+                                                                            @if (isset($allmembers))
+                                                                                <div class="data-col data-col-end"><a href="{{ route('view team', $allmembers->id) }}" class="link link-primary">View staff</a></div>
+                                                                                
+                                                                            @endif
+
+                                                                        @endif
+
+                                                                        
                                                                     </div><!-- data-item -->
                                                                 </div><!-- data-list -->
                                                             </div>

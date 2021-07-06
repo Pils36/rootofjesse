@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="nk-wg1-action">
-                                <a href="javascript:void(0)" class="link"><span>Manage Your Account</span>
+                                <a href="{{ route('profile') }}" class="link"><span>Manage Your Account</span>
                                     <em class="icon ni ni-chevron-right"></em></a>
                             </div>
                         </div>

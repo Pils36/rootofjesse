@@ -36,7 +36,7 @@
                                             </a>
                                         </li> --}}
                                         <li class="nk-menu-item">
-                                            <a href="javascript:void(0)" class="nk-menu-link">
+                                            <a href="{{ route('settings') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
                                                 <span class="nk-menu-text">Account Setting</span>
                                             </a>
