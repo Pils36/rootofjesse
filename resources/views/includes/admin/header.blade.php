@@ -29,17 +29,22 @@
                                                         <span class="sub-text">{{ Auth::user()->email }}</span>
                                                     </div>
                                                     <div class="user-action">
-                                                        <a class="btn btn-icon mr-n2" href="html/subscription/profile-setting.html"><em class="icon ni ni-setting"></em></a>
+                                                        <a class="btn btn-icon mr-n2" href="{{ route('settings') }}"><em class="icon ni ni-setting"></em></a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="html/subscription/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                                    <li><a href="html/subscription/profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                                    <li><a href="html/subscription/profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                                    <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                                    <li><a href="{{ route('profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                                    <li><a href="{{ route('settings') }}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                                                    <li><a href="{{ route('activity') }}"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                                                    <li>
+                                                        <form action="{{ route('change theme') }}" method="post" class="disp-0" id="changeTheme">@csrf <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"></form>
+                                                        
+                                                        <a class="dark-switch" href="#" onclick="$('#changeTheme').submit()"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a>
+                                                    </li>
                                                 </ul>
+
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">

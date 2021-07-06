@@ -23,7 +23,7 @@
     </style>
 </head>
 
-<body class="nk-body bg-white npc-subscription has-aside ">
+<body class="nk-body bg-white npc-subscription has-aside {{ (Auth::user()->mode == "dark") ? "dark-mode" : "" }}">
     <div class="nk-app-root">
         <!-- main @s -->
         <div class="nk-main ">

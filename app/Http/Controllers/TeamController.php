@@ -23,6 +23,15 @@ class TeamController extends Controller
         return view('admin.team.index')->with(['data' => $data]);
     }
 
+    public function view($id){
+
+        $data = [
+            'team' => $this->thisTeamMember($id),
+        ];
+
+        return view('admin.team.view')->with(['data' => $data]);
+    }
+
 
     public function create(){
         $data = [
