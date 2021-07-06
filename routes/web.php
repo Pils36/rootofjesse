@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about us');
 Route::get('/contactus', 'ContactController@contactUs')->name('contact us');
+Route::get('/moremessages', 'MessageController@moreMessages')->name('more message');
 Route::post('/contactus', 'ContactController@messageUs')->name('message us');
 
 

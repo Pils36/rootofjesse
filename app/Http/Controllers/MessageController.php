@@ -77,7 +77,7 @@ class MessageController extends Controller
         try {
             $data = Sermon::updateOrCreate(['post_id' => $req->post_id], $query);
 
-            return back()->with('success', 'Upload successful');
+            return redirect()->route('uploaded sermons')->with('success', 'Upload successful');
         } catch (\Throwable $th) {
             //throw $th;
             return back()->with('error', 'Error: '.$th->getMessage());
@@ -129,6 +129,16 @@ class MessageController extends Controller
         ];
 
         return view('admin.messages.editmessage')->with(['data' => $data]);
+    }
+
+
+    // User Front View
+    public function moreMessages(){
+        $data = [
+            'messages' => $this->availableSermon()
+        ];
+
+        return view('pages.message')->with(['data' => $data]);
     }
 
 

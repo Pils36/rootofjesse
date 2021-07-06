@@ -26,7 +26,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <ul class="link-list-opt no-bdr">
                                                             <li><a href="{{ route('create team member') }}"><span>Add Team</span></a></li>
-                                                            <li><a href="#"><span>Add Member</span></a></li>
+                                                            <li><a href="{{ route('create members') }}"><span>Add Member</span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>

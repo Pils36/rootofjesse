@@ -46,7 +46,7 @@
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about us') }}">about us</a></li>
                                 <li><a href="#">Ministries and programs</a></li>
-                                <li><a href="#">Messages Preached</a></li>
+                                <li><a href="{{ route('more message') }}">Messages Preached</a></li>
                                 {{-- <li><a href="causes.html">Causes</a>
                                     <ul class="sub-menu">
                                         <li><a href="causes.html">Causes List</a></li>
@@ -89,8 +89,8 @@
                                 </li> --}}
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about us') }}">about</a></li>
-                                <li><a href="#">ministies and programs</a></li>
-                                <li><a href="#">message preached</a></li>
+                                <li><a href="#">ministries and programs</a></li>
+                                <li><a href="{{ route('more message') }}">message preached</a></li>
                                 {{-- <li>
                                     <a class="has-arrow" href="causes.html">Causes</a>
                                     <ul class="sub-menu">

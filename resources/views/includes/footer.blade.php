@@ -55,7 +55,7 @@
                                 <li><a href="{{ route('about us') }}">about</a></li>
                                 <li><a href="#">Ministries</a></li>
                                 <li><a href="#">Programs</a></li>
-                                <li><a href="#">Messages</a></li>
+                                <li><a href="{{ route('more message') }}">Messages</a></li>
                                 <li><a href="{{ route('contact us') }}">Contact Us</a></li>
                             </ul>
                         </div>

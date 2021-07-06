@@ -48,7 +48,8 @@ class ContactController extends Controller
 
         }
         else{
-            $error = implode(",\n",$validator->messages()->all());
+            $error = implode(" ", $validator->messages()->all());
+
 
             return back()->with('error', $error);
 
