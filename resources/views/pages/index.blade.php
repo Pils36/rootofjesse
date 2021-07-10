@@ -73,9 +73,9 @@
                     <div class="icon">
                         <img src="{{ asset('assets/img/home1/support_icon.png') }}" alt="">
                     </div>
-                    <span>Consultation</span>
-                    <h2>Chat with us LIVE</h2>
-                    <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click</a>
+                    <span>&nbsp;</span>
+                    <h2>Worship with us LIVE</h2>
+                    <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 disp-0">
@@ -117,11 +117,21 @@
                     <span><i class="fal fa-heart"></i>About Us</span>
                     <h1>The Root <span>Of</span> Jesse,</h1>
                 </div>
-                <p>ROJ is the Youth Church of the RCCG Jesus House Parish, Port Harcourt. Our services are always unpredictably vibrant. It is a place for the singles and married with and youth at heart.</p>
+                <br>
+                <h3>
+                    We are;
+                </h3>
+                <p>A Worshiping Church.  A community of people who gather to minister unto the Lord in Biblical
+                expressions of praise and worship.</p>
 
                 <p>
-                    ROJ Service is the 3rd service of the RCCG Jesus House parish, Port Harcourt
-                    WITH vibrant sharp youths...taking Nigeria for Christ.
+                    A Bible Believing Church.  A community of people who believe the Bible is God’s Word and the
+                    supreme authority in guiding each individual life.
+                </p>
+
+                <p>
+                    A Quality Church.  A community of people who believe God deserves our best and most beautiful,
+                    not only in church facilities, but in our own “temple of God”.
                 </p>
 
 
