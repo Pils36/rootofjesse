@@ -138,7 +138,6 @@ Lord Jesus is accomplishing through other churches and individuals.
 
                     </p>
 
-
                     <div class="testimonial-quote">
                         <div class="feedback">
                             <h4>OUR VISION</h4>
