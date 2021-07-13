@@ -113,6 +113,60 @@
                             </div>
                         </div>
 
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span> Date Of Birth</label>
+                                    <span class="form-note">We'll like to know your birthday.</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <select name="day" id="day" class="form-control">
+                                            <option value="">Select Day</option>
+                                            @for ($i = 1; $i <= 31; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <select name="month" id="month" class="form-control">
+                                            <option value="">Select Month</option>
+                                            @for ($i = 1; $i <= 12; $i++)
+                                                <option value="{{ $i }}">{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span> Worshiping for first time?</label>
+                                    <span class="form-note">Are you worshiping with us for the first time.</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <select name="worship_first_time" id="worship_first_time" required class="form-control">
+                                            <option value="">Select Option</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
@@ -146,6 +200,23 @@
                                             <option value="Existing member">Existing member</option>
                                             <option value="First timer">First timer</option>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span> Prayer Request</label>
+                                    <span class="form-note">Please send your prayer request.</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <textarea name="prayer_request" id="prayer_request" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -204,14 +275,13 @@
                             </div>
                         </div>
 
-                        <div class="row g-3">
+                        {{--  <div class="row g-3">
                             <div class="col-lg-7 offset-lg-5">
                                 <div class="form-group mt-2">
-                                    {{--  Upload by Excel  --}}
                                     <a href="javascript:void(0)"><em class="icon ni ni-file-xls" style="font-size: 40px;"></em> Click here to upload Excel sheet</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>  --}}
 
                     </form>
                 </div>

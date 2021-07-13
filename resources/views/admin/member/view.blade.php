@@ -64,11 +64,31 @@
                                         </div>
                                         <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
                                     </div><!-- data-item -->
+
+
+                                    <div class="data-item">
+                                        <div class="data-col">
+                                            <span class="data-label">Date Of Birth</span>
+                                            <span class="data-value">{{ $data['member']->day.'/'.$data['member']->month }}</span>
+                                        </div>
+                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                    </div><!-- data-item -->
+
                                 </div><!-- data-list -->
                                 <div class="nk-data data-list data-list-s2">
                                     <div class="data-head">
                                         <h6 class="overline-title">Preferences</h6>
                                     </div>
+
+                                    <div class="data-item">
+                                        <div class="data-col">
+                                            <span class="data-label">Worshiping for the first time?</span>
+                                            <span class="data-value">{{ $data['member']->worship_first_time }}</span>
+                                        </div>
+                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                    </div><!-- data-item -->
+
+
                                     <div class="data-item">
                                         <div class="data-col">
                                             <span class="data-label">Who Invited You</span>
@@ -83,6 +103,15 @@
                                         </div>
                                         <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
                                     </div><!-- data-item -->
+
+                                    <div class="data-item">
+                                        <div class="data-col">
+                                            <span class="data-label">Prayer Request</span>
+                                            <span class="data-value">{{ $data['member']->prayer_request }}</span>
+                                        </div>
+                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                    </div><!-- data-item -->
+
                                     <div class="data-item">
                                         <div class="data-col">
                                             <span class="data-label">Assigned Staff</span>

@@ -8,7 +8,18 @@
                             <h4>Get In Touch</h4>
                         </div>
                         <div class="contact-us">
-                            <div class="single-contact-info">
+
+                            <p>
+                                Telephone: 0803 310 4890
+                            </p>
+                            <p>
+                                Email: info@rootofjessephc.com
+                            </p>
+
+                            <p>
+                                2b Degema close, Rumuibekwe Housing Estate Port Harcourt,
+                            </p>
+                            <div class="single-contact-info disp-0">
                                 <div class="icon">
                                     <i class="fal fa-phone"></i>
                                 </div>
@@ -23,7 +34,7 @@
                                     {{-- <span>+880-7623458760</span> --}}
                                 </div>
                             </div>
-                            <div class="single-contact-info">
+                            <div class="single-contact-info disp-0">
                                 <div class="icon">
                                     <i class="fal fa-envelope"></i>
                                 </div>
@@ -38,7 +49,7 @@
                                     {{-- <span>jobs@example.com</span> --}}
                                 </div>
                             </div>
-                            <div class="single-contact-info">
+                            <div class="single-contact-info disp-0">
                                 <div class="icon">
                                     <i class="fal fa-map-marker-alt"></i>
                                 </div>
@@ -96,9 +107,9 @@
                         </div>
                         <ul>
                             <li><a href="#">Store</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Tracts</a></li>
-                            <li><a href="#">Devotionals</a></li>
+                            <li><a href="{{ route('welcome here') }}">New Members</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Watch Us Live</a></li>
                         </ul>
                     </div>
                 </div> <!-- /.col-lg-3 - single-footer-wid -->

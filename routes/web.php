@@ -18,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 // Basic Pages
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about us');
+Route::get('/welcome', 'HomeController@welcome')->name('welcome here');
+
 Route::get('/contactus', 'ContactController@contactUs')->name('contact us');
-Route::get('/moremessages', 'MessageController@moreMessages')->name('more message');
 Route::post('/contactus', 'ContactController@messageUs')->name('message us');
+
+Route::get('/moremessages', 'MessageController@moreMessages')->name('more message');
 
 
 
@@ -29,6 +32,10 @@ Route::prefix('admin')->group(function () {
     // Admin Login Page::
     Route::get('/login', 'AdminController@login')->name('admin login');
     Route::post('/login', 'AdminController@loginUser')->name('login');
+
+
+    Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new members');
+
 
 
     Route::middleware(['auth'])->group(function () {
@@ -70,7 +77,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/view-member/{id}', 'MemberController@view')->name('view member');
         Route::get('/create-members', 'MemberController@create')->name('create members');
         Route::get('/edit-church-member/{id}', 'MemberController@editChurchMember')->name('edit church member');
-        Route::post('/create-new-members', 'MemberController@createNewMember')->name('create new members');
         Route::post('/edit-new-members/{id}', 'MemberController@editNewMember')->name('edit new members');
         Route::post('/delete-church-member/{id}', 'MemberController@deleteChurchMember')->name('delete member');
 

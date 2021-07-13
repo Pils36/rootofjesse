@@ -39,5 +39,10 @@ class HomeController extends Controller
     {
         return view('pages.about');
     }
+
+    public function welcome()
+    {
+        return view('pages.welcome');
+    }
     
 }

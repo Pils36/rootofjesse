@@ -47,15 +47,19 @@ class MemberController extends Controller
 
     public function createNewMember(Request $req){
 
-        $staff = $this->thisTeamMember($req->assigned_staff);
-
         $query = $req->all();
-
-        $query['assigned_staff'] = $staff->name;
 
 
         try {
-            $data = Members::updateOrCreate(['email' => $req->email], $query);
+
+            $staff = $this->thisTeamMember($req->assigned_staff);
+
+            if(isset($staff)){
+
+            $query['assigned_staff'] = $staff->name;
+
+
+                $data = Members::updateOrCreate(['email' => $req->email], $query);
 
             // Get this staff;
 
@@ -67,6 +71,15 @@ class MemberController extends Controller
             $this->sendEmail($this->to, $this->subject);
 
             return redirect()->route('members list')->with('success', 'Successfully added');
+            }
+            else{
+
+                $data = Members::updateOrCreate(['email' => $req->email], $query);
+
+                return redirect()->route('home')->with('success', 'Successfully submitted');
+            }
+
+            
 
         } catch (\Throwable $th) {
             //throw $th;

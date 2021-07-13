@@ -9,7 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="modinatheme">
+    <meta name="author" content="PilsTech Inc.">
+    <meta name="description" content="Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship, live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
+    
     <!-- ======== Page title ============ -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
