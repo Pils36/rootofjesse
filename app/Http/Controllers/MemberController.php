@@ -6,22 +6,25 @@ use Illuminate\Http\Request;
 
 use Maatwebsite\Excel\Facades\Excel;
 
+use Auth;
+
 use App\User as User;
 use App\Members as Members;
 
 use App\Traits\ChurchMember;
 
 use App\Traits\TeamMember;
+use App\Traits\Notify;
 
 class MemberController extends Controller
 {
 
-    use ChurchMember;
-    use TeamMember;
+    use ChurchMember, TeamMember, Notify;
     
     public function index(){
         $data = [
             'member' => $this->allMembers(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.member.index')->with(['data' => $data]);
@@ -31,6 +34,7 @@ class MemberController extends Controller
     public function view($id){
         $data = [
             'member' => $this->getMember($id),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.member.view')->with(['data' => $data]);
@@ -39,6 +43,7 @@ class MemberController extends Controller
     public function create(){
         $data = [
             'team' => $this->assignTeam(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.member.create')->with(['data' => $data]);
@@ -125,6 +130,7 @@ class MemberController extends Controller
         $data = [
             'member' => $this->getMember($id),
             'team' => $this->assignTeam(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.member.edit')->with(['data' => $data]);

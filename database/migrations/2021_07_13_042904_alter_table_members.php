@@ -36,3 +36,5 @@ class AlterTableMembers extends Migration
         });
     }
 }
+
+

@@ -11,12 +11,12 @@ use App\Sermon as Sermon;
 
 use App\Traits\SermonUpload;
 use App\Traits\ImageUpload;
+use App\Traits\Notify;
 
 class MessageController extends Controller
 {
 
-    use SermonUpload;
-    use ImageUpload;
+    use SermonUpload, ImageUpload, Notify;
 
     public function receiveUpload(Request $req){
 
@@ -101,14 +101,19 @@ class MessageController extends Controller
 
 
     public function uploadMessage(){
+
+        $data = [
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
         
-        return view('admin.messages.index');
+        return view('admin.messages.index')->with(['data' => $data]);
     }
 
     public function allMessages(){
         
         $data = [
-            'messages' => $this->allSermons()
+            'messages' => $this->allSermons(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.messages.allmessages')->with(['data' => $data]);
@@ -116,7 +121,8 @@ class MessageController extends Controller
 
     public function viewMessages($id){
         $data = [
-            'messages' => $this->thisSermons($id)
+            'messages' => $this->thisSermons($id),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.messages.viewmessage')->with(['data' => $data]);
@@ -125,7 +131,8 @@ class MessageController extends Controller
 
     public function editMessages($id){
         $data = [
-            'messages' => $this->thisSermons($id)
+            'messages' => $this->thisSermons($id),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.messages.editmessage')->with(['data' => $data]);
@@ -135,7 +142,8 @@ class MessageController extends Controller
     // User Front View
     public function moreMessages(){
         $data = [
-            'messages' => $this->availableSermon()
+            'messages' => $this->availableSermon(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('pages.message')->with(['data' => $data]);

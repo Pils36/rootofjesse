@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddModeToUsers extends Migration
+class AddNameToCreateInAppMessagings extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddModeToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('mode')->nullable();
+        Schema::table('in_app_messagings', function (Blueprint $table) {
+            $table->string('name')->nullable();
         });
     }
 
@@ -25,10 +25,8 @@ class AddModeToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('mode');
+        Schema::table('in_app_messagings', function (Blueprint $table) {
+            $table->string('name');
         });
     }
 }
-
-

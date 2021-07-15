@@ -20,6 +20,12 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about us');
 Route::get('/welcome', 'HomeController@welcome')->name('welcome here');
 
+Route::get('/store', 'HomeController@store')->name('store');
+Route::get('/watch-live', 'HomeController@watchLive')->name('watch live');
+Route::get('/events', 'HomeController@events')->name('events');
+Route::get('/give', 'HomeController@give')->name('give');
+Route::get('/services', 'HomeController@services')->name('services');
+
 Route::get('/contactus', 'ContactController@contactUs')->name('contact us');
 Route::post('/contactus', 'ContactController@messageUs')->name('message us');
 
@@ -85,7 +91,16 @@ Route::prefix('admin')->group(function () {
 
         // Settings
         Route::post('/change-theme', 'AdminController@changeTheme')->name('change theme');
+        Route::post('/update-password', 'AdminController@updatePassword')->name('update password');
+        Route::post('/update-profile', 'AdminController@updateProfile')->name('update profile');
 
+
+        // Messaging
+        Route::prefix('messaging')->group(function () {
+
+            Route::get('/', 'MessagingController@index')->name('messaging');
+            
+        });
         
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddModeToUsers extends Migration
+class AddCategoryToSermon extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddModeToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('mode')->nullable();
+        Schema::table('sermons', function (Blueprint $table) {
+            $table->string('category')->nullable();
         });
     }
 
@@ -25,10 +25,8 @@ class AddModeToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('mode');
+        Schema::table('sermons', function (Blueprint $table) {
+            $table->string('category');
         });
     }
 }
-
-

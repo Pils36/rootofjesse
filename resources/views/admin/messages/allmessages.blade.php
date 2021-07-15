@@ -75,6 +75,7 @@
                                     </div>
                                     <ul class="team-info">
                                         <li><span>Preacher</span><span>{{ (strlen($item->minister) < 15) ? $item->minister : substr($item->minister, 0, 15)."..." }}</span></li>
+                                        <li><span class="text-primary" style="font-weight: bold;">Series</span><span class="text-primary" style="font-weight: bold;">{{ (strlen($item->category) < 15) ? $item->category : substr($item->category, 0, 15)."..." }}</span></li>
                                         <li><span>Status</span><span>{{ ($item->publish == "on") ? "Published" : "Unpublished" }}</span></li>
                                         <li><span>When added</span><span>{{ $item->created_at->diffForHumans() }}</span></li>
                                     </ul>

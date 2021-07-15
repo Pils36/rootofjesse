@@ -63,8 +63,8 @@
                     <div class="promo-bg bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625218965/site-image/children_jnv4zn.jpg')">
                     </div>
                     <div class="promo-details">
-                        <span>Church Department</span>
-                        <h2><a href="javascript:void(0)">Ministries & Programs</a></h2>
+                        <span>Welcome Here,</span>
+                        <h2><a href="{{ route('services') }}">Join Service</a></h2>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,8 @@
                     </div>
                     <span>&nbsp;</span>
                     <h2>Worship with us LIVE</h2>
-                    <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a>
+                    <a href="https://facebook.com/therootofjesse" target="_blank" class="theme-btn black">Just a Click <i class="fab fa-youtube"></i></a>
+                    {{-- <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a> --}}
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 disp-0">

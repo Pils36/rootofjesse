@@ -40,7 +40,7 @@ class ContactController extends Controller
 
             $thisuser = User::where('email', 'info@rootofjessephc.com')->first();
 
-            $this->myNotification($thisuser->id, $this->subject);
+            $this->myNotification($thisuser->id, $this->subject, $this->getUserIpAddr());
 
             $this->sendEmail($this->to, $this->subject);
 

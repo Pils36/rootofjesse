@@ -29,6 +29,30 @@ class Controller extends BaseController
         return $randomString;
     }
 
+    // Get IP
+    public function getUserIpAddr(){
+
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            //ip from share internet
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            //ip pass from proxy
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        
+        return $ip;
+    }
+
+    // Get Browser
+    public function myBrowser(){
+        $browser = get_browser(null, true);
+        
+        return $browser['browser'];
+    }
+    
+
 
     // Send Email
     public function sendEmail($objDemoa, $purpose){

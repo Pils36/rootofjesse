@@ -29,12 +29,12 @@
                                                 <span class="nk-menu-text">Manage Team</span>
                                             </a>
                                         </li>
-                                        {{-- <li class="nk-menu-item">
-                                            <a href="html/subscription/downloads.html" class="nk-menu-link">
-                                                <span class="nk-menu-icon"><em class="icon ni ni-download-cloud"></em></span>
-                                                <span class="nk-menu-text">Download</span>
+                                        <li class="nk-menu-item">
+                                            <a href="{{ route('messaging') }}" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-emails"></em></span>
+                                                <span class="nk-menu-text">In-App Messaging</span>
                                             </a>
-                                        </li> --}}
+                                        </li>
                                         <li class="nk-menu-item">
                                             <a href="{{ route('settings') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-account-setting"></em></span>
