@@ -52,11 +52,7 @@
                                         <li><a href="#">Connect with your pastor</a></li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
-                                <li><a href="#">Join a service unit</a></li>
-=======
                                 <li><a href="{{ route('services') }}">Join a service unit</a></li>
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                                 
                                 
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
@@ -95,11 +91,7 @@
                                         <li><a href="#">Connect with your pastor</a></li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
-                                <li><a href="#">Join a service unit</a></li>
-=======
                                 <li><a href="{{ route('services') }}">Join a service unit</a></li>
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                                 
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>

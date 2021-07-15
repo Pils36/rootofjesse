@@ -75,12 +75,9 @@
                     </div>
                     <span>&nbsp;</span>
                     <h2>Worship with us LIVE</h2>
-<<<<<<< HEAD
-                    <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a>
-=======
+                    
                     <a href="https://facebook.com/therootofjesse" target="_blank" class="theme-btn black">Just a Click <i class="fab fa-youtube"></i></a>
                     {{-- <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a> --}}
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-12 disp-0">

@@ -86,24 +86,16 @@
                                 <li><a href="{{ route('about us') }}">about</a></li>
                                 <li><a href="{{ route('more message') }}">Message</a></li>
                                 <li><a href="#">Connect Group</a></li>
-<<<<<<< HEAD
-=======
                                 <li><a href="{{ route('welcome here') }}">New Members</a></li>
 
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                                 
                             </ul>
                         </div>
                         <div class="special-menu">
                             <ul>
-<<<<<<< HEAD
-                                <li><a href="#">Connect with your pastor</a></li>
-                                <li><a href="#">Join a service unit</a></li>
-=======
                                 <li><a href="{{ route('give') }}">Giving</a></li>
                                 <li><a href="#">Connect with your pastor</a></li>
                                 <li><a href="{{ route('services') }}">Join a service unit</a></li>
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                                 <li><a href="{{ route('contact us') }}">Contact Us</a></li>
                                 {{-- <li><a href="contact.html">Get A Quote</a></li> --}}
                                 {{-- <li><a href="faq.html">Terms & Conditions</a></li> --}}
@@ -117,16 +109,9 @@
                             <h4>Resources</h4>
                         </div>
                         <ul>
-<<<<<<< HEAD
-                            <li><a href="#">Store</a></li>
-                            <li><a href="#">Podcasts</a></li>
-                            <li><a href="#">Tracts</a></li>
-                            <li><a href="#">Devotionals</a></li>
-=======
                             <li><a href="{{ route('store') }}">Store</a></li>
                             <li><a href="{{ route('events') }}">Events</a></li>
                             <li><a href="{{ route('watch live') }}">Watch Us Live</a></li>
->>>>>>> 9de19b6043c48d11a2843b4a32a97897633f90b2
                         </ul>
                     </div>
                 </div> <!-- /.col-lg-3 - single-footer-wid -->

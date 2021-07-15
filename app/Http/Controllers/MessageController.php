@@ -141,10 +141,20 @@ class MessageController extends Controller
 
     // User Front View
     public function moreMessages(){
-        $data = [
-            'messages' => $this->availableSermon(),
-            'notification' => $this->listNotification(Auth::user()->id),
-        ];
+
+        if(Auth::check() == true){
+            $data = [
+                'messages' => $this->availableSermon(),
+                'notification' => $this->listNotification(Auth::user()->id),
+            ];
+        }
+        else{
+            $data = [
+                'messages' => $this->availableSermon(),
+            ];
+        }
+
+        
 
         return view('pages.message')->with(['data' => $data]);
     }
