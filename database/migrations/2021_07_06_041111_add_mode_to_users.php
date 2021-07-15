@@ -30,3 +30,5 @@ class AddModeToUsers extends Migration
         });
     }
 }
+
+

@@ -39,5 +39,35 @@ class HomeController extends Controller
     {
         return view('pages.about');
     }
+
+    public function welcome()
+    {
+        return view('pages.welcome');
+    }
+
+    public function store()
+    {
+        return view('pages.store');
+    }
+
+    public function watchLive()
+    {
+        return view('pages.watchlive');
+    }
+
+    public function events()
+    {
+        return view('pages.events');
+    }
+
+    public function give()
+    {
+        return view('pages.give');
+    }
+
+    public function services()
+    {
+        return view('pages.services');
+    }
     
 }

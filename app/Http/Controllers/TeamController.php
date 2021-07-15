@@ -10,14 +10,16 @@ use Auth;
 use App\User as User;
 
 use App\Traits\TeamMember;
+use App\Traits\Notify;
 
 class TeamController extends Controller
 {
-    use TeamMember;
+    use TeamMember, Notify;
 
     public function index(){
         $data = [
             'team' => $this->allTeam(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.team.index')->with(['data' => $data]);
@@ -27,6 +29,7 @@ class TeamController extends Controller
 
         $data = [
             'team' => $this->thisTeamMember($id),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.team.view')->with(['data' => $data]);
@@ -36,6 +39,7 @@ class TeamController extends Controller
     public function create(){
         $data = [
             'randString' => $this->generateRandomString(),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
         return view('admin.team.create')->with(['data' => $data]);
     }
@@ -73,7 +77,8 @@ class TeamController extends Controller
     // Edit Team Member
     public function editTeamMember($id){
         $data = [
-            'team' => $this->thisTeamMember($id)
+            'team' => $this->thisTeamMember($id),
+            'notification' => $this->listNotification(Auth::user()->id),
         ];
 
         return view('admin.team.edit')->with(['data' => $data]);

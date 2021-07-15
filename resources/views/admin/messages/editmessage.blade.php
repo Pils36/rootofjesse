@@ -74,6 +74,31 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        <div class="row g-3 align-center">
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span> Message Category</label>
+                                    <span class="form-note">Group message in series.</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <div class="form-control-wrap">
+                                        <div class="custom-file">
+                                            <select name="category" id="category" required class="form-control">
+                                                <option value="">Select Category</option>
+                                                <option value="Manifest" {{ ($data['messages']->category == "Manifest") ? "selected" : "" }}>Manifest</option>
+                                                <option value="Relationship" {{ ($data['messages']->category == "Relationship") ? "selected" : "" }}>Relationship</option>
+                                                <option value="Mount Up On Wings" {{ ($data['messages']->category == "Mount Up On Wings") ? "selected" : "" }}>Mount Up On Wings</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
