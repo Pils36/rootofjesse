@@ -39,30 +39,121 @@
                 </div>
                 <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
                     <div class="section-title">
-                        <span><i class="fal fa-heart"></i>About Us</span>
-                        <h1>The Root <span>Of</span> Jesse,</h1>
+                        {{-- <span><i class="fal fa-heart"></i>&nbsp;</span> --}}
+                        <h1>Hello <span>&</span> Welcome!</h1>
                     </div>
-                    <p>ROJ is the Youth Church of the RCCG Jesus House Parish, Port Harcourt. Our services are always unpredictably vibrant. It is a place for the singles and married with and youth at heart.</p>
-
+                    <br>
+                    <h3>
+                        Dear Guest,
+                    </h3>
                     <p>
-                        ROJ Service is the 3rd service of the RCCG Jesus House parish, Port Harcourt
-                        WITH vibrant sharp youths...taking Nigeria for Christ.
+                        Thank you for taking the time to visit our website. We hope you capture a glimpse of RCCG Root of Jesse (RoJ).
+Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship,
+live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.
+So whether you’re a spiritual seeker who’s just starting to ask questions about God,
+or a committed Christian who wants a place to grow and serve, you can find a home at RoJ……..we have a place for everyone!
                     </p>
                     
-                    <div class="testimonial-quote">
-                        <div class="feedback">
-                            <strong>
-                                When you have this kind of congregation – you have members of every party in the congregation and if you want to retain their respect for you-you must be neutral.
-                            </strong>
-                        </div>
-                        <div class="user-info d-flex align-items-center">
-                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625222394/site-image/Daddy_GO_jdwrow.jpg')">                                
-                            </div>
-                            <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
-                        </div>
-                    </div>
+                    
+                    
                     
                 </div>
+
+                <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
+                    <br>
+                    <h3>
+                        We’re glad you’re here.
+                    </h3>
+                    <p>
+                        The only thing we ask of you is: relax. You’re with friends. Even if you’ve never been in church before,
+you’ll have no worries about being “out of place”.
+<br>
+<br>
+At RoJ, What you will find is this:
+                        <ul style="font-style: italic; font-weight: bold">
+                            <li>• A friendly atmosphere</li>
+                            <li>• Friendly people who’ll help you find your way around</li>
+                            <li>• Contemporary worship</li>
+                            <li>• Messages relevant to your daily life</li>
+                            <li>• That you matter to God.</li>
+                        </ul>
+                    </p>
+                    <p>
+                        So, whether you’re single, married,
+with or without children – no matter where you’ve been or what you’ve done – we invite you to experience the God here.
+                    </p>
+
+
+                    <div class="testimonial-quote">
+                        <div class="feedback">
+                            <h4>OUR MISSION</h4>
+                            <strong>
+                                To make Heaven and take with us, as many people as we can.
+                            </strong>
+                            <br><br>
+                            <strong>
+                                To reach out to youths and young adults, in an atmosphere filled with the SPIRIT of CHRIST and the LOVE of GOD
+                            </strong>
+                            <br><br>
+                            <strong>
+                                To build ourselves, until we reach our full potential, modelling Christ in the way we live.
+                            </strong>
+                        </div>
+                        {{-- <div class="user-info d-flex align-items-center">
+                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png')">                                
+                            </div>
+                            <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
+                        </div> --}}
+                    </div>
+                    
+
+                </div>
+
+
+                <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
+                                        <br>
+                    <h3>
+                        We are;
+                    </h3>
+                    
+                    <p><span style="font-weight: bold;">A Worshiping Church.</span>  A community of people who gather to minister unto the Lord in Biblical
+expressions of praise and worship.
+</p>
+
+                    <p>
+                        <span style="font-weight: bold;">A Bible Believing Church.</span>  A community of people who believe the Bible is God’s Word and the
+supreme authority in guiding each individual life.
+                    </p>
+
+                    <p>
+                        <span style="font-weight: bold;">A Quality Church.</span>  A community of people who believe God deserves our best and most beautiful,
+not only in church facilities, but in our own “temple of God”.
+
+                    </p>
+
+
+                    <p>
+                        <span style="font-weight: bold;">A Non-Judgmental Church.</span>  A community of people that can accept and appreciate what the
+Lord Jesus is accomplishing through other churches and individuals.
+
+                    </p>
+
+                    <div class="testimonial-quote">
+                        <div class="feedback">
+                            <h4>OUR VISION</h4>
+                            <strong>
+                                Serving our generation according to the will of God Acts 
+                            </strong>
+                        </div>
+                        {{-- <div class="user-info d-flex align-items-center">
+                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png')">                                
+                            </div>
+                            <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
+                        </div> --}}
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </section>

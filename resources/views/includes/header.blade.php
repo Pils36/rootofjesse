@@ -22,11 +22,11 @@
             </div>
             <div class="col-xl-9 pl-lg-0 col-lg-9 d-none d-lg-block">
                 <div class="box-wrap">
-                    <div class="top-bar text-right">
+                    {{-- <div class="top-bar text-right">
                         <a href="mailto:info@rootofjessephc.com"><i class="fal fa-envelope"></i>info@rootofjessephc.com</a>
                         <a href="tel:08033104890"><i class="fal fa-phone"></i>0803 310 4890</a>
                         <a href="#" class="d-btn">Giving</a>
-                    </div>
+                    </div> --}}
                     <div class="menu-wrap d-flex align-items-center justify-content-around">
                         <div class="main-menu">
                             <ul>
@@ -45,26 +45,26 @@
                                 </li> --}}
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about us') }}">about us</a></li>
-                                <li><a href="#">Ministries and programs</a></li>
-                                <li><a href="{{ route('more message') }}">Messages Preached</a></li>
-                                {{-- <li><a href="causes.html">Causes</a>
+                                <li><a href="{{ route('more message') }}">Message</a></li>
+                                <li><a href="#">Connect</a>
                                     <ul class="sub-menu">
-                                        <li><a href="causes.html">Causes List</a></li>
-                                        <li><a href="cause-details.html">Causes details</a></li>
-                                        <li><a href="#">donation</a></li>
+                                        <li><a href="#">Connect Group</a></li>
+                                        <li><a href="#">Connect with your pastor</a></li>
                                     </ul>
-                                </li> --}}
+                                </li>
+                                <li><a href="#">Join a service unit</a></li>
+                                
                                 
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>
                         </div>
-                        <div class="social-link">
+                        {{-- <div class="social-link">
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                             <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -80,44 +80,28 @@
                         </button>
                         <nav class="sidebar-nav">
                             <ul class="metismenu" id="mobile-menu">
-                                {{-- <li><a class="has-arrow" href="#">Homes</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index-2.html">Homepage 1</a></li>
-                                        <li><a href="index-3.html">Homepage 2</a></li>
-                                        <li><a href="index-4.html">Homepage 3</a></li>
-                                    </ul>
-                                </li> --}}
+                                
                                 <li><a href="{{ route('home') }}">home</a></li>
-                                <li><a href="{{ route('about us') }}">about</a></li>
-                                <li><a href="#">ministries and programs</a></li>
-                                <li><a href="{{ route('more message') }}">message preached</a></li>
-                                {{-- <li>
-                                    <a class="has-arrow" href="causes.html">Causes</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="causes.html">Causes List</a></li>
-                                        <li><a href="cause-details.html">Causes details</a></li>
-                                        <li><a href="#">donation</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="{{ route('about us') }}">about us</a></li>
+                                <li><a href="{{ route('more message') }}">Message</a></li>
                                 <li>
-                                    <a class="has-arrow" href="#">Pages</a>
+                                    <a class="has-arrow" href="#">Connect</a>
                                     <ul class="sub-menu">
-                                        <li><a href="faq.html">faq</a></li>
-                                        <li><a href="events.html">events</a></li>
-                                        <li><a href="event-details.html">event details</a></li>
-                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="#">Connect Group</a></li>
+                                        <li><a href="#">Connect with your pastor</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="news.html">News</a></li> --}}
-                                <li><a href="{{ route('contact us') }}">Contact</a></li>
+                                <li><a href="#">Join a service unit</a></li>
+                                
+                                <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>
                         </nav>
 
-                        <div class="action-bar">
+                        {{-- <div class="action-bar">
                             <a href="mailto:info@rootofjessephc.com"><i class="fal fa-envelope"></i>info@rootofjessephc.com</a>
                             <a href="tel:08033104890"><i class="fal fa-phone"></i>0803 310 4890</a>
                             <a href="#" class="d-btn theme-btn">Giving</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="overlay"></div>

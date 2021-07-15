@@ -13,7 +13,13 @@
                                     <i class="fal fa-phone"></i>
                                 </div>
                                 <div class="contact-info">
-                                    <span>0803 310 4890</span>
+                                    <span>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                0803 310 4890
+                                            </div>
+                                        </div>
+                                    </span>
                                     {{-- <span>+880-7623458760</span> --}}
                                 </div>
                             </div>
@@ -22,7 +28,13 @@
                                     <i class="fal fa-envelope"></i>
                                 </div>
                                 <div class="contact-info">
-                                    <span>info@rootofjessephc.com</span>
+                                    <span>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                info@rootofjessephc.com
+                                            </div>
+                                        </div>
+                                    </span>
                                     {{-- <span>jobs@example.com</span> --}}
                                 </div>
                             </div>
@@ -32,15 +44,23 @@
                                 </div>
                                 <div class="contact-info">
                                     <span>
-                                    2b Degema close, <br>  Rumuibekwe housing estate Port Harcourt, Nigeria 50001</span>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                2b Degema close, Rumuibekwe Housing Estate Port Harcourt,
+                                            </div>
+                                            <div class="col-md-12">
+                                                 Nigeria
+                                            </div>
+                                        </div>
+                                 </span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="social-link">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://facebook.com/therootofjesse" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://instagram.com/rootofjesse_phc" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
@@ -53,17 +73,16 @@
                         <div class="special-menu">
                             <ul>
                                 <li><a href="{{ route('about us') }}">about</a></li>
-                                <li><a href="#">Ministries</a></li>
-                                <li><a href="#">Programs</a></li>
-                                <li><a href="{{ route('more message') }}">Messages</a></li>
-                                <li><a href="{{ route('contact us') }}">Contact Us</a></li>
+                                <li><a href="{{ route('more message') }}">Message</a></li>
+                                <li><a href="#">Connect Group</a></li>
+                                
                             </ul>
                         </div>
                         <div class="special-menu">
                             <ul>
-                                <li><a href="#">First timer</a></li>
-                                <li><a href="#">Giving</a></li>
-                                <li><a href="#">Consultation</a></li>
+                                <li><a href="#">Connect with your pastor</a></li>
+                                <li><a href="#">Join a service unit</a></li>
+                                <li><a href="{{ route('contact us') }}">Contact Us</a></li>
                                 {{-- <li><a href="contact.html">Get A Quote</a></li> --}}
                                 {{-- <li><a href="faq.html">Terms & Conditions</a></li> --}}
                             </ul>
@@ -76,7 +95,7 @@
                             <h4>Resources</h4>
                         </div>
                         <ul>
-                            <li><a href="#">Feedback</a></li>
+                            <li><a href="#">Store</a></li>
                             <li><a href="#">Podcasts</a></li>
                             <li><a href="#">Tracts</a></li>
                             <li><a href="#">Devotionals</a></li>
