@@ -10,7 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendEmail;
 
-use App\Classes\MobileDetect;
+use App\Classes\Mobile_Detect;
 
 class Controller extends BaseController
 {
@@ -49,7 +49,7 @@ class Controller extends BaseController
 
     // Get Browser
     public function myBrowser(){
-        $detect = new MobileDetect;
+        $detect = new Mobile_Detect;
 
         $platform = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'mobile') : 'web');
 
