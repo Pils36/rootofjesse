@@ -10,6 +10,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\sendEmail;
 
+use App\Classes\Mobile_Detect;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -47,11 +49,11 @@ class Controller extends BaseController
 
     // Get Browser
     public function myBrowser(){
-        $request = request();
+        $detect = new Mobile_Detect;
 
-        $browser = get_browser($request->header('User-Agent'), true);
-        
-        return $browser['browser'];
+        $platform = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'mobile') : 'web');
+
+        return $platform;
     }
     
 
