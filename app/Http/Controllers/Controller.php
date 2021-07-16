@@ -18,6 +18,7 @@ class Controller extends BaseController
 
     public $to;
     public $subject;
+    public $file;
     public $message;
     
     // Random String
@@ -67,6 +68,7 @@ class Controller extends BaseController
         if($purpose == $this->subject){
             $objDemo->to = $this->to;
             $objDemo->subject = $this->subject;
+            $objDemo->file = $this->file;
             $objDemo->message = $this->message;
         }
 

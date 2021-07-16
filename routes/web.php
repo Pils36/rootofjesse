@@ -99,6 +99,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('messaging')->group(function () {
 
             Route::get('/', 'MessagingController@index')->name('messaging');
+            Route::post('compose', 'MessagingController@compose')->name('compose mail');
             
         });
         

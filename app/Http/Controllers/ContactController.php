@@ -38,6 +38,8 @@ class ContactController extends Controller
 
             $this->message = "Hello Admin, <br> There's a contact us message from ".strtoupper($req->name)." <br> Kindly message information below; <hr> Full Name: ".strtoupper($req->name)." <br>Email Address: ".$req->email." <br>Telephone: ".$req->telephone."<br>Subject: ".$req->subject." <br>Message: <br>".$req->message." <hr>";
 
+            $this->file = NULL;
+
             $thisuser = User::where('email', 'info@rootofjessephc.com')->first();
 
             $this->myNotification($thisuser->id, $this->subject, $this->getUserIpAddr());

@@ -63,6 +63,8 @@ class TeamController extends Controller
 
             $this->message = "Hello ".$req->name.", <br> You have been added as a ".strtoupper($req->role)." of The Root Of Jesse Church PHC. <br> Your login details are stated below. You can change your password after your first login; <br> LOGIN DETAILS<hr> Email: ".$req->email." <br>Password: ".$req->password." <hr> <br> Best Regard. <br> The Root Of Jesse PHC";
 
+            $this->file = NULL;
+
             $this->sendEmail($this->to, $this->subject);
 
             return redirect()->route('team member')->with('success', 'Successfully created');

@@ -120,17 +120,22 @@
                                         <li style="display: inline-block; list-style: none; padding: 4px;"><a
                                                 style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
                                                 href="#"><img style="width: 30px"
-                                                    src="{{ asset('ext/images/socials/facebook.png') }}"
+                                                    src="https://img.icons8.com/fluent/50/000000/facebook-new.png"
                                                     alt="brand"></a></li>
                                         <li style="display: inline-block; list-style: none; padding: 4px;"><a
                                                 style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
                                                 href="#"><img style="width: 30px"
-                                                    src="{{ asset('ext/images/socials/twitter.png') }}" alt="brand"></a>
+                                                    src="https://img.icons8.com/color/48/000000/twitter.png" alt="brand"></a>
                                         </li>
                                         <li style="display: inline-block; list-style: none; padding: 4px;"><a
                                                 style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
                                                 href="#"><img style="width: 30px"
-                                                    src="{{ asset('ext/images/socials/youtube.png') }}" alt="brand"></a>
+                                                    src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="brand"></a>
+                                        </li>
+                                        <li style="display: inline-block; list-style: none; padding: 4px;"><a
+                                                style="display: inline-block; height: 30px; width:30px;border-radius: 50%; background-color: #ffffff"
+                                                href="#"><img style="width: 30px"
+                                                    src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="brand"></a>
                                         </li>
                                     </ul>
                                     <p style="padding-top: 15px; font-size: 12px;">This email was sent to you as a

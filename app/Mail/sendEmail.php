@@ -29,8 +29,18 @@ class sendEmail extends Mailable
     public function build()
     {
         if($this->mail->purpose){
-            return $this->subject($this->mail->subject)->view('mails.message')
+
+            if($this->mail->file != NULL){
+                return $this->subject($this->mail->subject)
+                    ->attach(asset("rootjesse/".$this->mail->file))
+                    ->view('mails.message')
                     ->with('maildata', $this->mail);
+            }
+            else{
+                return $this->subject($this->mail->subject)
+                    ->view('mails.message')
+                    ->with('maildata', $this->mail);
+            }
         }
     }
 }

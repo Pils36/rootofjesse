@@ -73,6 +73,8 @@ class MemberController extends Controller
 
             $this->message = "Hello ".$staff->name.", <br> We have assigned ".strtoupper($req->title.' '.$req->name)." to you for purpose of follow up. <br> Member details are found below; <br><br> <strong>".strtoupper($req->title.' '.$req->name)." INFORMATION</strong>  <hr> Full Name: ".strtoupper($req->title.' '.$req->name)." <br>Phone Number: ".$req->telephone." <br>Address: ".$req->address." <hr> <br> Best Regard. <br> The Root Of Jesse PHC";
 
+            $this->file = NULL;
+
             $this->sendEmail($this->to, $this->subject);
 
             return redirect()->route('members list')->with('success', 'Successfully added');
