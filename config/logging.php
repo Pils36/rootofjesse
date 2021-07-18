@@ -37,8 +37,8 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            // 'channels' => ['single'],
-            'channels' => ['single', 'slack'],
+            'channels' => ['single'],
+            // 'channels' => ['single', 'slack'],
             'ignore_exceptions' => false,
         ],
 

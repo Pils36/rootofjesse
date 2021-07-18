@@ -17,6 +17,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('ext/assets/css/dashlite.css?ver=2.4.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('ext/assets/css/theme.css?ver=2.4.0') }}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <style>
         .disp-0{
             display: none !important;

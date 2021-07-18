@@ -31,7 +31,7 @@
                             @if (count($data['loginActivity']) > 0)
                                 @foreach ($data['loginActivity'] as $loginactivity)
                                     <tr>
-                                        <td class="tb-col-os">{{ $loginactivity->browser }}</td>
+                                        <td class="tb-col-os">{{ strtoupper($loginactivity->browser) }}</td>
                                         <td class="tb-col-ip"><span class="sub-text">{{ $loginactivity->ip_address }}</span></td>
                                         <td class="tb-col-time"><span class="sub-text">{{ date('d-M-Y h:i A', strtotime($loginactivity->created_at)) }}</span></td>
                                     </tr>

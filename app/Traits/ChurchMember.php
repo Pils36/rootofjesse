@@ -18,10 +18,26 @@ trait ChurchMember
         return $data;
     }
 
+    
+    public function myAssignedMembers($name){
+
+        $data = Members::where('assigned_staff', $name)->orderBy('created_at', 'DESC')->paginate(20);
+
+        return $data;
+    }
+
 
     public function recentFiveMembers(){
 
         $data = Members::orderBy('created_at', 'DESC')->take(5)->get();
+
+        return $data;
+    }
+
+
+    public function myrecentFiveAssignedMembers($name){
+
+        $data = Members::where('assigned_staff', $name)->orderBy('created_at', 'DESC')->take(5)->get();
 
         return $data;
     }

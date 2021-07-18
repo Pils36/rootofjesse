@@ -251,14 +251,14 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                             </div>
                                             <div class="nk-ibx-nav" data-simplebar>
                                                 <ul class="nk-ibx-menu">
-                                                    <li class="active">
+                                                    <li>
                                                         <a class="nk-ibx-menu-item" href="{{ route('messaging') }}">
                                                             <em class="icon ni ni-inbox"></em>
                                                             <span class="nk-ibx-menu-text">Inbox</span>
                                                             <span class="badge badge-pill badge-primary">{{ count($data['messageinbox']) }}</span>
                                                         </a>
                                                     </li>
-                                                    <li>
+                                                    <li class="active">
                                                         <a class="nk-ibx-menu-item" href="{{ route('sent mails') }}">
                                                             <em class="icon ni ni-send"></em>
                                                             <span class="nk-ibx-menu-text">Sent</span>
@@ -370,8 +370,6 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
 
                                                     @if (count($data['teamMembers']) > 0)
                                                         @foreach ($data['teamMembers'] as $teammember)
-                                                            
-
                                                                 <li>
                                                                     <a href="javascript:void(0)">
                                                                         <div class="user-card">
@@ -479,14 +477,14 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                             <div class="nk-ibx-list" data-simplebar>
 
 
-                                                @if (count($data['messageinbox']) > 0)
-                                                    @foreach ($data['messageinbox'] as $messageInbox)
+                                                @if (count($data['messagesent']) > 0)
+                                                    @foreach ($data['messagesent'] as $messageSent)
 
                                                     
 
                                                         <div class="nk-ibx-item">
-                                                        <a href="javascript:void(0)" class="nk-ibx-link" onclick="showMessage('{{ $messageInbox->id }}')"></a>
-                                                            <input type="hidden" name="current_index" id="current_index{{ $messageInbox->id }}" value="{{ $messageInbox->id }}">
+                                                        <a href="javascript:void(0)" class="nk-ibx-link" onclick="showMessage('{{ $messageSent->id }}')"></a>
+                                                            <input type="hidden" name="current_index" id="current_index{{ $messageSent->id }}" value="{{ $messageSent->id }}">
                                                             <div class="nk-ibx-item-elem nk-ibx-item-check">
                                                                 <div class="custom-control custom-control-sm custom-checkbox">
                                                                     <input type="checkbox" class="custom-control-input nk-dt-item-check" id="conversionItem01">
@@ -499,10 +497,10 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <div class="nk-ibx-item-elem nk-ibx-item-user">
                                                                 <div class="user-card">
                                                                     <div class="user-avatar">
-                                                                        {{ strtoupper(Str::substr($messageInbox->name, 0, 2)) }}
+                                                                        {{ strtoupper(Str::substr($messageSent->name, 0, 2)) }}
                                                                     </div>
                                                                     <div class="user-name">
-                                                                        <div class="lead-text">{{ (strlen($messageInbox->name) < 20) ? $messageInbox->name : substr($messageInbox->name, 0, 20)."..." }}</div>
+                                                                        <div class="lead-text">{{ (strlen($messageSent->name) < 20) ? $messageSent->name : substr($messageSent->name, 0, 20)."..." }}</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -510,14 +508,14 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                                 <div class="nk-ibx-context-group">
                                                                     <div class="nk-ibx-context">
                                                                         <span class="nk-ibx-context-text">
-                                                                            <span class="heading">{{ (strlen($messageInbox->subject) < 40) ? $messageInbox->subject : substr($messageInbox->subject, 0, 40)."..." }}</span></span>
+                                                                            <span class="heading">{{ (strlen($messageSent->subject) < 40) ? $messageSent->subject : substr($messageSent->subject, 0, 40)."..." }}</span></span>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="nk-ibx-item-elem nk-ibx-item-attach">
                                                             </div>
                                                             <div class="nk-ibx-item-elem nk-ibx-item-time">
-                                                                <div class="sub-text"><span class="heading">{{ date('h:i A', strtotime($messageInbox->created_at)) }} <br> <small>{{ date('d/M/Y', strtotime($messageInbox->created_at)) }}</small></span> </div>
+                                                                <div class="sub-text"><span class="heading">{{ date('h:i A', strtotime($messageSent->created_at)) }} <br> <small>{{ date('d/M/Y', strtotime($messageSent->created_at)) }}</small></span> </div>
                                                             </div>
                                                             <div class="nk-ibx-item-elem nk-ibx-item-tools">
                                                                 <div class="ibx-actions">
@@ -571,7 +569,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                         <div class="nk-ibx-context-group">
                                                             <div class="nk-ibx-context">
                                                                 <span class="nk-ibx-context-text">
-                                                                    <span class="heading">No new message</span>
+                                                                    <span class="heading">No sent message</span>
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -742,6 +740,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
     <script src="{{ asset('ext/assets/js/scripts.js?ver=2.4.0') }}"></script>
     <script src="{{ asset('ext/assets/js/apps/inbox.js?ver=2.4.0') }}"></script>
     <script src="{{ asset('ext/assets/js/libs/tagify.js?ver=2.4.0') }}"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
     <script>

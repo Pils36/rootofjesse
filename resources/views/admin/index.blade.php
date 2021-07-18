@@ -232,8 +232,10 @@
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .nk-block -->
-        
-        
+
+
+        @if (Auth::user()->role == "Super Admin")
+
         <div class="nk-block">
             <div class="card card-bordered">
                 <div class="card-inner card-inner-md">
@@ -315,6 +317,97 @@
                 </table>
             </div><!-- .card -->
         </div><!-- .nk-block -->
+            
+        @else
+
+        <div class="nk-block">
+            <div class="card card-bordered">
+                <div class="card-inner card-inner-md">
+                    <div class="card-title-group">
+                        <h6 class="card-title">Assigned Members</h6>
+                        <div class="card-action">
+                            <a href="{{ route('members list') }}" class="link link-sm">See All <em
+                                    class="icon ni ni-chevron-right"></em></a>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-tranx">
+                    <thead>
+                        <tr class="tb-tnx-head">
+                            <th class="tb-tnx-id"><span class="">#</span></th>
+                            <th class="tb-tnx-info">
+                                <span class="tb-tnx-desc d-none d-sm-inline-block">
+                                    <span>Full Name</span>
+                                </span>
+                                <span class="tb-tnx-date d-md-inline-block d-none">
+                                    <span class="d-md-none">Date</span>
+                                    <span class="d-none d-md-block">
+                                        <span>Email</span>
+                                        <span>Phone Number</span>
+                                    </span>
+                                </span>
+                            </th>
+                            <th class="tb-tnx-amount">
+                                <span class="tb-tnx-total">Invited By</span>
+                                <span class="tb-tnx-status d-none d-md-inline-block">Status</span>
+                            </th>
+                    </thead>
+                    <tbody>
+
+                        @if (count($data['assignedmembers']) > 0)
+
+                            @php
+                                $i = 1;
+                            @endphp
+
+                            @foreach ($data['assignedmembers'] as $membersDetail)
+                                <tr class="tb-tnx-item">
+                                    <td class="tb-tnx-id">
+                                        <a href="javascript:void(0)"><span>{{ $i++ }}</span></a>
+                                    </td>
+                                    <td class="tb-tnx-info">
+                                        <div class="tb-tnx-desc">
+                                            <span class="title">{{ (strlen($membersDetail->name) < 15) ? $membersDetail->name : substr($membersDetail->name, 0, 15)."..." }}</span>
+                                        </div>
+                                        <div class="tb-tnx-date">
+                                            <span class="date">{{ (strlen($membersDetail->email) < 15) ? $membersDetail->email : substr($membersDetail->email, 0, 15)."..." }}</span>
+                                            <span class="date">{{ $membersDetail->telephone }}</span>
+                                        </div>
+                                    </td>
+                                    <td class="tb-tnx-amount">
+                                        <div class="tb-tnx-total">
+
+                                            <span class="date">{{ (strlen($membersDetail->who_invited_you) < 10) ? $membersDetail->who_invited_you : substr($membersDetail->who_invited_you, 0, 10)."..." }}</span>
+                                            
+                                        </div>
+                                        <div class="tb-tnx-status">
+                                            <span class="badge badge-dot badge-success"><span @if($membersDetail->status == "Visitor") class="tb-status text-info" @elseif($membersDetail->status == "Existing member") class="tb-status text-success" @else class="tb-status text-danger" @endif >{{ $membersDetail->status }}</span></span>
+                                        </div>
+                                    </td>
+                                </tr><!-- .tb-tnx-item -->
+                            @endforeach
+                        @else
+
+                                <tr class="tb-tnx-item">
+                                    <td colspan="6" align="center">No record</td>
+                                </tr><!-- .tb-tnx-item -->
+                            
+                        @endif
+
+                        
+                        
+                        
+                    </tbody>
+                </table>
+            </div><!-- .card -->
+        </div><!-- .nk-block -->
+            
+        @endif
+        
+        
+        
+
+
     </div>
 
 

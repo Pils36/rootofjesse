@@ -11,17 +11,17 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">All Members</h3>
+                                <h3 class="nk-block-title page-title"> {{ (Auth::user()->role == "Super Admin") ? "All Members" : "Assigned Members" }}</h3>
                                 <div class="nk-block-des text-soft">
-                                    <p>You have a record of {{ count($data['member']) }} members</p>
+                                    <p>You have a record of @if (Auth::user()->role == "Super Admin") {{ count($data['member']) }} members @else {{ count($data['myassignedmember']) }} members assigned to you @endif </p>
                                 </div>
                             </div><!-- .nk-block-head-content -->
-                            <div class="nk-block-head-content">
+                            <div class="nk-block-head-content {{ (Auth::user()->role != "Super Admin") ? "disp-0" : "" }}">
                                 <div class="toggle-wrap nk-block-tools-toggle">
                                     <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                     <div class="toggle-expand-content" data-content="pageMenu">
                                         <ul class="nk-block-tools g-3">
-                                            {{-- <li><a href="#" class="btn btn-white btn-outline-light"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li> --}}
+
                                             <li class="nk-block-tools-opt">
                                                 <div class="drodown">
                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
@@ -33,6 +33,7 @@
                                                     </div>
                                                 </div>
                                             </li>
+
                                         </ul>
                                     </div>
                                 </div><!-- .toggle-wrap -->
@@ -112,6 +113,8 @@
                                             </div>
                                         </div><!-- .nk-tb-item -->
 
+                                        @if (Auth::user()->role == "Super Admin")
+
                                         @if (count($data['member']) > 0)
 
                                         @foreach ($data['member'] as $members)
@@ -153,7 +156,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Send Email">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="modal" data-target="#compose-mail{{ $members->id }}" data-placement="top" title="Send Email">
                                                             <em class="icon ni ni-mail-fill"></em>
                                                         </a>
                                                     </li>
@@ -173,7 +176,7 @@
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <ul class="link-list-opt no-bdr">
                                                                     <li><a href="{{ route('view member', $members->id) }}"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#compose-mail{{ $members->id }}"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
                                                                     <li><a href="{{ route('edit church member', $members->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
                                                                     <li><a href="javascript:void(0)" onclick="deleteData('church_member', '{{ $members->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
                                                                     
@@ -325,6 +328,69 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                        {{-- Send Message --}}
+
+                                                <!-- @@ Compose Mail Modal @e -->
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="compose-mail{{ $members->id }}">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+
+                                                            <form action="{{ route('compose mail') }}" method="POST" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <div class="modal-header">
+                                                                    <h6 class="modal-title">Compose Message</h6>
+                                                                    <a href="javascript:void(0)" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                                                                </div>
+                                                                <div class="modal-body p-0">
+                                                                    <div class="nk-reply-form-header">
+                                                                        <div class="nk-reply-form-group">
+                                                                            <div class="nk-reply-form-input-group">
+                                                                                <div class="nk-reply-form-input nk-reply-form-input-to">
+                                                                                    <label class="label">To</label>
+                                                                                    <input type="hidden" name="name" value="{{ Auth::user()->name }}">
+                                                                                    <input type="hidden" name="sender" value="{{ Auth::user()->email }}">
+                                                                                    <input name="receiver" type="text" class="input-mail tagify" value="{{ $members->email }}" data-whitelist="{{ $members->email }}" required>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="nk-reply-form-editor">
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="text" name="subject" class="form-control form-control-simple" placeholder="Subject"  required>
+                                                                        </div>
+                                                                        <div class="nk-reply-form-field">
+                                                                            <textarea name="message" class="form-control form-control-simple no-resize ex-large summernote" placeholder="Compose message"></textarea>
+                                                                        </div>
+
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="file" name="file" id="file" class="form-control">
+
+                                                                        </div>
+                                                                    </div><!-- .nk-reply-form-editor -->
+                                                                    <div class="nk-reply-form-tools">
+                                                                        <ul class="nk-reply-form-actions g-1">
+                                                                            <li class="mr-2">
+                                                                                <button class="btn btn-primary" type="submit">Send</button>
+                                                                            </li>
+                                                                            
+                                                                            <li>
+                                                                                <a class="btn btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Upload Attachment" href="javascript:void(0)" onclick="$('#file').click()"><em class="icon ni ni-clip-v"></em></a>
+                                                                            </li>
+                                                                            
+                                                                        </ul>
+                                                                    </div><!-- .nk-reply-form-tools -->
+                                                                </div><!-- .modal-body -->
+
+                                                            </form>
+
+
+                                                        </div><!-- .modal-content -->
+                                                    </div><!-- .modla-dialog -->
+                                                </div><!-- .modal -->
                                             
                                         @endforeach
                                             
@@ -333,6 +399,297 @@
                                         
                                             
                                         @endif
+                                            
+                                        @else
+
+                                        @if (count($data['myassignedmember']) > 0)
+
+                                        @foreach ($data['myassignedmember'] as $memberDetails)
+
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-col-check">
+                                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                                    <input type="checkbox" name="memberid[]" class="custom-control-input" id="memberid{{ $memberDetails->id }}">
+                                                    <label class="custom-control-label" for="memberid{{ $memberDetails->id }}"></label>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div class="user-card">
+                                                    <div class="user-avatar xs bg-primary">
+                                                        <span>{{ strtoupper(Str::substr($memberDetails->name, 0, 2)) }}</span>
+                                                    </div>
+                                                    <div class="user-name">
+                                                        <span class="tb-lead">{{ $memberDetails->title.'. '.$memberDetails->name }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="nk-tb-col tb-col-sm">
+                                                <span>{{ $memberDetails->email }}</span>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-md">
+                                                <span>{{ $memberDetails->telephone }}</span>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-md">
+                                                <span @if($memberDetails->status == "Visitor") class="tb-status text-info" @elseif($memberDetails->status == "Existing member") class="tb-status text-success" @else class="tb-status text-danger" @endif >{{ $memberDetails->status }}</span>
+                                            </div>
+                                            
+                                            
+                                            <div class="nk-tb-col nk-tb-col-tools">
+                                                <ul class="nk-tb-actions gx-2">
+                                                    <li class="nk-tb-action-hidden">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Quick view" onclick="$('#quick_view{{ $memberDetails->id }}').click()">
+                                                            <em class="icon ni ni-user-fill-c"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nk-tb-action-hidden">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="modal" data-target="#compose-mail{{ $memberDetails->id }}" data-placement="top" title="Send Email">
+                                                            <em class="icon ni ni-mail-fill"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nk-tb-action-hidden">
+                                                        <a href="{{ route('edit church member', $memberDetails->id) }}" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <em class="icon ni ni-edit-alt-fill"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nk-tb-action-hidden">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete" onclick="deleteData('church_member', '{{ $memberDetails->id }}')">
+                                                            <em class="icon ni ni-user-cross-fill"></em>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="drodown">
+                                                            <a href="#" class="btn btn-sm btn-icon btn-trigger dropdown-toggle" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <ul class="link-list-opt no-bdr">
+                                                                    <li><a href="{{ route('view member', $memberDetails->id) }}"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
+                                                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#compose-mail{{ $memberDetails->id }}"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                    <li><a href="{{ route('edit church member', $memberDetails->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
+                                                                    <li><a href="javascript:void(0)" onclick="deleteData('church_member', '{{ $memberDetails->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
+                                                                    
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div><!-- .nk-tb-item -->
+
+
+
+                                        {{-- Quick View --}}
+
+                                        <button type="button" class="btn btn-secondary disp-0" data-toggle="modal" data-target="#modalTabs{{ $memberDetails->id }}" id="quick_view{{ $memberDetails->id }}">Quick Profile View</button>
+
+                                        <!-- Modal Tabs -->
+                                        <div class="modal fade" tabindex="-1" role="dialog" id="modalTabs{{ $memberDetails->id }}">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                                <div class="modal-content">
+                                                    <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                                                    <div class="modal-body modal-body-md">
+                                                        <h4 class="title">{{ $memberDetails->title.' '.$memberDetails->name }}</h4>
+                                                        <ul class="nk-nav nav nav-tabs">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" data-toggle="tab" href="#tabItem1">Information</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#tabItem2">Other Informations</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane active" id="tabItem1">
+                                                                <h6 class="title">Personal Information</h6>
+                                                                <div class="nk-block">
+                                                                    <div class="nk-data data-list data-list-s2">
+                                                                        <div class="data-head">
+                                                                            <h6 class="overline-title">Basics</h6>
+                                                                        </div>
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Full Name</span>
+                                                                                <span class="data-value">{{ $memberDetails->title.' '.$memberDetails->name }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        
+                                                                        <div class="data-item">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Email</span>
+                                                                                <span class="data-value">{{ $memberDetails->email }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more disable"><em class="icon ni ni-lock-alt"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Phone Number</span>
+                                                                                <span class="data-value text-soft">{{ $memberDetails->telephone }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                        
+                                                                        <div class="data-item" data-toggle="modal" data-target="#profile-edit" data-tab-target="#address">
+                                                                            <div class="data-col">
+                                                                                <span class="data-label">Address</span>
+                                                                                <span class="data-value">{{ $memberDetails->address }}</span>
+                                                                            </div>
+                                                                            <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                        </div><!-- data-item -->
+                                                                    </div><!-- data-list -->
+                                                                    
+                                                                </div><!-- .nk-block -->
+                                                            </div>
+                                                            <div class="tab-pane" id="tabItem2">
+                                                                <h6 class="title">Contact Information</h6>
+                                                                <div class="nk-data data-list data-list-s2">
+                                                                    <div class="data-head">
+                                                                        <h6 class="overline-title">Preferences</h6>
+                                                                    </div>
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Who Invited You</span>
+                                                                            <span class="data-value">{{ $memberDetails->who_invited_you }}</span>
+                                                                        </div>
+                                                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                    </div><!-- data-item -->
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Current Status</span>
+                                                                            <span class="data-value">{{ $memberDetails->status }}</span>
+                                                                        </div>
+                                                                        <div class="data-col data-col-end"><span class="data-more"><em class="icon ni ni-forward-ios"></em></span></div>
+                                                                    </div><!-- data-item -->
+                                                                    <div class="data-item">
+                                                                        <div class="data-col">
+                                                                            <span class="data-label">Assigned Staff</span>
+                                                                            <span class="data-value">{{ $memberDetails->assigned_staff }}</span>
+                                                                        </div>
+                                                                        @if ($allmembers = \App\User::where('name', $memberDetails->assigned_staff)->first())
+
+                                                                            @if (isset($allmembers))
+                                                                                <div class="data-col data-col-end"><a href="{{ route('view team', $allmembers->id) }}" class="link link-primary">View staff</a></div>
+                                                                                
+                                                                            @endif
+
+                                                                        @endif
+
+                                                                        
+                                                                    </div><!-- data-item -->
+                                                                </div><!-- data-list -->
+                                                            </div>
+                                                        </div>
+
+                                                        <button type="submit" class="btn btn-lg btn-danger" onclick="deleteData('church_member', '{{ $memberDetails->id }}')">Delete Member</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div> <!-- .modal -->
+
+
+
+
+                                        <button type="button" class="btn btn-primary disp-0" data-toggle="modal" data-target="#modalZoom{{ $memberDetails->id }}" id="church_member{{ $memberDetails->id }}">Modal Zoom</button>
+
+                                        <div class="modal fade zoom" tabindex="-1" id="modalZoom{{ $memberDetails->id }}">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">{{ $memberDetails->title.' '.$memberDetails->name }}</h5>
+                                                        <a href="#" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <em class="icon ni ni-cross"></em>
+                                                        </a>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h3>Are you sure you want to delete?</h3>
+                                                        <p>Please note that when you delete member, their roles will be nullified and they will not be able to have access to the dashboard.</p>
+                                                    </div>
+                                                    <div class="modal-footer bg-light">
+                                                        <form action="{{ route('delete member', $memberDetails->id) }}" method="post">
+                                                            @csrf
+
+                                                            <button type="submit" class="btn btn-lg btn-danger">Yes please!</button>
+                                                            <a href="javascript:void(0)" onclick="$('.close').click()" class="btn btn-light">Oh, I can't delete this</a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        {{-- Send Message --}}
+
+                                                <!-- @@ Compose Mail Modal @e -->
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="compose-mail{{ $memberDetails->id }}">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+
+                                                            <form action="{{ route('compose mail') }}" method="POST" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <div class="modal-header">
+                                                                    <h6 class="modal-title">Compose Message</h6>
+                                                                    <a href="javascript:void(0)" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                                                                </div>
+                                                                <div class="modal-body p-0">
+                                                                    <div class="nk-reply-form-header">
+                                                                        <div class="nk-reply-form-group">
+                                                                            <div class="nk-reply-form-input-group">
+                                                                                <div class="nk-reply-form-input nk-reply-form-input-to">
+                                                                                    <label class="label">To</label>
+                                                                                    <input type="hidden" name="name" value="{{ Auth::user()->name }}">
+                                                                                    <input type="hidden" name="sender" value="{{ Auth::user()->email }}">
+                                                                                    <input name="receiver" type="text" class="input-mail tagify" value="{{ $memberDetails->email }}" data-whitelist="{{ $memberDetails->email }}" required>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="nk-reply-form-editor">
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="text" name="subject" class="form-control form-control-simple" placeholder="Subject"  required>
+                                                                        </div>
+                                                                        <div class="nk-reply-form-field">
+                                                                            <textarea name="message" class="form-control form-control-simple no-resize ex-large summernote" placeholder="Compose message"></textarea>
+                                                                        </div>
+
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="file" name="file" id="file" class="form-control">
+
+                                                                        </div>
+                                                                    </div><!-- .nk-reply-form-editor -->
+                                                                    <div class="nk-reply-form-tools">
+                                                                        <ul class="nk-reply-form-actions g-1">
+                                                                            <li class="mr-2">
+                                                                                <button class="btn btn-primary" type="submit">Send</button>
+                                                                            </li>
+                                                                            
+                                                                            <li>
+                                                                                <a class="btn btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Upload Attachment" href="javascript:void(0)" onclick="$('#file').click()"><em class="icon ni ni-clip-v"></em></a>
+                                                                            </li>
+                                                                            
+                                                                        </ul>
+                                                                    </div><!-- .nk-reply-form-tools -->
+                                                                </div><!-- .modal-body -->
+
+                                                            </form>
+
+
+                                                        </div><!-- .modal-content -->
+                                                    </div><!-- .modla-dialog -->
+                                                </div><!-- .modal -->
+                                            
+                                        @endforeach
+                                            
+                                        @else
+
+                                        
+                                            
+                                        @endif
+                                            
+                                        @endif
+
+                                        
 
 
                                     </div><!-- .nk-tb-list -->

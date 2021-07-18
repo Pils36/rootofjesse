@@ -99,6 +99,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('messaging')->group(function () {
 
             Route::get('/', 'MessagingController@index')->name('messaging');
+            Route::get('/sent-mails', 'MessagingController@sent')->name('sent mails');
             Route::post('compose', 'MessagingController@compose')->name('compose mail');
             
         });
@@ -111,6 +112,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('ajax')->group(function () {
 
             Route::post('/dropzonemessage', 'MessageController@receiveUpload')->name('dropzonemessage');
+            Route::post('/openmessage', 'MessagingController@openMessage')->name('openmessage');
 
         });
 

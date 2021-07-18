@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 use Auth;
 
@@ -31,6 +32,19 @@ class MessagingController extends Controller
         return view('admin.mailmessage.index')->with(['data' => $data]);
     }
 
+
+    public function sent(){
+
+        $data = [
+            'notification' => $this->listNotification(Auth::user()->id),
+            'messageinbox' => $this->myInbox(Auth::user()->email),
+            'messagesent' => $this->mySent(Auth::user()->email),
+            'teamMembers' => $this->assignTeam(),
+        ];
+
+        return view('admin.mailmessage.sent')->with(['data' => $data]);
+    }
+
     public function compose(Request $req){
 
         $sendMessage = $this->composeMessage($req->all());
@@ -44,6 +58,8 @@ class MessagingController extends Controller
                     foreach($sendMessage as $infoData){
 
                         $this->to = $infoData['receiver'];
+
+                        $this->from = $infoData['sender'];
 
                         $this->subject = $infoData['subject'];
 
@@ -66,9 +82,21 @@ class MessagingController extends Controller
                 return back()->with('error', 'Something went wrong');
             }
         } catch (\Throwable $th) {
+            Log::critical($th->getMessage());
             return back()->with('error', $th->getMessage());
         }
 
         
     }
+
+    public function openMessage(Request $req){
+
+        $data = $this->getthisMessage($req->id);
+
+        $response = ['data' => $data, 'message' => 'success', 'status' => 200];
+
+
+        return json_encode($response);
+
+    }   
 }

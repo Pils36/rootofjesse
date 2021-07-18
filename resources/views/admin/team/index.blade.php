@@ -16,7 +16,7 @@
                                     <p>You have total {{ count($data['team']) }} team members</p>
                                 </div>
                             </div><!-- .nk-block-head-content -->
-                            <div class="nk-block-head-content">
+                            <div class="nk-block-head-content {{ (Auth::user()->role != "Super Admin") ? "disp-0" : "" }}">
                                 <div class="toggle-wrap nk-block-tools-toggle">
                                     <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                     <div class="toggle-expand-content" data-content="pageMenu">
@@ -44,8 +44,8 @@
                             <div class="card-inner-group">
                                 <div class="card-inner position-relative card-tools-toggle">
                                     <div class="card-title-group">
-                                        <div class="card-tools">
-                                            <div class="form-inline flex-nowrap gx-3">
+                                        <div class="card-tools ">
+                                            <div class="form-inline flex-nowrap gx-3 {{ (Auth::user()->role != "Super Admin") ? "disp-0" : "" }}">
                                                 <div class="form-wrap w-150px">
                                                     <select class="form-select form-select-sm" data-search="off" data-placeholder="Bulk Action">
                                                         <option value="">Bulk Action</option>
@@ -197,7 +197,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Send Email">
+                                                        <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="modal" data-placement="top" title="Send Email" data-target="#compose-mail{{ $teams->id }}">
                                                             <em class="icon ni ni-mail-fill"></em>
                                                         </a>
                                                     </li>
@@ -217,7 +217,7 @@
                                                             <div class="dropdown-menu dropdown-menu-right">
                                                                 <ul class="link-list-opt no-bdr">
                                                                     <li><a href="{{ route('view team', $teams->id) }}"><em class="icon ni ni-eye"></em><span>View details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
+                                                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#compose-mail{{ $teams->id }}"><em class="icon ni ni-mail"></em><span>Send Email</span></a></li>
                                                                     <li><a href="{{ route('edit team member', $teams->id) }}"><em class="icon ni ni-edit-alt"></em><span>Edit</span></a></li>
                                                                     <li><a href="javascript:void(0)" onclick="deleteData('team_member', '{{ $teams->id }}')"><em class="icon ni ni-trash-alt"></em><span>Delete</span></a></li>
                                                                     
@@ -359,6 +359,69 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
+                                        {{-- Send Message --}}
+
+                                                <!-- @@ Compose Mail Modal @e -->
+                                                <div class="modal fade" tabindex="-1" role="dialog" id="compose-mail{{ $teams->id }}">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+
+                                                            <form action="{{ route('compose mail') }}" method="POST" enctype="multipart/form-data">
+                                                                @csrf
+                                                                <div class="modal-header">
+                                                                    <h6 class="modal-title">Compose Message</h6>
+                                                                    <a href="javascript:void(0)" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+                                                                </div>
+                                                                <div class="modal-body p-0">
+                                                                    <div class="nk-reply-form-header">
+                                                                        <div class="nk-reply-form-group">
+                                                                            <div class="nk-reply-form-input-group">
+                                                                                <div class="nk-reply-form-input nk-reply-form-input-to">
+                                                                                    <label class="label">To</label>
+                                                                                    <input type="hidden" name="name" value="{{ Auth::user()->name }}">
+                                                                                    <input type="hidden" name="sender" value="{{ Auth::user()->email }}">
+                                                                                    <input name="receiver" type="text" class="input-mail tagify" value="{{ $teams->email }}" data-whitelist="{{ $teams->email }}" required>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="nk-reply-form-editor">
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="text" name="subject" class="form-control form-control-simple" placeholder="Subject"  required>
+                                                                        </div>
+                                                                        <div class="nk-reply-form-field">
+                                                                            <textarea name="message" class="form-control form-control-simple no-resize ex-large summernote" placeholder="Compose message"></textarea>
+                                                                        </div>
+
+                                                                        <div class="nk-reply-form-field">
+                                                                            <input type="file" name="file" id="file" class="form-control">
+
+                                                                        </div>
+                                                                    </div><!-- .nk-reply-form-editor -->
+                                                                    <div class="nk-reply-form-tools">
+                                                                        <ul class="nk-reply-form-actions g-1">
+                                                                            <li class="mr-2">
+                                                                                <button class="btn btn-primary" type="submit">Send</button>
+                                                                            </li>
+                                                                            
+                                                                            <li>
+                                                                                <a class="btn btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Upload Attachment" href="javascript:void(0)" onclick="$('#file').click()"><em class="icon ni ni-clip-v"></em></a>
+                                                                            </li>
+                                                                            
+                                                                        </ul>
+                                                                    </div><!-- .nk-reply-form-tools -->
+                                                                </div><!-- .modal-body -->
+
+                                                            </form>
+
+
+                                                        </div><!-- .modal-content -->
+                                                    </div><!-- .modla-dialog -->
+                                                </div><!-- .modal -->
                                             
                                         @endforeach
                                             

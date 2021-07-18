@@ -5,6 +5,7 @@ namespace App\Traits;
 
 use App\User as User;
 use App\Members as Members;
+use Auth;
 
 
 trait TeamMember

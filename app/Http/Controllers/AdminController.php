@@ -119,6 +119,7 @@ class AdminController extends Controller
 
         $data = [
             'members' => $this->recentFiveMembers(),
+            'assignedmembers' => $this->myrecentFiveAssignedMembers(Auth::user()->name),
             'notification' => $this->listNotification(Auth::user()->id),
         ];
 

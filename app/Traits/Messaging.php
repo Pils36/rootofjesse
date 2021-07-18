@@ -106,4 +106,11 @@ trait Messaging
         return $result;
 
     }
+
+
+    public function getthisMessage($id){
+        $data = InAppMessaging::where('id', $id)->first();
+
+        return $data;
+    }
 }

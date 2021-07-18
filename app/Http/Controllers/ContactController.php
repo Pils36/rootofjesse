@@ -34,6 +34,7 @@ class ContactController extends Controller
             ContactUs::insert($req->all());
 
             $this->to = "info@rootofjessephc.com";
+            $this->from = $req->email;
             $this->subject = "New contact message from ".strtoupper($req->name);
 
             $this->message = "Hello Admin, <br> There's a contact us message from ".strtoupper($req->name)." <br> Kindly message information below; <hr> Full Name: ".strtoupper($req->name)." <br>Email Address: ".$req->email." <br>Telephone: ".$req->telephone."<br>Subject: ".$req->subject." <br>Message: <br>".$req->message." <hr>";

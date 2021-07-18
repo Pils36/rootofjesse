@@ -18,7 +18,10 @@
 <script src="{{ asset('assets/js/timeline.min.js') }}"></script>
 <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
 <script src="{{ asset('assets/js/active.js') }}"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+    
 
 @if (session('success'))
     <script>
@@ -34,6 +37,16 @@
 
 
 @endif
+
+<script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Compose message',
+                tabsize: 2,
+                height: 200
+            });
+        });
+    </script>
 
 
 <!--Start of Tawk.to Script-->

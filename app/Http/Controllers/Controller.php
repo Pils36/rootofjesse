@@ -17,6 +17,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public $to;
+    public $from;
     public $subject;
     public $file;
     public $message;
@@ -67,6 +68,7 @@ class Controller extends BaseController
 
         if($purpose == $this->subject){
             $objDemo->to = $this->to;
+            $objDemo->from = $this->from;
             $objDemo->subject = $this->subject;
             $objDemo->file = $this->file;
             $objDemo->message = $this->message;

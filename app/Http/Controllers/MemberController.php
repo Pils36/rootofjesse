@@ -24,6 +24,7 @@ class MemberController extends Controller
     public function index(){
         $data = [
             'member' => $this->allMembers(),
+            'myassignedmember' => $this->myAssignedMembers(Auth::user()->name),
             'notification' => $this->listNotification(Auth::user()->id),
         ];
 
@@ -69,6 +70,7 @@ class MemberController extends Controller
             // Get this staff;
 
             $this->to = $staff->email;
+            $this->from = "info@rootofjessephc.com";
             $this->subject = "Hurray, a new member is assigned to YOU!";
 
             $this->message = "Hello ".$staff->name.", <br> We have assigned ".strtoupper($req->title.' '.$req->name)." to you for purpose of follow up. <br> Member details are found below; <br><br> <strong>".strtoupper($req->title.' '.$req->name)." INFORMATION</strong>  <hr> Full Name: ".strtoupper($req->title.' '.$req->name)." <br>Phone Number: ".$req->telephone." <br>Address: ".$req->address." <hr> <br> Best Regard. <br> The Root Of Jesse PHC";
@@ -111,6 +113,7 @@ class MemberController extends Controller
             // Get this staff;
 
             $this->to = $staff->email;
+            $this->from = Auth::user()->email;
             $this->subject = "We have updated ".strtoupper($req->title.' '.$req->name)."'s information";
 
             $this->message = "Hello ".$staff->name.", <br> We wish to notify you that ".strtoupper($req->title.' '.$req->name)."'s information has been updated. <br> Kindly see member's detail below; <hr><br> <strong>".strtoupper($req->title.' '.$req->name)." INFORMATION</strong>  <hr> Full Name: ".strtoupper($req->title.' '.$req->name)." <br>Phone Number: ".$req->telephone." <br>Address: ".$req->address." <hr> <br> Best Regard. <br> The Root Of Jesse PHC";
