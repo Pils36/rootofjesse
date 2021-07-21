@@ -18,6 +18,20 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
+                                            <a href="{{ route('message categories') }}" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-list-thumb-alt-fill"></em></span>
+                                                <span class="nk-menu-text">Message Categories</span>
+                                            </a>
+                                        </li>
+                                        <li class="nk-menu-item disp-0">
+                                            {{--  {{ route('platform gallery') }}  --}}
+                                            {{-- // TODO: VISIT GALLERY NAV MENU --}}
+                                            <a href="#" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-folder-check"></em></span>
+                                                <span class="nk-menu-text">Gallery</span>
+                                            </a>
+                                        </li>
+                                        <li class="nk-menu-item">
                                             <a href="{{ route('members list') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-report-profit"></em></span>
                                                 <span class="nk-menu-text">All Members</span>

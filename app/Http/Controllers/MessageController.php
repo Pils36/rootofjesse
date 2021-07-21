@@ -99,10 +99,51 @@ class MessageController extends Controller
     }
 
 
+    public function createNewCategory(Request $req){
+        $data = $this->createMessageCategories($req->all());
+
+        if(isset($data)){
+            return redirect()->route('message categories')->with('success', 'Successfully created');
+        }
+        else{
+            return back()->with('error', 'Something went wrong!');
+        }
+    }
+
+        // Delete Message Category
+    public function deleteMessageCategory($id){
+
+        $data = $this->removeMessageCategory($id);
+
+        if(isset($data)){
+            return redirect()->route('message categories')->with('success', 'Successfully deleted');
+        }
+        else{
+            return back()->with('error', 'Something went wrong!');
+        }
+
+    }
+
+    // Edit Message Category
+    public function editThisMessageCategory(Request $req, $id){
+
+        $data = $this->editthiscategory($req->all(), $id);
+
+        if(isset($data)){
+            return redirect()->route('message categories')->with('success', 'Successfully updated');
+        }
+        else{
+            return back()->with('error', 'Something went wrong!');
+        }
+
+    }
+
+
 
     public function uploadMessage(){
 
         $data = [
+            'messageCategory' => $this->getMessageCategory(),
             'notification' => $this->listNotification(Auth::user()->id),
         ];
         
@@ -117,6 +158,24 @@ class MessageController extends Controller
         ];
 
         return view('admin.messages.allmessages')->with(['data' => $data]);
+    }
+
+    public function messageCategory(){
+        
+        $data = [
+            'messagesCategory' => $this->allMessageCategory(),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+
+        return view('admin.messages.category')->with(['data' => $data]);
+    }
+
+    public function createCategory(){
+        $data = [
+            'randString' => $this->generateRandomString(),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+        return view('admin.messages.createcategory')->with(['data' => $data]);
     }
 
     public function viewMessages($id){
@@ -136,6 +195,15 @@ class MessageController extends Controller
         ];
 
         return view('admin.messages.editmessage')->with(['data' => $data]);
+    }
+
+    public function editMessageCategory($id){
+        $data = [
+            'messageCategory' => $this->thisMessageCategory($id),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+
+        return view('admin.messages.editcategory')->with(['data' => $data]);
     }
 
 

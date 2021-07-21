@@ -51,15 +51,27 @@ Route::prefix('admin')->group(function () {
         Route::get('/activity', 'AdminController@activity')->name('activity');
         Route::get('/profile', 'AdminController@profile')->name('profile');
         Route::get('/settings', 'AdminController@settings')->name('settings');
+        
+        
+        // Gallery
+        Route::get('/gallery', 'AdminController@gallery')->name('platform gallery');
+
 
 
         // Upload Sermon & Messages::
         Route::get('/upload-message', 'MessageController@uploadMessage')->name('upload message');
         Route::get('/all-message', 'MessageController@allMessages')->name('uploaded sermons');
+        Route::get('/message-categories', 'MessageController@messageCategory')->name('message categories');
+        Route::get('/create-message-category', 'MessageController@createCategory')->name('create message category');
         Route::get('/view-message/{id}', 'MessageController@viewMessages')->name('view message');
         Route::get('/edit-message/{id}', 'MessageController@editMessages')->name('edit message');
+        Route::get('/edit-category/{id}', 'MessageController@editMessageCategory')->name('edit category');
         Route::post('/publish-message', 'MessageController@publishMessage')->name('publish message');
         Route::post('/delete-message/{id}', 'MessageController@deleteMessage')->name('delete message');
+        Route::post('/new-category', 'MessageController@createNewCategory')->name('create new category');
+        Route::post('/edit-this-category/{id}', 'MessageController@editThisMessageCategory')->name('edit this category');
+        Route::post('/delete-category/{id}', 'MessageController@deleteMessageCategory')->name('delete category');
+
 
 
 

@@ -94,8 +94,7 @@
                                             alt="logo"><img style="height: 40px"
                                             src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png"
                                             alt="logo"></a>
-                                    <p style="font-size: 14px; color: #6576ff; padding-top: 12px;">The Root Of Jesse PHC
-                                        - The chosen genereations</p>
+                                    <p style="font-size: 14px; color: #6576ff; padding-top: 12px;">The Root Of Jesse PHC</p>
                                 </td>
                             </tr>
                         </tbody>

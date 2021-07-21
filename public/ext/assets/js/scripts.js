@@ -416,6 +416,7 @@
     NioApp.Dropzone('.upload-zone', {
       url: "/admin/ajax/dropzonemessage",
       addRemoveLinks: true,
+      timeout: 1800000,
       params: {
         post_id: $('#post_id').val()
       }

@@ -87,10 +87,16 @@
                                     <div class="form-control-wrap">
                                         <div class="custom-file">
                                             <select name="category" id="category" required class="form-control">
-                                                <option value="">Select Category</option>
-                                                <option value="Manifest">Manifest</option>
-                                                <option value="Relationship">Relationship</option>
-                                                <option value="Mount Up On Wings">Mount Up On Wings</option>
+                                                @if (count($data['messageCategory']) > 0)
+                                                    <option value="">Select Category</option>
+                                                    @foreach ($data['messageCategory'] as $categories)
+                                                        <option value="{{ $categories->name }}">{{ $categories->name }}</option>
+                                                    @endforeach
+                                                    
+                                                @else
+                                                    <option value="">No category created yet</option>
+                                                    
+                                                @endif
                                             </select>
                                         </div>
                                     </div>

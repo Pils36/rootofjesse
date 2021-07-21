@@ -13,10 +13,11 @@ use App\InAppMessaging as InAppMessaging;
 use App\Traits\SermonUpload;
 use App\Traits\ChurchMember;
 use App\Traits\Notify;
+use App\Traits\MyGallery;
 
 class AdminController extends Controller
 {
-    use SermonUpload, Notify, ChurchMember;
+    use SermonUpload, Notify, ChurchMember, MyGallery;
 
     public function login(){
 
@@ -154,6 +155,18 @@ class AdminController extends Controller
         ];
 
         return view('admin.auth.settings')->with(['data' => $data]);
+    }
+
+
+    public function gallery(){
+
+
+        $data = [
+            'pictures' => $this->galleryPhotos(),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+
+        return view('admin.gallery.index')->with(['data' => $data]);
     }
 
 
