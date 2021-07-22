@@ -31,7 +31,7 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <div class="photo-upload-zone" data-max-files="10">
+                                        <div class="upload-zone" data-max-files="10">
                                             <div class="dz-message" data-dz-message>
                                                 <span class="dz-message-text">Drag and drop file</span>
                                                 <span class="dz-message-or">or</span>

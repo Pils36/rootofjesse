@@ -425,7 +425,7 @@
 
 
   NioApp.Dropzone.init = function () {
-    NioApp.Dropzone('.photo-upload-zone', {
+    NioApp.Dropzone('.upload-zone', {
       url: "/admin/ajax/dropzonegallery",
       addRemoveLinks: true,
       timeout: 1800000,
