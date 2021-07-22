@@ -116,7 +116,7 @@
                                 <div class="form-group">
                                     <div class="form-control-wrap">
                                         <input type="hidden" name="post_id" value="{{ time() }}" id="post_id">
-                                        <div class="upload-zone" data-max-files="1">
+                                        <div class="messageupload-zone" data-max-files="1">
                                             <div class="dz-message" data-dz-message>
                                                 <span class="dz-message-text">Drag and drop file</span>
                                                 <span class="dz-message-or">or</span>
@@ -125,6 +125,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="progress disp-0"></div>
                             </div>
                         </div>
 

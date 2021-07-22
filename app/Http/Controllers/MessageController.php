@@ -46,6 +46,12 @@ class MessageController extends Controller
         }
 
         Sermon::updateOrCreate(['post_id' => $req->post_id], ['message' => $secure_url, 'public_id' => $public_id]);
+
+        $status = 200;
+        $resData = ['res' => 'Audio upload successful!', 'message' => 'success'];
+
+
+        return $this->returnJSON($resData, $status);
     }
 
 

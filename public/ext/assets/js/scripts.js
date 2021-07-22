@@ -408,17 +408,66 @@
     }
   }; // Dropzone Init @v1.0
 
+  NioApp.Dropzone2 = function (elm, opt) {
+    if ($(elm).exists()) {
+      $(elm).each(function () {
+        var maxFiles = $(elm).data('max-files'),
+            maxFiles = maxFiles ? maxFiles : null;
+        var maxFileSize = $(elm).data('max-file-size'),
+            maxFileSize = maxFileSize ? maxFileSize : 256;
+        var acceptedFiles = $(elm).data('accepted-files'),
+            acceptedFiles = acceptedFiles ? acceptedFiles : null;
+        var def = {
+          autoDiscover: false,
+          maxFiles: maxFiles,
+          maxFilesize: maxFileSize,
+          acceptedFiles: acceptedFiles
+        },
+            attr = opt ? extend(def, opt) : def;
+        $(this).addClass('dropzone').dropzone(attr);
+      });
+    }
+  }; // Dropzone Init @v1.0
+
 
       // autoQueue: false,
 
 
-  NioApp.Dropzone.init = function () {
-    NioApp.Dropzone('.upload-zone', {
+  NioApp.Dropzone2.init = function () {
+    NioApp.Dropzone2('.messageupload-zone', {
       url: "/admin/ajax/dropzonemessage",
       addRemoveLinks: true,
       timeout: 1800000,
+      uploadprogress: function(result){
+        
+        $('.progress').removeClass('disp-0');
+        if (result.status == "uploading") {
+          var bg_color;
+          
+          if(result.upload.progress < 100){
+            bg_color = "bg-danger";
+          }
+
+          $('.progress').html("<div class='progress-bar progress-bar-animated "+bg_color+"' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='50'>50%</div>");
+        }
+      },
       params: {
         post_id: $('#post_id').val()
+      },
+      complete: function(result){
+
+        var response = JSON.parse(result.xhr.responseText).res;
+        if(result.status == "success"){
+        $('.progress').removeClass('disp-0');
+
+                $('.progress').html("<div class='progress-bar progress-bar-animated bg-success' role='progressbar' style='width: "+result.upload.progress+"%;' aria-valuenow='"+result.upload.progress+"' aria-valuemin='0' aria-valuemax='"+result.upload.progress+"'>"+result.upload.progress+"%</div>");
+        }
+        else{
+          toastr.clear();
+                NioApp.Toast('<h5>Oops!</h5><p>'+response+'</p>', 'error');
+
+
+        }
       }
     });
   }; // Wizard @v1.0
@@ -807,6 +856,7 @@
     NioApp.Range.init();
     NioApp.Select2.init();
     NioApp.Dropzone.init();
+    NioApp.Dropzone2.init();
     NioApp.Slider.init();
     NioApp.DataTable.init();
   }; // Toggler @v1
