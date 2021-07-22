@@ -27,7 +27,6 @@
                         @csrf
                         
                         <div class="row g-3 align-center">
-                            
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
