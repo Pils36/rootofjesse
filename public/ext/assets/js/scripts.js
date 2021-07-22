@@ -424,46 +424,46 @@
   }; // Wizard @v1.0
 
 
-  NioApp.Dropzone.init = function () {
-    NioApp.Dropzone('.upload-zone', {
-      
-      url: "/admin/ajax/dropzonegallery",
-      addRemoveLinks: true,
-      timeout: 1800000,
-      acceptedFiles: 'image/*',
-      uploadMultiple: true,
-      uploadprogress: function(result){
+  // NioApp.Dropzone.init = function () {
+  //   NioApp.Dropzone('.upload-zone', {
+
+  //     url: "/admin/ajax/dropzonegallery",
+  //     addRemoveLinks: true,
+  //     timeout: 1800000,
+  //     acceptedFiles: 'image/*',
+  //     uploadMultiple: true,
+  //     uploadprogress: function(result){
         
-        $('.progress').removeClass('disp-0');
-        if (result.status == "uploading") {
-          var bg_color;
+  //       $('.progress').removeClass('disp-0');
+  //       if (result.status == "uploading") {
+  //         var bg_color;
           
-          if(result.upload.progress < 100){
-            bg_color = "bg-danger";
-          }
+  //         if(result.upload.progress < 100){
+  //           bg_color = "bg-danger";
+  //         }
 
-          $('.progress').html("<div class='progress-bar progress-bar-animated "+bg_color+"' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='50'>50%</div>");
-        }
-      },
-      complete: function(result){
+  //         $('.progress').html("<div class='progress-bar progress-bar-animated "+bg_color+"' role='progressbar' style='width: 50%;' aria-valuenow='50' aria-valuemin='0' aria-valuemax='50'>50%</div>");
+  //       }
+  //     },
+  //     complete: function(result){
         
-        var response = JSON.parse(result.xhr.responseText).res;
-        if(result.status == "success"){
-        $('.progress').removeClass('disp-0');
-          toastr.clear();
-                NioApp.Toast('<h5>Excellent!</h5><p>'+response+'</p>', 'success');
+  //       var response = JSON.parse(result.xhr.responseText).res;
+  //       if(result.status == "success"){
+  //       $('.progress').removeClass('disp-0');
+  //         toastr.clear();
+  //               NioApp.Toast('<h5>Excellent!</h5><p>'+response+'</p>', 'success');
 
-                $('.progress').html("<div class='progress-bar progress-bar-animated bg-success' role='progressbar' style='width: "+result.upload.progress+"%;' aria-valuenow='"+result.upload.progress+"' aria-valuemin='0' aria-valuemax='"+result.upload.progress+"'>"+result.upload.progress+"%</div>");
-        }
-        else{
-          toastr.clear();
-                NioApp.Toast('<h5>Oops!</h5><p>'+response+'</p>', 'error');
+  //               $('.progress').html("<div class='progress-bar progress-bar-animated bg-success' role='progressbar' style='width: "+result.upload.progress+"%;' aria-valuenow='"+result.upload.progress+"' aria-valuemin='0' aria-valuemax='"+result.upload.progress+"'>"+result.upload.progress+"%</div>");
+  //       }
+  //       else{
+  //         toastr.clear();
+  //               NioApp.Toast('<h5>Oops!</h5><p>'+response+'</p>', 'error');
 
 
-        }
-      }
-    });
-  }; // Wizard @v1.0
+  //       }
+  //     }
+  //   });
+  // }; // Wizard @v1.0
 
 
   NioApp.Wizard = function () {
