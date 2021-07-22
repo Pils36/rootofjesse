@@ -11,5 +11,5 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = ['admin/ajax/dropzonemessage'];
+    protected $except = ['admin/ajax/dropzonemessage', 'admin/ajax/dropzonegallery'];
 }

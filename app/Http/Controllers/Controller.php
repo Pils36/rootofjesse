@@ -59,6 +59,9 @@ class Controller extends BaseController
     }
     
 
+    public function returnJSON($data, $status){
+        return response($data, $status)->header('Content-Type', 'application/json');
+    }
 
     // Send Email
     public function sendEmail($objDemoa, $purpose){

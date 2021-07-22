@@ -8,15 +8,17 @@ use Auth;
 
 use App\User as User;
 use App\Sermon as Sermon;
+use App\Gallery as Gallery;
 
 use App\Traits\SermonUpload;
 use App\Traits\ImageUpload;
 use App\Traits\Notify;
+use App\Traits\MyGallery;
 
 class MessageController extends Controller
 {
 
-    use SermonUpload, ImageUpload, Notify;
+    use SermonUpload, ImageUpload, Notify, MyGallery;
 
     public function receiveUpload(Request $req){
 
@@ -44,6 +46,78 @@ class MessageController extends Controller
         }
 
         Sermon::updateOrCreate(['post_id' => $req->post_id], ['message' => $secure_url, 'public_id' => $public_id]);
+    }
+
+
+    public function uploadGallery(Request $req){
+
+        if($req->hasFile('file')){
+            if(count($req->file('file')) > 0){
+                foreach ($req->file('file') as $key => $value) {
+                    
+                    //Get filename with extension
+                    $filenameWithExt = $value->getClientOriginalName();
+                    // Get just filename
+                    $filename = pathinfo($filenameWithExt , PATHINFO_FILENAME);
+                    // Get just extension
+                    $extension = $value->getClientOriginalExtension();
+
+                    $imageData = $this->imageUpload($value, "gallery");
+
+                    $imageUrl = $imageData['secure_url'];
+                    $public_id = $imageData['public_id'];
+
+                    $query['name'] = $filename;
+                    $query['imageUrl'] = $imageUrl;
+                    $query['public_id'] = $public_id;
+
+                    
+
+                    $getItem = Gallery::where('name', $filename)->first();
+
+                    if(isset($getItem)){
+
+                        // TODO: Get Cloudinary delete api from Jerry
+
+                        // $this->deleteAsset($getItem->public_id, $value);
+
+                        Gallery::updateOrCreate(['name' => $filename], $query);
+                    }
+                    else{
+                        $this->insertPhoto($query);
+                    }
+
+
+                }
+
+                $status = 200;
+                $resData = ['res' => 'Upload successfully', 'message' => 'success'];
+
+            }
+            else{
+
+                $status = 400;
+                $resData = ['res' => 'Something went wrong!', 'message' => 'error'];
+            }
+        }
+        else{
+            $status = 400;
+            $resData = ['res' => 'File not detected', 'message' => 'error'];
+        }
+
+        return $this->returnJSON($resData, $status);
+    }
+
+    public function deletePhotoGallery($id){
+
+        $data = $this->deleteThisPhoto($id);
+
+        if(isset($data)){
+            return redirect()->route('uploaded gallery')->with('success', 'Successfully deleted');
+        }
+        else{
+            return back()->with('error', 'Something went wrong!');
+        }
     }
 
 

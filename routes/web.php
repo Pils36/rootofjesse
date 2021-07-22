@@ -55,6 +55,8 @@ Route::prefix('admin')->group(function () {
         
         // Gallery
         Route::get('/gallery', 'AdminController@gallery')->name('platform gallery');
+        Route::get('/uploaded-gallery', 'AdminController@uploadedGallery')->name('uploaded gallery');
+        Route::post('/delete-photo/{id}', 'MessageController@deletePhotoGallery')->name('delete photo');
 
 
 
@@ -124,6 +126,7 @@ Route::prefix('admin')->group(function () {
         Route::prefix('ajax')->group(function () {
 
             Route::post('/dropzonemessage', 'MessageController@receiveUpload')->name('dropzonemessage');
+            Route::post('/dropzonegallery', 'MessageController@uploadGallery')->name('dropzonegallery');
             Route::post('/openmessage', 'MessagingController@openMessage')->name('openmessage');
 
         });

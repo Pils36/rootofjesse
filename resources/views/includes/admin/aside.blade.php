@@ -23,10 +23,8 @@
                                                 <span class="nk-menu-text">Message Categories</span>
                                             </a>
                                         </li>
-                                        <li class="nk-menu-item disp-0">
-                                            {{--  {{ route('platform gallery') }}  --}}
-                                            {{-- // TODO: VISIT GALLERY NAV MENU --}}
-                                            <a href="#" class="nk-menu-link">
+                                        <li class="nk-menu-item">
+                                            <a href="{{ route('platform gallery') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-folder-check"></em></span>
                                                 <span class="nk-menu-text">Gallery</span>
                                             </a>

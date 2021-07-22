@@ -169,5 +169,16 @@ class AdminController extends Controller
         return view('admin.gallery.index')->with(['data' => $data]);
     }
 
+    public function uploadedGallery(){
+
+
+        $data = [
+            'pictures' => $this->firstTwentyPhotos(),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+
+        return view('admin.gallery.view')->with(['data' => $data]);
+    }
+
 
 }

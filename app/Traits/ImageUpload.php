@@ -30,4 +30,9 @@ trait ImageUpload
             'bytes' => $response->getReadableSize(),
         ];
     }
+
+
+    public function deleteAsset($public_ids, $options = []){
+        $response = Cloudinary::delete_resources($public_ids);
+    }
 }

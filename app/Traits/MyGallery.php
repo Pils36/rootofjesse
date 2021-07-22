@@ -15,9 +15,18 @@ trait MyGallery
         return $data;
     }
 
+    public function firstTwentyPhotos()
+    {
+        $data = Gallery::orderBy('created_at', 'DESC')->paginate(20);
+
+        return $data;
+    }
+
     public function insertPhoto($query)
     {
-        # code...
+        $data = Gallery::updateOrCreate(['name' => $query['name']],$query);
+
+        return $data;
     }
 
     public function getThisPhoto($id)
@@ -34,7 +43,11 @@ trait MyGallery
 
     public function deleteThisPhoto($id)
     {
-        # code...
+        $data = Gallery::where('id', $id)->delete();
+
+        // TODO: Add Cloudinary Delete
+
+        return $data;
     }
 
 }
