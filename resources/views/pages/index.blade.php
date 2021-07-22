@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="support-promo-box text-white">
-                    <div class="promo-bg bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625218965/site-image/children_jnv4zn.jpg')">
+                    <div class="promo-bg bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg')">
                     </div>
                     <div class="promo-details">
                         <span>Welcome Here,</span>
@@ -103,8 +103,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-shots">
-                    <div class="about-top-img bg-cover"
-                        style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg')"></div>
+                    {{--  <div class="about-top-img bg-cover"
+                        style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg')"></div>  --}}
                     <div class="about-main-img">
                         <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217367/site-image/IMG_0448_w8tcmc.jpg" alt="" class="img-fluid">
                     </div>
@@ -253,9 +253,9 @@
     </div>
 </section>
 
+@if (count($data['gallery']) > 0)
 
-
-<div class="row disp-0">
+<div class="row">
     <div class="col-12 col-lg-8 offset-lg-2 text-center">
         <div class="section-title mt-40 mb-40">
             <h1>Photo Gallery</h1>
@@ -263,182 +263,44 @@
     </div>
 </div>
 
-<section class="event-section event-carousel text-white disp-0">
+<section class="event-section event-carousel text-white">
     
     <div class="event-carousel-active owl-carousel">
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/1.jpg')">
+        @foreach ($data['gallery'] as $photos)
+
+        <div class="single-event-item bg-cover" style="background-image: url('{{ $photos->imageUrl }}')">
             <div class="event-details">
                 <div class="event-date">
-                    <span>23</span>Nov
+
+
+                    <span>{{ date('d', strtotime($photos->created_at)) }}</span>{{ date('M', strtotime($photos->created_at)) }}
                 </div>
                 <div class="event-title">
-                    <a href="events.html" class="event-cat">School</a>
-                    <h4><a href="event-details.html">Mission Intensive Training School</a></h4>
+                    <a href="{{ $photos->imageUrl }}" target="_blank" class="event-cat">ROJ</a>
+                    <h4><a href="{{ $photos->imageUrl }}" target="_blank">{{ (strlen($photos->name) < 15) ? $photos->name : substr($photos->name, 0, 15)."..." }}</a></h4>
                 </div>
             </div>
             <div class="event-hover d-flex">
                 <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
+                    <i class="fal fa-clock"></i>{{ $photos->created_at->diffForHumans() }}
                 </div>
                 <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Halim
+                    <i class="fal fa-user"></i>ROJ
                 </div>
             </div>
         </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/2.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>30</span>Nov
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Leadership</a>
-                    <h4><a href="event-details.html">Temple and Family History Leadership</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Halim
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/3.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>30</span>Nov
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Water Day</a>
-                    <h4><a href="event-details.html">Need To Playing For This Worlds</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Halim
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/4.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>30</span>Nov
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Water Day</a>
-                    <h4><a href="event-details.html">Sports & Fitness – Stretch & Pray</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>11:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Khan
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/5.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>30</span>Jan
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Nature Day</a>
-                    <h4><a href="event-details.html">Need To Save The Nature</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Salman Ahmed
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/blog/p5.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>12</span>Dec
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Water Day</a>
-                    <h4><a href="event-details.html">Need To Playing For This Worlds</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Halim
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/blog/p2.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>22</span>Feb
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Lorem Day</a>
-                    <h4><a href="events.html">Lorem ipsum dolor sit consectetur</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Salman Ahmed
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/event/4.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>11</span>July
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">help</a>
-                    <h4><a href="event-details.html">Help For This Worlds</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>10:00 - 08:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Miranda Halim
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
-        <div class="single-event-item bg-cover" style="background-image: url('assets/img/blog/p1.jpg')">
-            <div class="event-details">
-                <div class="event-date">
-                    <span>02</span>May
-                </div>
-                <div class="event-title">
-                    <a href="events.html" class="event-cat">Nature Day</a>
-                    <h4><a href="event-details.html">Need To Save The Nature</a></h4>
-                </div>
-            </div>
-            <div class="event-hover d-flex">
-                <div class="event-time">
-                    <i class="fal fa-clock"></i>13:00 - 18:00
-                </div>
-                <div class="event-author">
-                    <i class="fal fa-user"></i>Nourin Halim
-                </div>
-            </div>
-        </div> <!-- ./single-event-item -->
+            
+        @endforeach
+
+        
+        
+
     </div>
 </section>
+    
+@endif
+
+
 
 <section class="block-section section-padding disp-0">
     <div class="container">
@@ -477,7 +339,7 @@
     </div>
 </section>
 
-<section class="video-section bg-cover section-padding" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg')">
+<section class="video-section bg-cover section-padding disp-0" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg')">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-12 text-center text-lg-left">

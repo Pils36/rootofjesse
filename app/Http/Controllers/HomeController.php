@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 
 
 use App\Traits\SermonUpload;
+use App\Traits\MyGallery;
 
 
 class HomeController extends Controller
 {
 
-    use SermonUpload;
+    use SermonUpload, MyGallery;
 
     /**
      * Create a new controller instance.
@@ -28,10 +29,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'messages' => $this->getLatestMessages()
+            'messages' => $this->getLatestMessages(),
+            'gallery' => $this->galleryPhotos(),
         ];
-
-
 
         return view('pages.index')->with(['data' => $data]);
     }
