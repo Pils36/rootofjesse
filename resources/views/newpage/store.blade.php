@@ -11,12 +11,12 @@
 							<img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg" alt="Breadcrumbs Image" style="height: 400px; object-fit: cover;">
 					</div>
 					<div class="breadcrumbs-text white-color">
-							<h1 class="page-title">About Us</h1>
+							<h1 class="page-title">Store</h1>
 							<ul>
 								<li>
 									<a class="active" href="{{ route('home') }}">Home</a>
 								</li>
-								<li>About Us</li>
+								<li>Store</li>
 							</ul>
 					</div>
 			</div>

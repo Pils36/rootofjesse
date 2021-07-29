@@ -115,7 +115,7 @@
                             <div class="col-lg-4 col-md-12 md-mb-30">
                                 <div class="features-wrap">
                                     <div class="icon-part">
-                                       <img src="new/assets/images/features/icon/2.png" alt="">
+                                       <img src="{{ asset('new/assets/images/features/icon/2.png') }}" alt="">
                                     </div>
                                     <div class="content-part">
                                       <h4 class="title">
@@ -130,7 +130,7 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="features-wrap">
                                     <div class="icon-part">
-                                       <img src="new/assets/images/features/icon/1.png" alt="">
+                                       <img src="{{ asset('new/assets/images/features/icon/1.png') }}" alt="">
                                     </div>
                                     <div class="content-part">
                                         <h4 class="title">
@@ -286,7 +286,7 @@
                                 <div class="courses-item">
                                         <div class="courses-grid">
                                             <div class="img-part">
-                                                <a href="#"><img src="{{ $sermons->album_art }}" alt="" style="width: 100%"></a>
+                                                <a href="javascript:void(0)"><img src="{{ $sermons->album_art }}" alt="" style="width: 100%; height: 30vh; object-fit: cover;"></a>
                                             </div>
                                             <div class="content-part">
                                                 
@@ -309,6 +309,14 @@
             </div>
             <!-- Categories Section End -->
                 
+            @endif
+
+            @if (count($data['messages']) > 3)
+
+                <center>
+                        <a class="readon orange-btn mb-20" href="{{ route('more message') }}">Listen to More</a>
+                </center>
+
             @endif
 
      
