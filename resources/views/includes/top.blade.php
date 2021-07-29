@@ -12,6 +12,7 @@
     <meta name="author" content="PilsTech Inc.">
     <meta name="description" content="Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship, live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
     
+    
     <!-- ======== Page title ============ -->
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

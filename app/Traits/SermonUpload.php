@@ -91,7 +91,15 @@ trait SermonUpload
     // Get Available Message
     public function availableSermon(){
 
-        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->paginate(10);
+        $data = Sermon::where('publish', 'on')->orderBy('created_at', 'DESC')->paginate(9);
+
+        return $data;
+    }
+
+
+    public function thisSermon($id){
+
+        $data = Sermon::where('id', $id)->first();
 
         return $data;
     }

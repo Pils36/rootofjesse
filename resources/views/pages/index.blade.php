@@ -64,7 +64,8 @@
                     </div>
                     <div class="promo-details">
                         <span>Welcome Here,</span>
-                        <h2><a href="{{ route('services') }}">Join Service</a></h2>
+                        
+                        <h2><a href="{{ route('services') }}">Be at the Next Service</a></h2>
                     </div>
                 </div>
             </div>
@@ -74,9 +75,10 @@
                         <img src="{{ asset('assets/img/home1/support_icon.png') }}" alt="">
                     </div>
                     <span>&nbsp;</span>
-                    <h2>Worship with us LIVE</h2>
+                    {{-- <h2>Worship with us LIVE</h2> --}}
+                    <h4>I feel refreshed everytime I worship at the Root of Jesse. I feel blessed to be a part of the service.</h4>
                     
-                    <a href="https://facebook.com/therootofjesse" target="_blank" class="theme-btn black">Just a Click <i class="fab fa-youtube"></i></a>
+                    {{-- <a href="https://facebook.com/therootofjesse" target="_blank" class="theme-btn black">Just a Click <i class="fab fa-youtube"></i></a> --}}
                     {{-- <a href="javascript:void(0)" class="theme-btn black" onclick="javascript:void(Tawk_API.toggle())">Just a Click <i class="fab fa-youtube"></i></a> --}}
                 </div>
             </div>

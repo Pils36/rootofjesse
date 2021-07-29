@@ -22,6 +22,7 @@ Route::get('/welcome', 'HomeController@welcome')->name('welcome here');
 
 Route::get('/store', 'HomeController@store')->name('store');
 Route::get('/watch-live', 'HomeController@watchLive')->name('watch live');
+Route::get('/photo-gallery', 'HomeController@rojGallery')->name('photo gallery');
 Route::get('/events', 'HomeController@events')->name('events');
 Route::get('/give', 'HomeController@give')->name('give');
 Route::get('/services', 'HomeController@services')->name('services');
@@ -30,6 +31,7 @@ Route::get('/contactus', 'ContactController@contactUs')->name('contact us');
 Route::post('/contactus', 'ContactController@messageUs')->name('message us');
 
 Route::get('/moremessages', 'MessageController@moreMessages')->name('more message');
+Route::get('/onesermon/{id}', 'MessageController@oneMessage')->name('one sermon');
 
 
 

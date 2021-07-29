@@ -33,41 +33,71 @@ class HomeController extends Controller
             'gallery' => $this->galleryPhotos(),
         ];
 
-        return view('pages.index')->with(['data' => $data]);
+        return view('newpage.index')->with(['data' => $data, 'pages' => 'Home']);
     }
     public function about()
     {
-        return view('pages.about');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.about')->with(['data' => $data, 'pages' => 'About']);
     }
 
     public function welcome()
     {
-        return view('pages.welcome');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('pages.welcome')->with(['data' => $data, 'pages' => 'Welcome']);
     }
 
     public function store()
     {
-        return view('pages.store');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.store')->with(['data' => $data, 'pages' => 'Store']);
     }
 
     public function watchLive()
     {
-        return view('pages.watchlive');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('pages.watchlive')->with(['data' => $data, 'pages' => 'Watch Live']);
+    }
+
+
+    public function rojGallery()
+    {
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.gallery')->with(['data' => $data, 'pages' => 'Gallery']);
     }
 
     public function events()
     {
-        return view('pages.events');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.events')->with(['data' => $data, 'pages' => 'Events']);
     }
 
     public function give()
     {
-        return view('pages.give');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.give')->with(['data' => $data, 'pages' => 'Give']);
     }
 
     public function services()
     {
-        return view('pages.services');
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+        return view('newpage.services')->with(['data' => $data, 'pages' => 'Services']);
     }
     
 }

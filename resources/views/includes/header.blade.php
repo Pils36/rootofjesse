@@ -43,17 +43,19 @@
                                         </li>
                                     </ul>
                                 </li> --}}
+
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about us') }}">about us</a></li>
                                 <li><a href="{{ route('more message') }}">Message</a></li>
                                 <li><a href="#">Connect</a>
                                     <ul class="sub-menu">
+                                        <li><a href="{{ route('welcome here') }}">New Members</a></li>
+                                        <li><a href="{{ route('services') }}">Join a service unit</a></li>
                                         <li><a href="#">Connect Group</a></li>
                                         <li><a href="#">Connect with your pastor</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('services') }}">Join a service unit</a></li>
-                                
+                                 <li><a href="{{ route('give') }}">Giving</a></li>
                                 
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>

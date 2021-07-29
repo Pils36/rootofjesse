@@ -25,6 +25,11 @@
                 tabsize: 2,
                 height: 200
             });
+            $('#cf-default-textarea').summernote({
+                placeholder: 'Short note about sermon',
+                tabsize: 2,
+                height: 200
+            });
         });
 
     function deleteData(val, id){

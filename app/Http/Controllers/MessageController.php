@@ -271,6 +271,7 @@ class MessageController extends Controller
     public function editMessages($id){
         $data = [
             'messages' => $this->thisSermons($id),
+            'messagesCategory' => $this->allMessageCategory(),
             'notification' => $this->listNotification(Auth::user()->id),
         ];
 
@@ -294,17 +295,40 @@ class MessageController extends Controller
             $data = [
                 'messages' => $this->availableSermon(),
                 'notification' => $this->listNotification(Auth::user()->id),
+                'gallery' => $this->galleryPhotos(),
             ];
         }
         else{
             $data = [
                 'messages' => $this->availableSermon(),
+                'gallery' => $this->galleryPhotos(),
             ];
         }
 
         
 
-        return view('pages.message')->with(['data' => $data]);
+        return view('newpage.message')->with(['data' => $data, 'pages' => 'Message']);
+    }
+    
+    public function oneMessage($id){
+
+        if(Auth::check() == true){
+            $data = [
+                'messages' => $this->thisSermon($id),
+                'notification' => $this->listNotification(Auth::user()->id),
+                'gallery' => $this->galleryPhotos(),
+            ];
+        }
+        else{
+            $data = [
+                'messages' => $this->thisSermon($id),
+                'gallery' => $this->galleryPhotos(),
+            ];
+        }
+
+        
+
+        return view('newpage.onemessage')->with(['data' => $data, 'pages' => 'Message']);
     }
 
 

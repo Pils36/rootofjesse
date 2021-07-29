@@ -83,15 +83,29 @@
                                     <span class="form-note">Group message in series.</span>
                                 </div>
                             </div>
+
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
                                         <div class="custom-file">
-                                            <select name="category" id="category" required class="form-control">
+                                            {{--  <select name="category" id="category" required class="form-control">
                                                 <option value="">Select Category</option>
                                                 <option value="Manifest" {{ ($data['messages']->category == "Manifest") ? "selected" : "" }}>Manifest</option>
                                                 <option value="Relationship" {{ ($data['messages']->category == "Relationship") ? "selected" : "" }}>Relationship</option>
                                                 <option value="Mount Up On Wings" {{ ($data['messages']->category == "Mount Up On Wings") ? "selected" : "" }}>Mount Up On Wings</option>
+                                            </select>  --}}
+
+                                            <select name="category" id="category" required class="form-control">
+                                                @if (count($data['messagesCategory']) > 0)
+                                                    <option value="">Select Category</option>
+                                                    @foreach ($data['messagesCategory'] as $categories)
+                                                        <option value="{{ $categories->name }}" {{ ($categories->name == $data['messages']->category) ? "selected" : "" }}>{{ $categories->name }}</option>
+                                                    @endforeach
+                                                    
+                                                @else
+                                                    <option value="">No category created yet</option>
+                                                    
+                                                @endif
                                             </select>
                                         </div>
                                     </div>

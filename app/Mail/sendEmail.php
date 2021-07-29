@@ -32,15 +32,13 @@ class sendEmail extends Mailable
         if($this->mail->purpose){
 
             if($this->mail->file != NULL){
-                return $this->from($this->mail->from)
-                    ->subject($this->mail->subject)
+                return $this->subject($this->mail->subject)
                     ->attach(asset("rootjesse/".$this->mail->file))
                     ->view('mails.message')
                     ->with('maildata', $this->mail);
             }
             else{
-                return $this->from($this->mail->from)
-                    ->subject($this->mail->subject)
+                return $this->subject($this->mail->subject)
                     ->view('mails.message')
                     ->with('maildata', $this->mail);
             }

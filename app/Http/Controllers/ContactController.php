@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use\Illuminate\Support\Facades\Validator;
 
 use App\Traits\Notify;
+use App\Traits\MyGallery;
 
 use App\User as User;
 use App\ContactUs as ContactUs;
@@ -13,11 +14,16 @@ use App\ContactUs as ContactUs;
 class ContactController extends Controller
 {
 
-    use Notify;
+    use Notify, MyGallery;
 
     public function contactUs()
     {
-        return view('pages.contact');
+
+        $data = [
+            'gallery' => $this->galleryPhotos(),
+        ];
+
+        return view('newpage.contact')->with(['data' => $data, 'pages' => 'Contact']);
     }
 
     public function messageUs(Request $req){

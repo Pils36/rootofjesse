@@ -85,8 +85,7 @@
                             <ul>
                                 <li><a href="{{ route('about us') }}">about</a></li>
                                 <li><a href="{{ route('more message') }}">Message</a></li>
-                                <li><a href="#">Connect Group</a></li>
-                                <li><a href="{{ route('welcome here') }}">New Members</a></li>
+                                {{-- <li><a href="{{ route('welcome here') }}">New Members</a></li> --}}
 
                                 
                             </ul>

@@ -35,11 +35,15 @@
                                     <div class="card-inner">
                                         <div class="project">
                                             <div class="project-head">
-                                                <a href="html/apps-kanban.html" class="project-title">
+                                                <a href="javascript:void(0)" class="project-title">
                                                     <div class="user-avatar sq bg-purple"><span>{{ strtoupper(Str::substr($data['messages']->title, 0, 2)) }}</span></div>
                                                     <div class="project-info">
                                                         <h6 class="title">{{ $data['messages']->title }}</h6>
+                                                        <small>
+                                                            @if($data['messages']->publish == "on") <em class="icon ni ni-check-round-cut"></em><span class="text-primary">Published</span> @else <em class="icon ni ni-alert-circle"></em><span class="text-danger">Unpublished</span> @endif
+                                                        </small>
                                                     </div>
+                                                    
                                                 </a>
                                                 <div class="drodown">
                                                     <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger mt-n1 mr-n1" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
@@ -54,12 +58,10 @@
                                                 </div>
                                             </div>
                                             <div class="project-details">
-                                                <p>{{ $data['messages']->description }}</p>
+                                                {!! $data['messages']->description !!}
                                             </div>
                                             <div class="project-progress">
-                                                <div class="project-progress-details">
-                                                    <div class="project-progress-task">@if($data['messages']->publish == "on") <em class="icon ni ni-check-round-cut"></em><span class="text-primary">Published</span> @else <em class="icon ni ni-alert-circle"></em><span class="text-danger">Unpublished</span> @endif</div>
-                                                </div>
+                                                
                                                     <audio class="mt-10" style="width: 100%" controls src="{{ $data['messages']->message }}"> Your browser  does not support the <code>audio</code> element. </audio>
                                                     <div class="progress-bar" data-progress="93.5"></div>
                                             </div>
