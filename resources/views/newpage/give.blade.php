@@ -8,9 +8,9 @@
 			<!-- Breadcrumbs Start -->
 			<div class="rs-breadcrumbs breadcrumbs-overlay">
 					<div class="breadcrumbs-img">
-							<img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217441/site-image/IMG_3673_ueyepo.jpg" alt="Breadcrumbs Image" style="height: 400px; object-fit: cover;">
+							<img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1627783513/site-image/tithe_and_offering_on4rzs.jpg" alt="Breadcrumbs Image" style="height: 400px; object-fit: cover;">
 					</div>
-					<div class="breadcrumbs-text white-color">
+					<div class="breadcrumbs-text white-color disp-0">
 							<h1 class="page-title">Giving & Donations</h1>
 							<ul>
 								<li>
@@ -33,7 +33,7 @@
 						</div>
 						<div class="col-lg-7 pr-70 md-pr-15">
 							<div class="sec-title">
-								<h2 class="title mb-17">Use the detail below to give,</h2>
+								<h4 class="title mb-17">A gift opens the way and ushers the giver into the presence  of the great - Prov. 18:16</h4>
 								<div class="desc table-responsive">
                                     <table class="table table-striped table-bordered">
                                         <tbody>

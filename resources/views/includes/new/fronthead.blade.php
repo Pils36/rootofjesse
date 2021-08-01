@@ -16,7 +16,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 text-right">
+                                <div class="col-lg-10 text-right">
                                   <div class="rs-menu-area">
                                       <div class="main-menu">
                                           <div class="mobile-menu">
@@ -44,7 +44,7 @@
                                                     <li><a href="{{ route('welcome here') }}">New Members</a></li>
                                                     <li class="{{ ($pages == "Services" ? 'current-menu-item' : '') }}"><a href="{{ route('services') }}">Join a service unit</a></li>
                                                     <li><a href="#">Connect Group</a></li>
-                                                    <li><a href="#">Connect with your pastor</a></li>
+                                                    <li><a href="#">We love to hear from you</a></li>
                                                  </ul>
                                              </li>
                                              
@@ -63,7 +63,7 @@
                                              <li class="menu-item-has-children">
                                                  <a href="#">Resources</a>
                                                  <ul class="sub-menu">
-                                                    <li class="{{ ($pages == "Store" ? 'current-menu-item' : '') }}"><a href="{{ route('store') }}">Store</a></li>
+                                                    <li class="{{ ($pages == "Store" ? 'current-menu-item' : '') }}"><a href="{{ route('store') }}">Free Gift</a></li>
                                                     <li class="{{ ($pages == "Events" ? 'current-menu-item' : '') }}"><a href="{{ route('events') }}">Events</a></li>
                                                     <li class="{{ ($pages == "Gallery" ? 'current-menu-item' : '') }}"><a href="{{ route('photo gallery') }}">Gallery</a></li>
                                                     <li><a href="https://www.facebook.com/TheRootofJesse/" target="_blank">Watch Us Live</a></li>
@@ -76,7 +76,7 @@
                                     
                                   </div>
                                 </div>
-                                <div class="col-lg-2 text-right">
+                                <div class="col-lg-2 text-right disp-0">
                                     <div class="expand-btn-inner">
                                         <ul>
                                           

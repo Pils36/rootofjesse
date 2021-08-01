@@ -186,7 +186,7 @@
                                 <div class="tab-pane fade" id="about-admin" role="tabpanel" aria-labelledby="about-admin-tab">
                                     <div class="sec-title mb-25">
                                         <h2 class="title">Our Vision</h2>
-                                        <div class="desc">Serving our generation according to the will of God Acts</div>
+                                        <div class="desc">Serving our generation according to the will of God - Acts 13:36a</div>
                                     </div>
                                     <div class="tab-img">
                                         <img class="" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217478/site-image/IMG_3726_ojijsd.jpg" alt="Tab Image">

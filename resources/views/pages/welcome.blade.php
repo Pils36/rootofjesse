@@ -4,9 +4,9 @@
 <head>
     <base href="../../../">
     <meta charset="utf-8">
-    <meta name="author" content="Softnio">
+    <meta name="author" content="PilsTech Inc.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+    <meta name="description" content="Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship, live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
@@ -31,7 +31,7 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle nk-auth-body  wide-md">
                         <div class="brand-logo pb-4 text-center">
-                            <a href="html/index.html" class="logo-link">
+                            <a href="{{ route('home') }}" class="logo-link">
                                 <img class="logo-light logo-img logo-img-lg" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo">
                                 <img class="logo-dark logo-img logo-img-lg" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo-dark">
                             </a>
@@ -39,7 +39,7 @@
                         <div class="card card-bordered">
                 <div class="card-inner">
                     <div class="card-head">
-                        <h5 class="card-title">Kindly fill our membership form, we would contact you sonnest.</h5>
+                        <h5 class="card-title">Kindly fill our membership form, we would contact you soonest.</h5>
                     </div>
                     <form action="{{ route('create new members') }}" class="gy-3" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -189,7 +189,7 @@
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
                                 <div class="form-group">
-                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span> Who Invited You</label>
+                                    <label class="form-label"> Who Invited You</label>
                                     <span class="form-note">Provide who invited you to church.</span>
                                 </div>
                             </div>

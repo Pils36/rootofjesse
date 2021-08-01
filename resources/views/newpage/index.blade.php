@@ -290,7 +290,7 @@
                                             </div>
                                             <div class="content-part">
                                                 
-                                                <h3 class="title"><a href="{{ route('one sermon', $sermons->id) }}">{{ (strlen($sermons->title) < 12) ? $sermons->title : substr($sermons->title, 0, 12)."..." }}</a></h3>
+                                                <h3 class="title" style="font-size: 16px !important;"><a href="{{ route('one sermon', $sermons->id) }}">{{ (strlen($sermons->title) < 50) ? $sermons->title : substr($sermons->title, 0, 50)."..." }}</a></h3>
 
                                                 <ul class="meta-part">
                                                     <audio class="mt-10" style="width: 100%" controls src="{{ $sermons->message }}"> Your browser  does not support the <code>audio</code> element. </audio>

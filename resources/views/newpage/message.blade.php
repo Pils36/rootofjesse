@@ -36,7 +36,7 @@
                                         <div class="content-part">
                                             <span><a class="categories" href="#">{{ (strlen($sermons->minister) < 12) ? $sermons->minister : substr($sermons->minister, 0, 12)."..." }}</a></span>
                                             
-                                            <h3 class="title"><a href="{{ route('one sermon', $sermons->id) }}">{{ (strlen($sermons->minister) < 20) ? $sermons->minister : substr($sermons->minister, 0, 20)."..." }}</a></h3>
+                                            <h3 class="title" style="font-size: 16px !important;"><a href="{{ route('one sermon', $sermons->id) }}">{{ (strlen($sermons->title) < 50) ? $sermons->title : substr($sermons->title, 0, 50)."..." }}</a></h3>
                                             <div class="bottom-part">
                                                 <audio class="mt-10" style="width: 100%" controls src="{{ $sermons->message }}"> Your browser  does not support the <code>audio</code> element. </audio>
                                             </div>

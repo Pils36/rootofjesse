@@ -13,7 +13,7 @@ To reach out to youths and young adults, in an atmosphere filled with the SPIRIT
 To build ourselves, until we reach our full potential, modelling Christ in the way we live.</p>
 
                                     <h4 class="widget-title">Our Vision</h4>
-                                    <p class="text-white">Serving our generation according to the will of God Acts</p>
+                                    <p class="text-white">Serving our generation according to the will of God - Acts 13:36a</p>
                         </div>
 
                         <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
