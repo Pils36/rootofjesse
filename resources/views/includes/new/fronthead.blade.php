@@ -10,8 +10,8 @@
                                     <div class="logo-cat-wrap">
                                         <div class="logo-part">
                                             <a href="{{ route('home') }}">
-                                                <img src="https://res.cloudinary.com/pilstech/image/upload/v1624067471/Rccg_logo_c2s2wg.png" alt="">
-                                                <img src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="">
+                                                <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667074331/site-image/Rccg_logo_aotpks.png" alt="">
+                                                <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -27,15 +27,15 @@
                                           <nav class="rs-menu">
                                          <ul class="nav-menu">
                                             <li class="{{ ($pages == "Home" ? 'current-menu-item' : '') }}"> <a href="{{ route('home') }}">Home</a>
-                                                
+
                                             </li>
                                              <li class="{{ ($pages == "About" ? 'current-menu-item' : '') }}">
                                                  <a href="{{ route('about us') }}">About Us</a>
-                                                 
+
                                              </li>
                                              <li class="{{ ($pages == "Message" ? 'current-menu-item' : '') }}">
                                                  <a href="{{ route('more message') }}">Message</a>
-                                                 
+
                                              </li>
 
                                              <li class="menu-item-has-children">
@@ -47,17 +47,17 @@
                                                     <li><a href="#">We love to hear from you</a></li>
                                                  </ul>
                                              </li>
-                                             
+
 
                                              <li class="{{ ($pages == "Give" ? 'current-menu-item' : '') }}">
                                                  <a href="{{ route('give') }}">Giving</a>
                                              </li>
 
-                                             
+
 
                                              <li class="{{ ($pages == "Contact" ? 'current-menu-item' : '') }}">
                                                  <a href="{{ route('contact us') }}">Contact Us</a>
-                                                 
+
                                              </li>
 
                                              <li class="menu-item-has-children">
@@ -71,21 +71,21 @@
                                              </li>
 
                                          </ul> <!-- //.nav-menu -->
-                                      </nav>                                        
+                                      </nav>
                                       </div> <!-- //.main-menu -->
-                                    
+
                                   </div>
                                 </div>
                                 <div class="col-lg-2 text-right disp-0">
                                     <div class="expand-btn-inner">
                                         <ul>
-                                          
+
                                             {{--  <li>
                                                 <a class="hidden-xs rs-search" data-target=".search-modal" data-toggle="modal" href="#">
                                                     <i class="flaticon-search"></i>
                                                 </a>
                                             </li>  --}}
-                                            
+
                                         </ul>
                                         <span>
                                             <a id="nav-expander" class="nav-expander">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Menu End --> 
+                    <!-- Menu End -->
 
                     <!-- Canvas Menu start -->
                 <nav class="right_menu_togle hidden-md">
@@ -112,8 +112,8 @@
                     </div>
                     <div class="canvas-logo">
                         <a href="{{ route('home') }}">
-                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624067471/Rccg_logo_c2s2wg.png" alt="">
-                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="">
+                            <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667074331/site-image/Rccg_logo_aotpks.png" alt="">
+                            <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="">
                         </a>
                     </div>
                     <div class="offcanvas-text">
@@ -129,7 +129,7 @@
                                     <a class="image-popup" href="{{ $photoGallery->imageUrl }}"><img src="{{ $photoGallery->imageUrl }}" alt=""></a>
                                 </div>
                             @endforeach
-                            
+
                         </div>
 
                         @else
@@ -157,7 +157,7 @@
 
                     @endif
 
-                    
+
                     <div class="map-img">
                         {{-- <img src="new/assets/images/map.jpg" alt=""> --}}
                         <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d4064226.6368307164!2d2.960535128074049!3d5.859655540017993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d6.5953588!2d3.3639538!4m5!1s0x1069cd9cb66ff4a5%3A0x26d8a3c86a884a05!2s2b%20Degema%20Close%2C%20Obia%2C%20Port%20Harcourt!3m2!1d4.846119799999999!2d7.0456864999999995!5e0!3m2!1sen!2sng!4v1625216090561!5m2!1sen!2sng" style="border:0; width:100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

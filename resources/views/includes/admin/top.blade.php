@@ -10,7 +10,7 @@
         content="Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship,
 live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png">
     <!-- Page Title  -->
     <title>The Root of Jesse | Dashboard</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">

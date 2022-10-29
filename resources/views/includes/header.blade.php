@@ -14,8 +14,8 @@
                 <div class="logo">
                     <a href="{{ route('home') }}">
                         <center>
-                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624067471/Rccg_logo_c2s2wg.png" alt="RCCG" style="width: 70px;">
-                            <img src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="TROJ" style="width: 80px;">
+                            <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667074331/site-image/Rccg_logo_aotpks.png" alt="RCCG" style="width: 70px;">
+                            <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="TROJ" style="width: 80px;">
                         </center>
                     </a>
                 </div>
@@ -56,7 +56,7 @@
                                     </ul>
                                 </li>
                                  <li><a href="{{ route('give') }}">Giving</a></li>
-                                
+
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>
                         </div>
@@ -82,7 +82,7 @@
                         </button>
                         <nav class="sidebar-nav">
                             <ul class="metismenu" id="mobile-menu">
-                                
+
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about us') }}">about us</a></li>
                                 <li><a href="{{ route('more message') }}">Message</a></li>
@@ -94,7 +94,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('services') }}">Join a service unit</a></li>
-                                
+
                                 <li><a href="{{ route('contact us') }}">Contact us</a></li>
                             </ul>
                         </nav>

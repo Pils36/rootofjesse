@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use\Illuminate\Support\Facades\Validator;
+use App\User as User;
+use Illuminate\Support\Facades\Validator;
 
 use App\Traits\Notify;
 use App\Traits\MyGallery;
 
-use App\User as User;
+use Illuminate\Http\Request;
 use App\ContactUs as ContactUs;
+
 
 class ContactController extends Controller
 {

@@ -90,9 +90,9 @@
                             <tr>
                                 <td style="text-align: center; padding-bottom:25px">
                                     <a href="{{ route('home') }}"><img style="height: 40px"
-                                            src="https://res.cloudinary.com/pilstech/image/upload/v1624067471/Rccg_logo_c2s2wg.png"
+                                            src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667074331/site-image/Rccg_logo_aotpks.png"
                                             alt="logo"><img style="height: 40px"
-                                            src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png"
+                                            src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png"
                                             alt="logo"></a>
                                     <p style="font-size: 14px; color: #6576ff; padding-top: 12px;">The Root Of Jesse PHC</p>
                                 </td>

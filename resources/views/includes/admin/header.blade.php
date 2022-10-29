@@ -3,8 +3,8 @@
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">
                                 <a href="{{ route('dasboard') }}" class="logo-link">
-                                    <img class="logo-light logo-img" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo">
-                                    <img class="logo-dark logo-img" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo-dark">
+                                    <img class="logo-light logo-img" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="logo">
+                                    <img class="logo-dark logo-img" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-tools">
@@ -40,7 +40,7 @@
                                                     <li><a href="{{ route('activity') }}"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                                                     <li>
                                                         <form action="{{ route('change theme') }}" method="post" class="disp-0" id="changeTheme">@csrf <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"></form>
-                                                        
+
                                                         <a class="dark-switch" href="#" onclick="$('#changeTheme').submit()"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a>
                                                     </li>
                                                 </ul>
@@ -94,8 +94,8 @@
                                                             </div>
                                                         </div>
                                                     @endif
-                                                    
-                                                    
+
+
                                                 </div><!-- .nk-notification -->
                                             </div><!-- .nk-dropdown-body -->
                                             <div class="dropdown-foot center disp-0">

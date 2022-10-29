@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zxx">  
-    
+<html lang="zxx">
+
 <!-- Mirrored from keenitsolutions.com/products/html/educavo/index9.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Jul 2021 22:22:32 GMT -->
 <head>
         <!-- meta tag -->
@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="PilsTech Inc.">
     <meta name="description" content="Our Sunday service is designed to speak to you, right where you are. With a friendly atmosphere, contemporary worship, live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
-    
+
         <title>{{ config('app.name', 'The Root Of Jesse | Homepage') }}</title>
         <!-- responsive tag -->
-        
-        <link rel="apple-touch-icon" href="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png">
-        <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png">
+
+        <link rel="apple-touch-icon" href="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png">
+        <link rel="shortcut icon" type="image/x-icon" href="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png">
         <!-- Bootstrap v4.4.1 css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('new/assets/css/bootstrap.min.css') }}">
         <!-- font-awesome css -->

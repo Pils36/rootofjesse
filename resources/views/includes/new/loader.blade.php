@@ -2,7 +2,7 @@
         <div id="loader" class="loader orange-color">
             <div class="loader-container">
                 <div class='loader-icon'>
-                    <img src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="">
+                    <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="">
                 </div>
             </div>
         </div>

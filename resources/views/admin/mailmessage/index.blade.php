@@ -11,7 +11,7 @@
 live WORD and multimedia we seek to express relevant and meaningful truth to all who attend.">
 
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png">
     <!-- Page Title  -->
     <title>Inbox({{ count($data['messageinbox']) }}) | Root Of Jesse Admin</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -38,8 +38,8 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                         <div class="nk-header-wrap">
                             <div class="nk-header-brand">
                                 <a href="{{ route('dasboard') }}" class="logo-link">
-                                    <img class="logo-light logo-img" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png 2x" alt="logo">
-                                    <img class="logo-dark logo-img" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png 2x" alt="logo-dark">
+                                    <img class="logo-light logo-img" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png 2x" alt="logo">
+                                    <img class="logo-dark logo-img" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png 2x" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
                             <div class="nk-header-menu">
@@ -74,7 +74,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                             <span class="nk-menu-text">Account Setting</span>
                                         </a>
                                     </li><!-- .nk-menu-item -->
-                                    
+
                                 </ul><!-- .nk-menu -->
                             </div><!-- .nk-header-menu -->
                             <div class="nk-header-tools">
@@ -114,8 +114,8 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             </div>
                                                         </div>
                                                     @endif
-                                                    
-                                                    
+
+
                                                 </div><!-- .nk-notification -->
                                             </div><!-- .nk-dropdown-body -->
                                             <div class="dropdown-foot center disp-0">
@@ -154,7 +154,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                     <li><a href="{{ route('activity') }}"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
                                                     <li>
                                                         <form action="{{ route('change theme') }}" method="post" class="disp-0" id="changeTheme">@csrf <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"></form>
-                                                        
+
                                                         <a class="dark-switch" href="javascript:void(0)" onclick="$('#changeTheme').submit()"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a>
                                                     </li>
                                                 </ul>
@@ -225,7 +225,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                 <span class="nk-menu-text">Account Setting</span>
                                             </a>
                                         </li>
-                                        
+
                                     </ul><!-- .nk-menu -->
                                 </div><!-- .nk-sidebar-menu -->
                                 <div class="nk-aside-close">
@@ -278,7 +278,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <span class="nk-ibx-menu-text">Favourite</span>
                                                         </a>
                                                     </li>
-                                                    
+
                                                     <li class="disp-0">
                                                         <a class="nk-ibx-menu-item" href="javascript:void(0)">
                                                             <em class="icon ni ni-report"></em>
@@ -292,7 +292,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <span class="badge badge-pill badge-danger badge-dim">8</span>
                                                         </a>
                                                     </li>
-                                                    <li class="disp-0"> 
+                                                    <li class="disp-0">
                                                         <a class="nk-ibx-menu-item" href="javascript:void(0)">
                                                             <em class="icon ni ni-emails"></em>
                                                             <span class="nk-ibx-menu-text">All Mails</span>
@@ -370,7 +370,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
 
                                                     @if (count($data['teamMembers']) > 0)
                                                         @foreach ($data['teamMembers'] as $teammember)
-                                                            
+
 
                                                                 <li>
                                                                     <a href="javascript:void(0)">
@@ -381,7 +381,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                                                 </span>
                                                                                 <span class="sub-text" title="{{ $teammember->email }}">{{ (strlen($teammember->email) < 20) ? $teammember->email : substr($teammember->email, 0, 20)."..." }}
                                                                                 </span>
-                                                                                
+
                                                                             </div>
                                                                         </div>
                                                                     </a>
@@ -413,13 +413,13 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><em class="icon ni ni-more-v"></em></a>
                                                             <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
                                                                 <ul class="link-list-opt no-bdr">
-                                                                    
+
                                                                     <li><a href="javascript:void(0)" data-toggle="modal" data-target="#compose-mail"><span>Send Email</span></a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                        
+
                                                     @endif
 
                                                 </ul>
@@ -446,14 +446,14 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                     </div>
                                                     <ul class="nk-ibx-head-tools g-1">
                                                         <li><a href="javascript:void(0)" class="btn btn-icon btn-trigger"><em class="icon ni ni-undo"></em></a></li>
-                                                        
+
                                                         <li class="d-none d-sm-block"><a href="javascript:void(0)" class="btn btn-icon btn-trigger"><em class="icon ni ni-trash"></em></a></li>
                                                         <li>
                                                             <div class="dropdown">
                                                                 <a href="javascript:void(0)" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-v"></em></a>
                                                                 <div class="dropdown-menu">
                                                                     <ul class="link-list-opt no-bdr">
-                                                                        
+
                                                                         <li><a class="dropdown-item" href="javascript:void(0)"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
                                                                     </ul>
                                                                 </div>
@@ -463,7 +463,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                 </div>
                                                 <div>
                                                     <ul class="nk-ibx-head-tools g-1">
-                                                        
+
                                                         <li><a href="javascript:void(0)" class="btn btn-trigger btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a></li>
                                                         <li class="mr-n1 d-lg-none"><a href="javascript:void(0)" class="btn btn-trigger btn-icon toggle" data-target="inbox-aside"><em class="icon ni ni-menu-alt-r"></em></a></li>
                                                     </ul>
@@ -482,7 +482,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                 @if (count($data['messageinbox']) > 0)
                                                     @foreach ($data['messageinbox'] as $messageInbox)
 
-                                                    
+
 
                                                         <div class="nk-ibx-item">
                                                         <a href="javascript:void(0)" class="nk-ibx-link" onclick="showMessage('{{ $messageInbox->id }}')"></a>
@@ -522,7 +522,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <div class="nk-ibx-item-elem nk-ibx-item-tools">
                                                                 <div class="ibx-actions">
                                                                     <ul class="ibx-actions-hidden gx-1">
-                                                                        
+
                                                                         <li>
                                                                             <a href="javascript:void(0)" class="btn btn-sm btn-icon btn-trigger" data-toggle="tooltip" data-placement="top" title="Delete"><em class="icon ni ni-trash"></em></a>
                                                                         </li>
@@ -533,9 +533,9 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                                                 <a href="javascript:void(0)" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                                 <div class="dropdown-menu dropdown-menu-right">
                                                                                     <ul class="link-list-opt no-bdr">
-                                                                                        
+
                                                                                         <li><a class="dropdown-item" href="javascript:void(0)"><em class="icon ni ni-trash"></em><span>Delete</span></a></li>
-                                                                                        
+
                                                                                     </ul>
                                                                                 </div>
                                                                             </div>
@@ -564,7 +564,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                             <div class="user-avatar">
                                                                 ...
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
                                                     <div class="nk-ibx-item-elem nk-ibx-item-fluid">
@@ -581,16 +581,16 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                     <div class="nk-ibx-item-elem nk-ibx-item-time">
                                                         <div class="sub-text">{{ date('h:i A') }}</div>
                                                     </div>
-                                                    
+
                                                 </div><!-- .nk-ibx-item -->
-                                                    
+
                                                 @endif
 
 
 
                                             </div><!-- .nk-ibx-list -->
 
-                                                
+
 
                                             <div class="nk-ibx-view">
 
@@ -599,15 +599,15 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                     <div class="nk-ibx-head-actions">
                                                         <ul class="nk-ibx-head-tools g-1">
                                                             <li class="ml-n2"><a href="javascript:void(0)" class="btn btn-icon btn-trigger nk-ibx-hide"><em class="icon ni ni-arrow-left"></em></a></li>
-                                                            
+
                                                             <li><a href="javascript:void(0)" class="btn btn-icon btn-trigger btn-tooltip" title="Delete"><em class="icon ni ni-trash"></em></a></li>
-                                                            
-                                                            
+
+
                                                         </ul>
                                                     </div>
                                                     <div class="nk-ibx-head-actions">
                                                         <ul class="nk-ibx-head-tools g-1">
-                                                            
+
                                                             <li class="mr-n1 mr-lg-0"><a href="javascript:void(0)" class="btn btn-icon btn-trigger search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a></li>
                                                         </ul>
                                                     </div>
@@ -620,10 +620,10 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                                     </div><!-- .search-wrap -->
                                                 </div><!-- .nk-ibx-head -->
 
-                                                
+
 
                                                 <div class="nk-ibx-reply nk-reply" data-simplebar>
-                                                    
+
                                                     <div class="nk-ibx-reply-group">
                                                         <div class="nk-ibx-reply-item nk-reply-item">
                                                             <div class="nk-reply-body nk-ibx-reply-body">
@@ -632,23 +632,23 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
 
 
                                                                 <div class="attach-files" id="messagefile">
-                                                                   
+
                                                                 </div>
 
-                                                                
+
                                                             </div>
                                                         </div>
                                                         <!-- .nk-reply-item -->
                                                     </div>
                                                 </div><!-- .nk-reply -->
-                                                        
+
 
                                                 </div>
 
-                                            
+
                                         </div><!-- .nk-ibx-body -->
 
-                                        
+
                                     </div><!-- .nk-ibx -->
                                 </div>
                                 <!-- footer @s -->
@@ -697,9 +697,9 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                             <input type="hidden" name="sender" value="{{ Auth::user()->email }}">
                                             <input name="receiver" type="text" class="input-mail tagify" placeholder="Recipient" data-whitelist="info@rootofjessephc.com, support@rootofjessephc.com, contact@rootofjessephc.com" required>
                                         </div>
-                                        
+
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="nk-reply-form-editor">
@@ -720,11 +720,11 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                                     <li class="mr-2">
                                         <button class="btn btn-primary" type="submit">Send</button>
                                     </li>
-                                    
+
                                     <li>
                                         <a class="btn btn-icon btn-sm" data-toggle="tooltip" data-placement="top" title="Upload Attachment" href="javascript:void(0)" onclick="$('#file').click()"><em class="icon ni ni-clip-v"></em></a>
                                     </li>
-                                    
+
                                 </ul>
                             </div><!-- .nk-reply-form-tools -->
                         </div><!-- .modal-body -->
@@ -762,7 +762,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
             var formData = new FormData();
             formData.append("id", current_index);
 
-            
+
                     setHeaders();
                     jQuery.ajax({
                     url: route,
@@ -809,7 +809,7 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
                     'X-CSRF-TOKEN': "{{csrf_token()}}"
                 }
                 });
-            
+
         }
 
     </script>

@@ -53,10 +53,10 @@ live WORD and multimedia we seek to express relevant and meaningful truth to all
 So whether you’re a spiritual seeker who’s just starting to ask questions about God,
 or a committed Christian who wants a place to grow and serve, you can find a home at RoJ……..we have a place for everyone!
                     </p>
-                    
-                    
-                    
-                    
+
+
+
+
                 </div>
 
                 <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
@@ -100,12 +100,12 @@ with or without children – no matter where you’ve been or what you’ve done
                             </strong>
                         </div>
                         {{-- <div class="user-info d-flex align-items-center">
-                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png')">                                
+                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png')">
                             </div>
                             <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
                         </div> --}}
                     </div>
-                    
+
 
                 </div>
 
@@ -115,7 +115,7 @@ with or without children – no matter where you’ve been or what you’ve done
                     <h3>
                         We are;
                     </h3>
-                    
+
                     <p><span style="font-weight: bold;">A Worshiping Church.</span>  A community of people who gather to minister unto the Lord in Biblical
 expressions of praise and worship.
 </p>
@@ -142,11 +142,11 @@ Lord Jesus is accomplishing through other churches and individuals.
                         <div class="feedback">
                             <h4>OUR VISION</h4>
                             <strong>
-                                Serving our generation according to the will of God Acts 
+                                Serving our generation according to the will of God Acts
                             </strong>
                         </div>
                         {{-- <div class="user-info d-flex align-items-center">
-                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png')">                                
+                            <div class="profile-img bg-cover" style="background-image: url('https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png')">
                             </div>
                             <span>Pastor E.A Adeboye <br><small>(G.O, RCCG)</small></span>
                         </div> --}}
@@ -166,7 +166,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                         <div class="timeline">
                             <div class="timeline__wrap">
                               <div class="timeline__items">
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>1998</h2>
@@ -174,7 +174,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/1.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>2002</h2>
@@ -182,7 +182,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/2.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>2010</h2>
@@ -190,7 +190,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/3.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>2018</h2>
@@ -198,7 +198,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/4.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>2020</h2>
@@ -206,7 +206,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/1.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                                 <div class="timeline__item">
                                   <div class="timeline__content">
                                     <h2>2021</h2>
@@ -214,7 +214,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                                     <img src="assets/img/timeline/2.jpg" alt="">
                                   </div>
                                 </div>
-                                
+
                               </div>
                             </div>
                         </div>
@@ -246,7 +246,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                             </div>
                             <p>Program Per Month</p>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0">
                     <div class="skill-box-items row text-center">
@@ -298,7 +298,7 @@ Lord Jesus is accomplishing through other churches and individuals.
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
 
     <section class="brands-carousel-section bg-cover bg-overlay section-padding disp-0"  style="background-image: url('assets/img/brand_carousel_bg.jpg')">
         <div class="container">
@@ -330,6 +330,6 @@ Lord Jesus is accomplishing through other churches and individuals.
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
 
 @endsection

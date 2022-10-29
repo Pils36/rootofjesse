@@ -27,8 +27,8 @@
                     <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                         <div class="brand-logo pb-4 text-center">
                             <a href="html/index.html" class="logo-link">
-                                <img class="logo-light logo-img logo-img-lg" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo">
-                                <img class="logo-dark logo-img logo-img-lg" src="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" srcset="https://res.cloudinary.com/pilstech/image/upload/v1624069172/rootofjesse_pkyfwt.png" alt="logo-dark">
+                                <img class="logo-light logo-img logo-img-lg" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="logo">
+                                <img class="logo-dark logo-img logo-img-lg" src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" srcset="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1667075047/site-image/roj_logo_ar2ior.png" alt="logo-dark">
                             </a>
                         </div>
                         <div class="card card-bordered">
@@ -67,11 +67,11 @@
                                         <button class="btn btn-lg btn-primary btn-block">Sign in</button>
                                     </div>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <!-- wrap @e -->
             </div>
