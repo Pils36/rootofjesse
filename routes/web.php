@@ -53,8 +53,8 @@ Route::prefix('admin')->group(function () {
         Route::get('/activity', 'AdminController@activity')->name('activity');
         Route::get('/profile', 'AdminController@profile')->name('profile');
         Route::get('/settings', 'AdminController@settings')->name('settings');
-        
-        
+
+
         // Gallery
         Route::get('/gallery', 'AdminController@gallery')->name('platform gallery');
         Route::get('/uploaded-gallery', 'AdminController@uploadedGallery')->name('uploaded gallery');
@@ -77,9 +77,14 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete-category/{id}', 'MessageController@deleteMessageCategory')->name('delete category');
 
 
-
-
-
+        // Platform Events
+        Route::get('/all-events', 'EventController@allEvents')->name('uploaded events');
+        Route::get('/upload-events', 'EventController@uploadEvents')->name('upload events');
+        Route::post('/publish-event', 'EventController@publishEvent')->name('publish event');
+        Route::get('/view-event/{id}', 'EventController@viewEvents')->name('view event');
+        // TODO:: Fix edit event
+        Route::get('/edit-event/{id}', 'EventController@editEvents')->name('edit event');
+        Route::post('/delete-event/{id}', 'EventController@deleteEvent')->name('delete event');
 
         // Team
         Route::get('/team-members', 'TeamController@index')->name('team member');
@@ -90,10 +95,10 @@ Route::prefix('admin')->group(function () {
         Route::post('/delete-team-member/{id}', 'TeamController@deleteTeamMember')->name('delete team');
 
 
-        
-        
-        
-        
+
+
+
+
         // Church Members and First Timers
         Route::get('/members-list', 'MemberController@index')->name('members list');
         Route::get('/view-member/{id}', 'MemberController@view')->name('view member');
@@ -117,9 +122,9 @@ Route::prefix('admin')->group(function () {
             Route::get('/', 'MessagingController@index')->name('messaging');
             Route::get('/sent-mails', 'MessagingController@sent')->name('sent mails');
             Route::post('compose', 'MessagingController@compose')->name('compose mail');
-            
+
         });
-        
+
 
 
         // Logout User::
@@ -133,7 +138,7 @@ Route::prefix('admin')->group(function () {
 
         });
 
-        
+
     });
 
 

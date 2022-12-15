@@ -79,7 +79,7 @@
                                                                     </div>
                                                                     <div class="nk-notification-content">
                                                                         <div class="nk-notification-text">{{ $notification->activities }}</div>
-                                                                        <div class="nk-notification-time">{{ $notification->created_at->diffForHumans() }}</div>
+                                                                        <div class="nk-notification-time">{{ $notification->created_at  !== NULL ?? $notification->created_at->diffForHumans() }}</div>
                                                                     </div>
                                                                 </div>
                                                         @endforeach

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 use App\User as User;
 use App\Sermon as Sermon;
@@ -60,7 +60,7 @@ class MessageController extends Controller
         if($req->hasFile('file')){
             if(count($req->file('file')) > 0){
                 foreach ($req->file('file') as $key => $value) {
-                    
+
                     //Get filename with extension
                     $filenameWithExt = $value->getClientOriginalName();
                     // Get just filename
@@ -77,7 +77,7 @@ class MessageController extends Controller
                     $query['imageUrl'] = $imageUrl;
                     $query['public_id'] = $public_id;
 
-                    
+
 
                     $getItem = Gallery::where('name', $filename)->first();
 
@@ -146,7 +146,7 @@ class MessageController extends Controller
             $album_art = $image['secure_url'];
 
         }
-        
+
         // Upload Message
         $query = $req->all();
 
@@ -226,12 +226,12 @@ class MessageController extends Controller
             'messageCategory' => $this->getMessageCategory(),
             'notification' => $this->listNotification(Auth::user()->id),
         ];
-        
+
         return view('admin.messages.index')->with(['data' => $data]);
     }
 
     public function allMessages(){
-        
+
         $data = [
             'messages' => $this->allSermons(),
             'notification' => $this->listNotification(Auth::user()->id),
@@ -240,8 +240,11 @@ class MessageController extends Controller
         return view('admin.messages.allmessages')->with(['data' => $data]);
     }
 
+
+
+
     public function messageCategory(){
-        
+
         $data = [
             'messagesCategory' => $this->allMessageCategory(),
             'notification' => $this->listNotification(Auth::user()->id),
@@ -305,11 +308,11 @@ class MessageController extends Controller
             ];
         }
 
-        
+
 
         return view('newpage.message')->with(['data' => $data, 'pages' => 'Message']);
     }
-    
+
     public function oneMessage($id){
 
         if(Auth::check() == true){
@@ -326,7 +329,7 @@ class MessageController extends Controller
             ];
         }
 
-        
+
 
         return view('newpage.onemessage')->with(['data' => $data, 'pages' => 'Message']);
     }

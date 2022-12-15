@@ -18,6 +18,12 @@
                                             </a>
                                         </li>
                                         <li class="nk-menu-item">
+                                            <a href="{{ route('uploaded events') }}" class="nk-menu-link">
+                                                <span class="nk-menu-icon"><em class="icon ni ni-list-thumb-alt-fill"></em></span>
+                                                <span class="nk-menu-text">Events</span>
+                                            </a>
+                                        </li>
+                                        <li class="nk-menu-item">
                                             <a href="{{ route('message categories') }}" class="nk-menu-link">
                                                 <span class="nk-menu-icon"><em class="icon ni ni-list-thumb-alt-fill"></em></span>
                                                 <span class="nk-menu-text">Message Categories</span>
