@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 use App\Traits\SermonUpload;
 use App\Traits\MyGallery;
+use App\Traits\MyEvents;
 
 
 class HomeController extends Controller
 {
 
-    use SermonUpload, MyGallery;
+    use SermonUpload, MyGallery, MyEvents;
 
     /**
      * Create a new controller instance.
@@ -30,6 +31,7 @@ class HomeController extends Controller
     {
         $data = [
             'messages' => $this->getLatestMessages(),
+            'events' => $this->getActiveEvents(),
             'gallery' => $this->galleryPhotos(),
         ];
 
@@ -80,6 +82,7 @@ class HomeController extends Controller
     {
         $data = [
             'gallery' => $this->galleryPhotos(),
+            'events' => $this->getActiveEvents()
         ];
         return view('newpage.events')->with(['data' => $data, 'pages' => 'Events']);
     }
@@ -99,5 +102,5 @@ class HomeController extends Controller
         ];
         return view('newpage.services')->with(['data' => $data, 'pages' => 'Services']);
     }
-    
+
 }

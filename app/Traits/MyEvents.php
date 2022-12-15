@@ -29,4 +29,11 @@ trait MyEvents
 
         return $data;
     }
+
+    public function getActiveEvents()
+    {
+        $data = PlatformEvent::where('status', 'on')->orderBy('created_at', 'DESC')->get();
+
+        return $data;
+    }
 }

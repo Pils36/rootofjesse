@@ -35,8 +35,8 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="name" class="form-control" id="event-name" placeholder="Doing Exploit" required>
-                                        <input type="hidden" name="post_id" value="{{ time() }}" id="post_id">
+                                        <input type="text" name="name" class="form-control" id="event-name" value="{{ $data['events']->name }}"  required>
+                                        <input type="hidden" name="post_id" value="{{ $data['events']->post_id }}" id="post_id">
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="location" class="form-control" id="event-location" placeholder="ROJ, Portharcourt Nigeria" required>
+                                        <input type="text" name="location" class="form-control" id="event-location" value="{{ $data['events']->location }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="event_date" class="form-control" id="event-date" placeholder="December 18th - 24th, 2022" required>
+                                        <input type="text" name="event_date" class="form-control" id="event-date" value="{{ $data['events']->event_date }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <input type="text" name="link" class="form-control" id="event-link" placeholder="https://docs.google.com">
+                                        <input type="text" name="link" class="form-control" id="event-link" value="{{ $data['events']->link }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                         <div class="row g-3 align-center">
                             <div class="col-lg-5">
                                 <div class="form-group">
-                                    <label class="form-label"><span class="text-danger font-weight-bold">*</span>Image</label>
+                                    <label class="form-label">Image</label>
                                     <span class="form-note">Represent the event with a catching image</span>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <div class="form-group">
                                     <div class="form-control-wrap">
                                         <div class="custom-file">
-                                            <input type="file" name="image" class="custom-file-input" id="customFile" required>
+                                            <input type="file" name="image" class="custom-file-input" id="customFile">
                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control form-control-sm" name="description" id="cf-default-textarea" placeholder="Short note about event" required></textarea>
+                                        <textarea class="form-control form-control-sm" name="description" id="cf-default-textarea" required>{{ $data['events']->description }}</textarea>
                                     </div>
 
                                 </div>
@@ -133,7 +133,7 @@
                             <div class="col-lg-7">
                                 <div class="form-group">
                                     <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" name="status" id="event-off">
+                                        <input type="checkbox" class="custom-control-input" name="status" id="site-off" {{ ($data['events']->status) == "on" ? "checked" : "" }}>
                                         <label class="custom-control-label" for="event-off">Publish</label>
                                     </div>
                                 </div>

@@ -82,7 +82,6 @@ Route::prefix('admin')->group(function () {
         Route::get('/upload-events', 'EventController@uploadEvents')->name('upload events');
         Route::post('/publish-event', 'EventController@publishEvent')->name('publish event');
         Route::get('/view-event/{id}', 'EventController@viewEvents')->name('view event');
-        // TODO:: Fix edit event
         Route::get('/edit-event/{id}', 'EventController@editEvents')->name('edit event');
         Route::post('/delete-event/{id}', 'EventController@deleteEvent')->name('delete event');
 

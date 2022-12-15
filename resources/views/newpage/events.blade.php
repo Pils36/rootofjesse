@@ -20,19 +20,63 @@
                     </ul>
                 </div>
             </div>
-            <!-- Breadcrumbs End -->            
+            <!-- Breadcrumbs End -->
 
 		    <!-- Events Section Start -->
             <div class="rs-event orange-color pt-100 pb-100 md-pt-70 md-pb-70">
                 <div class="container">
                     <div class="row">
+
+
+                        @if (count($data['events']) > 0)
+
+                        @foreach ($data['events'] as $event)
+
+                        <div class="col-lg-4 mb-60 col-md-6">
+                            <div class="event-item">
+                                <div class="event-short">
+                                   <div class="featured-img">
+                                       <img src="{{ $event->image }}" alt="Image">
+                                   </div>
+
+                                   <div class="content-part">
+                                       <div class="address"><i class="fa fa-map-o"></i> {{ $event->location }}</div>
+                                       <h4 class="title"><a href="#">{{ $event->name }}</a></h4>
+                                       <p class="text">
+                                          {!! $event->description !!}
+                                       </p>
+
+                                       <div class="event-btm">
+                                           <div class="date-part">
+                                               <div class="date">
+                                                   <i class="fa fa-calendar-check-o"></i>
+                                                   {{ $event->event_date }}
+                                               </div>
+                                           </div>
+
+                                           @if ($event->link !== NULL)
+                                               <div class="btn-part">
+                                               <a href="{{ $event->link }}" target="_blank">Join Event</a>
+                                           </div>
+                                           @endif
+
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endforeach
+
+                        @else
+
                         <div class="col-lg-4 mb-60 col-md-6">
                             <div class="event-item">
                                 <div class="event-short">
                                    <div class="featured-img">
                                        <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217257/site-image/IMG_3951_r8zf0f.jpg" alt="Image">
                                    </div>
-                                   
+
                                    <div class="content-part">
                                        <div class="address"><i class="fa fa-map-o"></i> ROJ, Portharcourt Nigeria</div>
                                        <h4 class="title"><a href="#">Doing Exploit</a></h4>
@@ -45,28 +89,32 @@
                                                 <li>Praise</li>
                                             </ul>
                                        </p>
-                                            
+
                                        <div class="event-btm">
                                            <div class="date-part">
                                                <div class="date">
                                                    <i class="fa fa-calendar-check-o"></i>
-                                                   November 11th - 15th, {{ date('Y') }} 
+                                                   November 11th - 15th, {{ date('Y') }}
                                                </div>
                                            </div>
                                            <div class="btn-part">
                                                <a href="javascript:void(0)">Join Event</a>
                                            </div>
                                        </div>
-                                   </div> 
+                                   </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
+
+                        @endif
+
+
                     </div>
-                </div> 
+                </div>
             </div>
-            <!-- Events Section End --> 
- 
-     </div> 
-         <!-- Main content End --> 
+            <!-- Events Section End -->
+
+     </div>
+         <!-- Main content End -->
 
 @endsection

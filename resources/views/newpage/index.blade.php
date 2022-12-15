@@ -1,5 +1,5 @@
 
-        
+
         @extends('layouts.app')
 
         @section('content')
@@ -25,10 +25,10 @@
                                             <a class="readon orange-btn" href="{{ route('services') }}">Be at the Next Service</a>
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </div>
-                    </div>    
+                    </div>
                     <div class="slide-part">
                         <div class="container">
                             <div class="row align-items-center">
@@ -45,7 +45,7 @@
                                             <a class="readon orange-btn" href="{{ route('services') }}">Be at the Next Service</a>
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-lg-4 col-md-12 md-mb-30">
                                 <div class="features-wrap">
                                     <div class="icon-part">
@@ -126,7 +126,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-lg-4 col-md-12">
                                 <div class="features-wrap">
                                     <div class="icon-part">
@@ -147,10 +147,10 @@
                 </div>
                 <!-- Features Section End -->
             </div>
-            <!-- Slider Section End -->  
+            <!-- Slider Section End -->
 
 
-            
+
 
 
             <!-- About Section Start -->
@@ -158,7 +158,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="offset-lg-4">
-                       
+
                         </div>
                         <div class="col-lg-8">
                             <div class="content-part">
@@ -169,7 +169,7 @@
                                             <i class="fa fa-play"></i>
                                         </a> --}}
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="sec-title3 pl-65 md-pl-15 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
                                     <div class="sub-title">About Us</div>
                                     <h2 class="title">Hello & Welcome!</h2>
@@ -179,7 +179,7 @@
                                     <div class="btn-part wow fadeInUp" data-wow-delay="400ms" data-wow-duration="2000ms">
                                         <a class="readon orange-btn" href="{{ route('about us') }}">Read More</a>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="offset-lg-3">
-                            
+
                         </div>
                         <div class="col-lg-9">
                             <div class="main-content">
@@ -203,7 +203,7 @@
                                     <div class="col-lg-6">
                                        <div class="images-title pl-80 md-pl-15 md-mb-40">
                                            <img src="new/assets/images/about/home8/2.jpg" alt="">
-                                       </div> 
+                                       </div>
                                     </div>
                                     <div class="col-lg-6">
                                        <div class="sec-title3 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
@@ -214,7 +214,7 @@
                                            <div class="btn-part wow fadeInUp" data-wow-delay="400ms" data-wow-duration="2000ms">
                                                <a class="readon orange-btn" href="#">Read More</a>
                                            </div>
-                                       </div> 
+                                       </div>
                                     </div>
                                 </div>
                             </div>
@@ -230,13 +230,13 @@
                                         <h2 class="number rs-count kplus">3</h2>
                                         <h4 class="title mb-0">Downloads</h4>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="col-lg-3 col-md-6 md-mb-30">
                                     <div class="counter-item text-center">
                                         <h2 class="number rs-count kplus">10</h2>
                                         <h4 class="title mb-0">Subscribers</h4>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="col-lg-3 col-md-6">
                                     <div class="counter-item text-center">
                                         <h2 class="number rs-count plus">40</h2>
@@ -264,7 +264,7 @@
                        <div class="btn-part wow fadeInUp" data-wow-delay="400ms" data-wow-duration="2000ms">
                            <a class="readon orange-btn" href="#">Download Now</a>
                        </div>
-                   </div> 
+                   </div>
                </div>
             </div>
             <!-- Recipes Section end -->
@@ -289,7 +289,7 @@
                                                 <a href="javascript:void(0)"><img src="{{ $sermons->album_art }}" alt="" style="width: 100%; height: 30vh; object-fit: cover;"></a>
                                             </div>
                                             <div class="content-part">
-                                                
+
                                                 <h3 class="title" style="font-size: 16px !important;"><a href="{{ route('one sermon', $sermons->id) }}">{{ (strlen($sermons->title) < 50) ? $sermons->title : substr($sermons->title, 0, 50)."..." }}</a></h3>
 
                                                 <ul class="meta-part">
@@ -299,16 +299,16 @@
                                         </div>
                                 </div>
                                 </div>
-                            
+
                         @endforeach
 
-                        
-                        
+
+
                     </div>
                 </div>
             </div>
             <!-- Categories Section End -->
-                
+
             @endif
 
             @if (count($data['messages']) > 3)
@@ -319,7 +319,7 @@
 
             @endif
 
-     
+
 
 
             <!-- Events Section Start -->
@@ -331,31 +331,70 @@
                         </div>
                         <h2 class="title mb-30">Our Upcoming Events</h2>
                     </div>
+
+
+                    @if (count($data['events']) > 0)
+
+
+                    <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="7000" data-smart-speed="2000" data-dots="true" data-nav="false" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
+
+                    @foreach ($data['events'] as $event)
+
+                       <div class="event-item">
+                           <div class="event-short">
+                              <div class="featured-img">
+                                  <img src="{{ $event->image }}" alt="Image">
+                                    <div class="dates">
+                                          {{ $event->event_date }}
+
+                                  </div>
+                              </div>
+                              <div class="content-part">
+                                  <h4 class="title"><a href="{{ route('events', 'slug='.str_replace(" ", "_", $event->name)) }}">{{ $event->name }}</a></h4>
+                                <div class="time-sec">
+
+                                    <div class="address"><i class="fa fa-map-o"></i> {{ $event->location }}</div>
+                                </div>
+                              </div>
+                           </div>
+                       </div>
+                    @endforeach
+
+
+                   </div>
+
+
+                    @else
+
                     <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="7000" data-smart-speed="2000" data-dots="true" data-nav="false" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
                        <div class="event-item">
                            <div class="event-short">
                               <div class="featured-img">
                                   <img src="https://res.cloudinary.com/the-root-of-jesse-phc/image/upload/v1625217366/site-image/IMG_4159_pelwy5.jpg" alt="Image">
                                     <div class="dates">
-                                          November 11th - 15th, 2021  
-                                          
+                                          November 11th - 15th, 2021
+
                                   </div>
                               </div>
                               <div class="content-part">
                                   <h4 class="title"><a href="#">Doing Exploits</a></h4>
                                 <div class="time-sec">
-                                    
+
                                     <div class="address"><i class="fa fa-map-o"></i> ROJ, PHC Nigeria</div>
                                 </div>
-                              </div> 
+                              </div>
                            </div>
                        </div>
                    </div>
-                </div> 
-            </div>
-            <!-- Events Section End -->    
 
-            
+                    @endif
+
+
+                </div>
+            </div>
+            <!-- Events Section End -->
+
+
 
             <!-- Newsletter section start -->
             <div class="rs-newsletter home8-style1 bg7 pt-100 pb-100 md-pt-70 md-pb-70 disp-0">
@@ -364,17 +403,17 @@
                       <div class="sec-title3 wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
                           <div class="sub-title"> Subscribe Newsletter</div>
                           <h2 class="title">Subscribe To Our Newsletter!</h2>
-                                           
-                      </div> 
+
+                      </div>
                         <form class="newsletter-form">
                             <input type="email" id="email" name="email" placeholder="Enter Your Email" required="">
-                            <button type="submit">Submit</button> 
-                        </form>                        
+                            <button type="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
             <!-- Newsletter section end -->
-            
+
             <!-- Testimonial Section Start -->
             <div class="rs-testimonial style8 pt-100 pb-100 md-pt-70 md-pb-70 disp-0">
               <div class="container">
@@ -386,7 +425,7 @@
                 </div>
                   <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="7000" data-smart-speed="2000" data-dots="true" data-nav="false" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="true" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="true" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="true" data-md-device="3" data-md-device-nav="false" data-md-device-dots="true">
                       <div class="testi-item">
-                          <div class="author-desc">                                
+                          <div class="author-desc">
                               <div class="desc">Education is the passport to the future for tomorrow belongs to those who pre pare for it today. Sed ut perspiciatis unde omnis  iste natus error sit vo luptatem</div>
                               <div class="author-img">
                                   <img src="new/assets/images/testimonial/style8/1.png" alt="">
@@ -449,17 +488,17 @@
                                         <a class="image-popup" href="{{ $photos->imageUrl }}"><img src="{{ $photos->imageUrl }}" alt=""></a>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                        @endforeach
                    @endif
-                    
-                    
+
+
                </div>
             </div>
-            <!-- Events Section End -->  
-        </div> 
+            <!-- Events Section End -->
+        </div>
         <!-- Main content End -->
 
         @endsection
-        
+
 

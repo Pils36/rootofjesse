@@ -84,6 +84,17 @@ class EventController extends Controller
     }
 
 
+    public function editEvents($id)
+    {
+        $data = [
+            'events' => $this->thisEvent($id),
+            'notification' => $this->listNotification(Auth::user()->id),
+        ];
+
+        return view('admin.events.editevents')->with(['data' => $data]);
+    }
+
+
 
     public function deleteEvent($id)
     {
